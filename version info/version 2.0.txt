@@ -1,0 +1,5 @@
+Birch Hill Ski Temperature is now a universal App!
+--supports iPhone, iPod Touch, and iPad
+--support for iOS 7
+--displays temperature at Goldstream Sports
+--additional features for iPad

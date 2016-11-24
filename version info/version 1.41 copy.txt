@@ -1,0 +1,5 @@
+vers. 1.41
+
+--added information page with sources for temperature readings
+--added pull-to-refresh functionality to News page (thanks to Leah Culver)
+--fix update issue with weather forecast

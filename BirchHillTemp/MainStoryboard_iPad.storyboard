@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" initialViewController="DPM-NO-2Qh">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+    </dependencies>
+    <scenes>
+        <!--Trails View Controller - Root View Controller-->
+        <scene sceneID="M7v-vF-vmN">
+            <objects>
+                <tableViewController id="RcX-qn-4wE" customClass="TrailsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jkn-O3-v1G">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="OvervewCell" textLabel="Az1-z3-w1E" style="IBUITableViewCellStyleDefault" id="cZm-1t-ebs">
+                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cZm-1t-ebs" id="4Kr-yg-rOd">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Az1-z3-w1E">
+                                            <rect key="frame" x="10" y="0.0" width="748" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="MapCell" textLabel="MVe-MN-GlL" style="IBUITableViewCellStyleDefault" id="Qgq-a0-1NN">
+                                <rect key="frame" x="0.0" y="66" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qgq-a0-1NN" id="RGV-EC-jt4">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MVe-MN-GlL">
+                                            <rect key="frame" x="10" y="0.0" width="748" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrailCell" textLabel="tb4-CL-Isk" detailTextLabel="xo3-lu-z26" style="IBUITableViewCellStyleSubtitle" id="NJb-cz-IWY">
+                                <rect key="frame" x="0.0" y="110" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NJb-cz-IWY" id="XP2-fN-L30">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tb4-CL-Isk">
+                                            <rect key="frame" x="10" y="1" width="36" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xo3-lu-z26">
+                                            <rect key="frame" x="10" y="23" width="56" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="22" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0TE-cp-WIW">
+                                            <rect key="frame" x="548" y="3" width="200" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="21" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pTM-Gc-cME">
+                                            <rect key="frame" x="548" y="25" width="200" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="A8o-QA-vEx"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lv7-Wz-owg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1667" y="-832"/>
+        </scene>
+        <!--Forecast View Controller - Root View Controller-->
+        <scene sceneID="eOq-eI-xKR">
+            <objects>
+                <tableViewController id="Y8h-FW-gyh" customClass="ForecastViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eIA-Ss-Rh3">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WeatherCell" textLabel="NEW-uE-reo" detailTextLabel="xbH-NZ-vm2" style="IBUITableViewCellStyleSubtitle" id="zzB-l9-2Ze">
+                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zzB-l9-2Ze" id="wFw-hv-Xo6">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NEW-uE-reo">
+                                            <rect key="frame" x="10" y="1" width="36" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xbH-NZ-vm2">
+                                            <rect key="frame" x="10" y="23" width="56" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ForecastDateCell" textLabel="0K3-yh-HAr" style="IBUITableViewCellStyleDefault" id="Xjl-a8-bEs">
+                                <rect key="frame" x="0.0" y="66" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xjl-a8-bEs" id="qyn-D1-NUb">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Forecast date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0K3-yh-HAr">
+                                            <rect key="frame" x="10" y="0.0" width="748" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="WarningCell" textLabel="gpv-lL-2go" detailTextLabel="0r1-2W-Snn" style="IBUITableViewCellStyleSubtitle" id="cij-TW-Mm9">
+                                <rect key="frame" x="0.0" y="110" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cij-TW-Mm9" id="Y1k-6o-dRQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Warning" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gpv-lL-2go">
+                                            <rect key="frame" x="10" y="1" width="69" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" red="0.8043229167" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0r1-2W-Snn">
+                                            <rect key="frame" x="10" y="23" width="56" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="yIi-QT-beF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="las-CA-I1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1657" y="440"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="056-zc-Fqj">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="oy5-Ln-YD5" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3fs-AG-bbv">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9SZ-KV-kQy" kind="relationship" relationship="rootViewController" id="d6G-9s-P81"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9vC-ue-X86" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2215" y="2765"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Z7e-J5-YIu">
+            <objects>
+                <viewController autoresizesArchivedViewToFullSize="NO" modalPresentationStyle="currentContext" id="9SZ-KV-kQy" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gte-X1-ZJx">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="q45-v6-YXc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gfN-xO-4Zx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1097" y="2540"/>
+        </scene>
+        <!--List View Controller - NSCF News-->
+        <scene sceneID="cOH-yf-hjd">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="Ehk-cN-rn2" customClass="ListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SsF-Mz-FGT">
+                        <rect key="frame" x="0.0" y="64" width="320" height="788"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsCell" textLabel="PwR-UL-8yJ" detailTextLabel="Gts-4V-BFd" style="IBUITableViewCellStyleSubtitle" id="vJo-fh-aoB">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vJo-fh-aoB" id="gS6-en-civ">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PwR-UL-8yJ">
+                                            <rect key="frame" x="10" y="2" width="36" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gts-4V-BFd">
+                                            <rect key="frame" x="10" y="24" width="50" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ehk-cN-rn2" id="u7b-mg-aF4"/>
+                            <outlet property="delegate" destination="Ehk-cN-rn2" id="CwC-kc-id2"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="NSCF News" id="yW4-PP-Th8"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ulc-qy-vTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-227" y="1304"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wzp-WS-AKU">
+            <objects>
+                <navigationController id="vg9-FP-vDv" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="5Im-5C-piD">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ehk-cN-rn2" kind="relationship" relationship="rootViewController" id="SZ8-Eo-y1G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="61V-HN-5y2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-753" y="1270"/>
+        </scene>
+        <!--Intelligent Split View Controller - News-->
+        <scene sceneID="rF5-n2-HVa">
+            <objects>
+                <splitViewController id="lNv-Qu-GH4" customClass="IntelligentSplitViewController" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="News" image="166-newspaper.png" id="noc-jF-oDD"/>
+                    <toolbarItems/>
+                    <connections>
+                        <segue destination="vg9-FP-vDv" kind="relationship" relationship="masterViewController" id="C76-fl-vAQ"/>
+                        <segue destination="oy5-Ln-YD5" kind="relationship" relationship="detailViewController" id="4HX-pj-tiT"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sLJ-1v-cMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2805" y="1660"/>
+        </scene>
+        <!--Info View Controller - Settings-->
+        <scene sceneID="Suo-ao-WPW">
+            <objects>
+                <viewController id="vJL-YJ-Wty" customClass="InfoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U4W-kj-JPz">
+                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="JXU-SG-PQg">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="956"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" textLabel="jhF-Pr-bbT" detailTextLabel="zgt-IQ-9rI" style="IBUITableViewCellStyleValue1" id="eQ9-bG-gT4">
+                                        <rect key="frame" x="0.0" y="54" width="768" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eQ9-bG-gT4" id="got-0S-Azr">
+                                            <rect key="frame" x="45" y="1" width="678" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jhF-Pr-bbT">
+                                                    <rect key="frame" x="10" y="11" width="33" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zgt-IQ-9rI">
+                                                    <rect key="frame" x="624" y="11" width="44" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellDonate" textLabel="Rft-jt-zGE" imageView="7CJ-eZ-aSg" style="IBUITableViewCellStyleDefault" id="Zt5-4J-zBh">
+                                        <rect key="frame" x="0.0" y="99" width="768" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zt5-4J-zBh" id="K3b-v0-n2K">
+                                            <rect key="frame" x="45" y="0.0" width="658" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rft-jt-zGE">
+                                                    <rect key="frame" x="53" y="0.0" width="595" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="nscficon-114.png" id="7CJ-eZ-aSg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellDisclosure" textLabel="r2y-sL-NCc" detailTextLabel="1T1-BT-bDE" style="IBUITableViewCellStyleValue1" id="jHZ-Ij-b8W">
+                                        <rect key="frame" x="0.0" y="143" width="768" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jHZ-Ij-b8W" id="AFK-qF-ojr">
+                                            <rect key="frame" x="45" y="0.0" width="658" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r2y-sL-NCc">
+                                                    <rect key="frame" x="10" y="11" width="33" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1T1-BT-bDE">
+                                                    <rect key="frame" x="604" y="11" width="44" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="CellSwitch" textLabel="9W5-iI-tpQ" style="IBUITableViewCellStyleDefault" id="FSV-iW-E6b">
+                                        <rect key="frame" x="0.0" y="187" width="768" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FSV-iW-E6b" id="3ve-KB-7Vd">
+                                            <rect key="frame" x="45" y="0.0" width="678" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9W5-iI-tpQ">
+                                                    <rect key="frame" x="10" y="0.0" width="658" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellColor" textLabel="kPY-w2-b0m" detailTextLabel="s3e-YY-zT8" style="IBUITableViewCellStyleValue1" id="Fgn-eg-jEr">
+                                        <rect key="frame" x="0.0" y="231" width="768" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fgn-eg-jEr" id="OsZ-mT-CEP">
+                                            <rect key="frame" x="45" y="0.0" width="658" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Bubble Color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kPY-w2-b0m">
+                                                    <rect key="frame" x="10" y="11" width="101" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s3e-YY-zT8">
+                                                    <rect key="frame" x="604" y="11" width="44" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vJL-YJ-Wty" id="vY3-lk-URl"/>
+                                    <outlet property="delegate" destination="vJL-YJ-Wty" id="Tkj-ak-2YS"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="19-gear.png" id="4Oh-sj-7aJ"/>
+                    <connections>
+                        <outlet property="settingsTableView" destination="JXU-SG-PQg" id="fry-LI-7Ea"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jhg-40-BYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4611" y="968"/>
+        </scene>
+        <!--Navigation Controller - Forecast-->
+        <scene sceneID="NXC-DO-9Jk">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="kWw-Ec-Uh0" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Forecast" image="171-sun.png" id="ewH-6W-0fU"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d2Z-kN-6ug">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y8h-FW-gyh" kind="relationship" relationship="rootViewController" id="QHt-VG-Ty1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eid-Dq-qrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2633" y="440"/>
+        </scene>
+        <!--Trail Detail View Controller-->
+        <scene sceneID="svt-ep-NxL">
+            <objects>
+                <viewController id="rgF-rW-E85" customClass="TrailDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ggt-BD-zEt">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uIe-nj-hoT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-739" y="-856"/>
+        </scene>
+        <!--Navigation Controller - Trails-->
+        <scene sceneID="wCv-lB-ZMM">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="NfZ-e7-oWx" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Trails" image="63-runner.png" id="UEA-9m-7Lw"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BfI-PF-yJE">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RcX-qn-4wE" kind="relationship" relationship="rootViewController" id="SmL-Ny-RP3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8pe-RD-biT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2567" y="-872"/>
+        </scene>
+        <!--Map View Controller - Map-->
+        <scene sceneID="yJT-k3-nSh">
+            <objects>
+                <viewController autoresizesArchivedViewToFullSize="NO" wantsFullScreenLayout="YES" id="CmH-mP-mBF" customClass="MapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Noj-5H-ct1">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.60000000000000009" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Iwq-4R-mmH">
+                                <rect key="frame" x="652" y="34" width="71" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Flip">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flip:" destination="CmH-mP-mBF" eventType="touchUpInside" id="2cp-5D-4Qb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="103-map.png" id="8xM-8u-Wex"/>
+                    <connections>
+                        <outlet property="flipButton" destination="Iwq-4R-mmH" id="2Pb-Wl-qD0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="flM-PE-P3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2085" y="-3476"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Efl-Ix-LzI">
+            <objects>
+                <viewController storyboardIdentifier="portrait" id="wdH-IW-pFv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UX6-yr-JhT">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="uKF-r8-aU1">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                                <items>
+                                    <navigationItem title="Birch Hill Temperature" id="DCP-Ug-keu">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="refresh" id="4aU-gP-g31">
+                                            <connections>
+                                                <action selector="tappedRefresh:" destination="caN-3s-idh" id="abT-7b-dld"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view tag="21" contentMode="scaleToFill" id="Vpb-e8-7OZ" userLabel="Current Temp View">
+                                <rect key="frame" x="85" y="81" width="400" height="220"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="24" contentMode="scaleToFill" id="7k5-rL-71c" userLabel="NWS View">
+                                <rect key="frame" x="11" y="335" width="180" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="25" contentMode="scaleToFill" id="rPj-dd-huR" userLabel="UAF View">
+                                <rect key="frame" x="199" y="335" width="180" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="26" contentMode="scaleToFill" id="t3x-Ta-dPJ" userLabel="GS View">
+                                <rect key="frame" x="387" y="335" width="180" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="22" contentMode="scaleToFill" id="mMv-5d-vyU" userLabel="High Temp View">
+                                <rect key="frame" x="504" y="81" width="180" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="23" contentMode="scaleToFill" id="HEP-KU-oDM" userLabel="Low Temp View">
+                                <rect key="frame" x="504" y="196" width="180" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="31" contentMode="scaleToFill" horizontalCompressionResistancePriority="144" verticalCompressionResistancePriority="132" id="ItH-M6-7gH" userLabel="Humidity View">
+                                <rect key="frame" x="590" y="510" width="150" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="28" contentMode="scaleToFill" id="tMu-Dt-gqh" userLabel="Wind Current View">
+                                <rect key="frame" x="41" y="510" width="150" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="29" contentMode="scaleToFill" id="OqT-LN-OJY" userLabel="Wind Average View">
+                                <rect key="frame" x="225" y="510" width="150" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="30" contentMode="scaleToFill" id="4iS-rD-7PX" userLabel="Wind Max View">
+                                <rect key="frame" x="411" y="510" width="150" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="27" contentMode="scaleToFill" id="EC6-bA-Chm" userLabel="Chill View">
+                                <rect key="frame" x="575" y="335" width="180" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="32" contentMode="scaleToFill" id="RNW-lZ-WJ2" userLabel="Cam View">
+                                <rect key="frame" x="41" y="674" width="340" height="260"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="33" contentMode="scaleToFill" id="Z8R-TG-A9F" userLabel="Sunrise View">
+                                <rect key="frame" x="404" y="674" width="340" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="34" contentMode="scaleToFill" id="8oI-Se-f61" userLabel="Forecast View">
+                                <rect key="frame" x="404" y="774" width="340" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50914320020000003" green="0.65979369369999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1nz-vd-bid" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-679" y="-3731"/>
+        </scene>
+        <!--View Controller - Landscape-->
+        <scene sceneID="q8G-J2-z2b">
+            <objects>
+                <viewController storyboardIdentifier="landscape" title="Landscape" id="SGo-Mz-wlx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HSC-Fn-iO8" userLabel="View-landscape">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="xgo-ez-sfi">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                                <items>
+                                    <navigationItem title="Birch Hill Temperature" id="C96-tu-Abu">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="refresh" id="Rjt-kx-HBo"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view tag="21" contentMode="scaleToFill" id="sin-aP-CXE" userLabel="Current Temp View">
+                                <rect key="frame" x="11" y="75" width="400" height="220"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="24" contentMode="scaleToFill" id="yJA-lu-l7a" userLabel="NWS View">
+                                <rect key="frame" x="17" y="345" width="180" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="25" contentMode="scaleToFill" id="f6A-ZE-ljQ" userLabel="UAF View">
+                                <rect key="frame" x="219" y="345" width="180" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="26" contentMode="scaleToFill" id="ks0-md-hPa" userLabel="GS View">
+                                <rect key="frame" x="17" y="515" width="180" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="22" contentMode="scaleToFill" id="TF2-FG-S4l" userLabel="High Temp View">
+                                <rect key="frame" x="440" y="75" width="180" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="23" contentMode="scaleToFill" id="oex-20-tQq" userLabel="Low Temp View">
+                                <rect key="frame" x="440" y="190" width="180" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="28" contentMode="scaleToFill" id="u22-Wj-wjv" userLabel="Wind Current View">
+                                <rect key="frame" x="455" y="308" width="150" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="29" contentMode="scaleToFill" id="q8X-Gp-GEg" userLabel="Wind Average View">
+                                <rect key="frame" x="455" y="436" width="150" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="30" contentMode="scaleToFill" id="i4f-4b-uqm" userLabel="Wind Max View">
+                                <rect key="frame" x="455" y="564" width="150" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="27" contentMode="scaleToFill" id="0JO-yU-6oR" userLabel="Chill View">
+                                <rect key="frame" x="219" y="515" width="180" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="32" contentMode="scaleToFill" id="AAq-vd-SpV" userLabel="Cam View">
+                                <rect key="frame" x="672" y="390" width="340" height="260"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="33" contentMode="scaleToFill" id="qVe-U1-wfb" userLabel="Sunrise View">
+                                <rect key="frame" x="672" y="98" width="340" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="34" contentMode="scaleToFill" id="vgq-w8-sIc" userLabel="Forecast View">
+                                <rect key="frame" x="672" y="212" width="340" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="30" contentMode="scaleToFill" id="eap-lj-frF" userLabel="Humidity View">
+                                <rect key="frame" x="527" y="800" width="180" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50914320020000003" green="0.65979369369999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MOk-gX-voN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-978" y="-2434"/>
+        </scene>
+        <!--First View Controller - Temperature-->
+        <scene sceneID="RVW-k7-Ndw">
+            <objects>
+                <viewController title="Temperature" id="caN-3s-idh" customClass="FirstViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fbF-aG-8Ri">
+                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="Ulx-hK-RaU">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                                <items>
+                                    <navigationItem title="Birch Hill Temperature" id="YAe-kd-tOl">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="refresh" id="mos-H3-77k">
+                                            <connections>
+                                                <action selector="tappedRefresh:" destination="caN-3s-idh" id="cNc-uv-aq3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view tag="21" contentMode="scaleToFill" id="9Zq-u0-S4E" userLabel="Current Temp View">
+                                <rect key="frame" x="85" y="81" width="400" height="220"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="24" contentMode="scaleToFill" id="zMn-KD-aWu" userLabel="NWS View">
+                                <rect key="frame" x="11" y="335" width="180" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="25" contentMode="scaleToFill" id="cNU-vV-d47" userLabel="UAF View">
+                                <rect key="frame" x="199" y="335" width="180" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="26" contentMode="scaleToFill" id="Gal-Yo-x2v" userLabel="GS View">
+                                <rect key="frame" x="387" y="335" width="180" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="22" contentMode="scaleToFill" id="Lx0-4b-kxC" userLabel="High Temp View">
+                                <rect key="frame" x="504" y="81" width="180" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="23" contentMode="scaleToFill" id="GCY-Jq-lsf" userLabel="Low Temp View">
+                                <rect key="frame" x="504" y="196" width="180" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="31" contentMode="scaleToFill" horizontalCompressionResistancePriority="144" verticalCompressionResistancePriority="132" id="4fO-lx-AXQ" userLabel="Humidity View">
+                                <rect key="frame" x="590" y="510" width="150" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="28" contentMode="scaleToFill" id="Ykx-mJ-dUJ" userLabel="Wind Current View">
+                                <rect key="frame" x="41" y="510" width="150" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="29" contentMode="scaleToFill" id="PFo-IZ-Ud1" userLabel="Wind Average View">
+                                <rect key="frame" x="225" y="510" width="150" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="30" contentMode="scaleToFill" id="SQl-iR-bGI" userLabel="Wind Max View">
+                                <rect key="frame" x="411" y="510" width="150" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="27" contentMode="scaleToFill" id="zWd-4b-EDT" userLabel="Chill View">
+                                <rect key="frame" x="575" y="335" width="180" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90174724579999999" blue="0.33101528219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="32" contentMode="scaleToFill" id="O5T-YS-sv7" userLabel="Cam View">
+                                <rect key="frame" x="41" y="674" width="340" height="260"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="33" contentMode="scaleToFill" id="AjS-eT-CnH" userLabel="Sunrise View">
+                                <rect key="frame" x="404" y="674" width="340" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view tag="34" contentMode="scaleToFill" id="7ZC-gJ-sSr" userLabel="Forecast View">
+                                <rect key="frame" x="404" y="774" width="340" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50914320020000003" green="0.65979369369999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Temperature" image="93-thermometer.png" id="jpN-XO-IdO"/>
+                    <connections>
+                        <outlet property="camView" destination="O5T-YS-sv7" id="rvI-2u-8AZ"/>
+                        <outlet property="chillView" destination="zWd-4b-EDT" id="JaU-Zp-o1X"/>
+                        <outlet property="currentTempView" destination="9Zq-u0-S4E" id="dJA-5d-wNr"/>
+                        <outlet property="forecastView" destination="7ZC-gJ-sSr" id="0MT-Y8-tDt"/>
+                        <outlet property="gsTempView" destination="Gal-Yo-x2v" id="UNm-yK-dq3"/>
+                        <outlet property="highTempView" destination="Lx0-4b-kxC" id="jpA-pz-Ut6"/>
+                        <outlet property="humidityView" destination="4fO-lx-AXQ" id="Rml-eo-sD6"/>
+                        <outlet property="lowTempView" destination="GCY-Jq-lsf" id="aSy-pa-tJj"/>
+                        <outlet property="navBarItem" destination="YAe-kd-tOl" id="E9E-P4-0N6"/>
+                        <outlet property="nwsTempView" destination="zMn-KD-aWu" id="qNa-DP-oDq"/>
+                        <outlet property="sunriseView" destination="AjS-eT-CnH" id="M9m-mK-5rD"/>
+                        <outlet property="uafTempView" destination="cNU-vV-d47" id="HuZ-NY-PSD"/>
+                        <outlet property="windAverageView" destination="PFo-IZ-Ud1" id="BwX-Dc-pPi"/>
+                        <outlet property="windCurrentView" destination="Ykx-mJ-dUJ" id="0tG-33-6cL"/>
+                        <outlet property="windMaxView" destination="SQl-iR-bGI" id="WGo-cS-Aja"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kLi-vx-QK8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2168" y="-2101"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ReQ-G5-t0K">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="DPM-NO-2Qh" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="6K0-ZK-5RX">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="caN-3s-idh" kind="relationship" relationship="viewControllers" id="hsD-8V-tNa"/>
+                        <segue destination="NfZ-e7-oWx" kind="relationship" relationship="viewControllers" id="7Yw-cQ-4UT"/>
+                        <segue destination="kWw-Ec-Uh0" kind="relationship" relationship="viewControllers" id="Qev-Mw-ico"/>
+                        <segue destination="lNv-Qu-GH4" kind="relationship" relationship="viewControllers" id="MaS-5j-6Et"/>
+                        <segue destination="CmH-mP-mBF" kind="relationship" relationship="viewControllers" id="Sqo-S4-8Am"/>
+                        <segue destination="vJL-YJ-Wty" kind="relationship" relationship="viewControllers" id="QkJ-Ud-WnW"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Oi-E9-kdI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3558" y="-1514"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="103-map.png" width="26" height="21"/>
+        <image name="166-newspaper.png" width="28" height="23"/>
+        <image name="171-sun.png" width="28" height="28"/>
+        <image name="19-gear.png" width="26" height="26"/>
+        <image name="63-runner.png" width="18" height="25"/>
+        <image name="93-thermometer.png" width="12" height="28"/>
+        <image name="nscficon-114.png" width="114" height="114"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

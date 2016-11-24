@@ -1,0 +1,7 @@
+vers. 1.4
+
+--cleaner formatting of trail report and forecast
+--current and long-term weather forecast now presented on single page
+--sunrise/sunset times included on WebCam page
+--fixed bug which caused app to become unresponsive when waking from background
+--current date displayed on main page

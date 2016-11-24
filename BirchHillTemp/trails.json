@@ -1,0 +1,254 @@
+{  "sections" :[
+
+{ "section_name" : "Lighted Loops",
+    "trails" : [
+
+    {
+    "name" : "GREEN DOT",
+    "title" : "Green Dot",
+    "difficulty" : "EASY",
+    "length" : "300",
+    "condition" : ""
+    },
+                
+	{
+		"name" : "WARM-UP",
+		"title" : "Warm-Up",
+		"difficulty" : "EASY",
+		"length" : "1500",
+		"condition" : ""
+	},
+
+	{
+		"name" : "RELAY START",
+		"title" : "Relay Start",
+		"difficulty" : "EASY",
+		"length" : "750",
+		"condition" : ""
+	},
+
+	{
+		"name" : "TOWER LOOP",
+		"title" : "Tower Loop",
+		"difficulty" : "DIFFICULT",
+		"length" : "2300",
+		"condition" : ""
+	},
+
+	{
+		"name" : "0LD TOWER",
+		"title" : "Old Tower",
+		"difficulty" : "EASY",
+		"length" : "250",
+		"condition" : ""
+	},
+
+	{
+		"name" : "ROLLER COASTER",
+		"title" : "Roller Coaster",
+		"difficulty" : "MORE DIFFICULT",
+		"length" : "900",
+		"condition" : ""
+	},
+
+	{
+		"name" : "WHITE BEAR ACCESS",
+		"title" : "White Bear Access",
+		"difficulty" : "DIFFICULT",
+		"length" : "900",
+		"condition" : ""
+	},
+
+	{
+		"name" : "SOUTH TOWER",
+		"title" : "South Tower",
+		"difficulty" : "DIFFICULT",
+		"length" : "400",
+		"condition" : ""
+	},
+
+	{
+		"name" : "TOWER DIRECT",
+		"title" : "Tower Direct",
+		"difficulty" : "DIFFICULT",
+		"length" : "150",
+		"condition" : ""
+	},
+
+	{
+		"name" : "MEDEVAC",
+		"title" : "Medevac",
+		"difficulty" : "MOST DIFFICULT",
+		"length" : "400",
+		"condition" : ""
+	},
+
+	{
+		"name" : "RUSSELL'S",
+		"title" : "Russel's",
+		"difficulty" : "EASY",
+		"length" : "300",
+		"condition" : ""
+	},
+
+    ]},
+    
+ { "section_name" : "Blue Loops",
+    "trails" : [
+	
+
+	{
+		"name" : "BLUE LOOP",
+		"title" : "Blue Loop",
+		"difficulty" : "DIFFICULT",
+		"length" : "1200",
+		"condition" : ""
+	},
+
+	{
+		"name" : "OUTHOUSE LOOP",
+		"title" : "Outhouse Loop",
+		"difficulty" : "DIFFICULT",
+		"length" : "2500",
+		"condition" : ""
+	},
+    ]},
+
+{ "section_name" : "Black Loops",
+    "trails" : [
+	{
+		"name" : "COMP LOOP",
+		"title" : "Comp Loop",
+		"difficulty" : "MOST DIFFICULT",
+		"length" : "1100",
+		"condition" : ""
+	},
+
+	{
+		"name" : "NORTH FORTY",
+		"title" : "North Forty",
+		"difficulty" : "MOST DIFFICULT",
+		"length" : "2500",
+		"condition" : ""
+	},
+
+	{
+		"name" : "BLACK HOLE",
+		"title" : "Black Hole",
+		"difficulty" : "MOST DIFFICULT",
+		"length" : "2500",
+		"condition" : ""
+	},
+
+	{
+		"name" : "TOMMY KNOCKER",
+		"title" : "Tommy Knocker",
+		"difficulty" : "DIFFICULT",
+		"length" : "0200",
+		"condition" : ""
+	},
+
+	{
+		"name" : "BLACK FUNK",
+		"title" : "Black Funk",
+		"difficulty" : "DIFFICULT",
+		"length" : "250",
+		"condition" : ""
+	},
+]},
+
+{ "section_name" : "White Bear Loops",
+    "trails" : [
+
+	
+
+	{
+		"name" : "WHITE BEAR",
+		"title" : "White Bear",
+		"difficulty" : "DIFFICULT",
+		"length" : "9900",
+		"condition" : ""
+	},
+
+	{
+		"name" : "MOILANEN MEADOWS",
+		"title" : "Moilanen Meadows",
+		"difficulty" : "DIFFICULT",
+		"length" : "1500",
+		"condition" : ""
+	},
+
+	{
+		"name" : "CLASSICAL ONLY",
+		"title" : "Classical Only",
+		"difficulty" : "DIFFICULT",
+		"length" : "6000",
+		"condition" : ""
+	},
+
+	{
+		"name" : "WHITE CUB",
+		"title" : "White Cub",
+		"difficulty" : "EASY",
+		"length" : "1000",
+		"condition" : ""
+	},
+
+]},
+
+{ "section_name" : "South Side Classics",
+    "trails" : [
+
+	{
+		"name" : "BLACKHAWK",
+		"title" : "Blackhawk",
+		"difficulty" : "DIFFICULT",
+		"length" : "2600",
+		"condition" : ""
+	},
+
+	{
+		"name" : "CHINOOK",
+		"title" : "Chinook",
+		"difficulty" : "VERY DIFFICULT",
+		"length" : "3600",
+		"condition" : ""
+	},
+
+	{
+		"name" : "SONOT CONNECTOR",
+		"title" : "Sonot Connector",
+		"difficulty" : "DIFFICULT",
+		"length" : "2000",
+		"condition" : ""
+	},
+	 
+]},
+                
+{ "section_name" : "Maps",
+                "trails" : [
+            
+            {
+                            "name" : "",
+            "title" : "Birch Hill Trails",
+            "subtitle" : "",
+                            "difficulty" : "",
+                            "length" : "",
+		"condition" : ""
+            
+            },
+            
+            
+]},
+                
+                
+                
+                
+	],
+	
+"author" : "Gary Holton",
+"date" : "2013-01-14",
+	
+	
+}
+

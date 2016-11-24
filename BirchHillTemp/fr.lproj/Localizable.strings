@@ -1,0 +1,90 @@
+/* 
+  Localizable.strings
+  BirchHillTemp
+
+  Created by Gary Holton on 1/3/13.
+
+*/
+
+// navigation
+"Back" = "BAL";
+"pull to refresh" = "tirer pour actualiser";
+"loading..." = "loading...";
+"last updated yeserday" = "last updated yesterday";
+"last updated %d days ago" = "mis à jour ya %d jours";
+
+// tab labels
+"Temp" = "Temp";
+"Trails" = "Sentiers";
+"Forecast" = "Météo";
+"WebCam" = "WebCam";
+"News" = "Actualités";
+
+// tab names
+"Birch Hill Temp" = "Birch Hill Temp";
+"Birch Hill Temperature" = "temp à Birch Hill";
+"Birch Hill Trails" = "Sentiers du Birch Hill";
+"NWS Forecast - Fairbanks" = "Météo - Fairbanks";
+"Birch Hill WebCam" = "Birch Hill WebCam";
+"NSCF News" = "NSCF Actualités";
+"About" = "Informations";
+
+// sunrise
+"Rise" = "Lever";
+"Set" = "Coucher";
+"gain of %.fm %.fs from yesterday" = "gain of %.fm %.fs from yesterday";
+"loss of %.fm %.fs from yesterday" = "gain of %.fm %.fs from yesterday";
+
+
+
+"HIGH" = "MAX";
+"LOW" = "MIN";
+"HUMIDITY" = "HUMIDITÉ";
+"AIRPORT" = "AÉROPORT";
+"CHILL" = "CHILL";
+"WINDCHILL" = "FACTEUR VENT";
+
+// wind labels
+"WIND" = "VENT";
+"AVERAGE" = "MOYEN";
+"MAX" = "MAX";
+
+// weather
+"Forecast date" = "Actualisée à";
+"Updated" = "Actualisée à";
+"Now" = "maintenant";
+"Today" = "aujourd'hui";
+"Tonight" = "ce soir";
+"Tomorrow" = "demain";
+"Sunday" = "dimanche";
+"Monday" = "lundi";
+"Tuesday" = "mardi";
+"Wednesday" = "mercredi";
+"Thursday" = "jeudi";
+"Friday" = "vendredi";
+"Saturday" = "samedi";
+"Sunday Night" = "dimanche soir";
+"Monday Night" = "lundi soir";
+"Tuesday Night" = "mardi soir";
+"Wednesday Night" = "mercredi soir";
+"Thursday Night" = "jeudi soir";
+"Friday Night" = "vendredi soir";
+"Saturday Night" = "samedi soir";
+"and" = "et";
+"Temperatures in Fahrenheit" = "les températures en Fahrenheit";
+
+"Last updated" = "Last updated";
+
+
+// webcam
+"We're sorry, the webcam is unavailable." = "Nous sommes désolés, la webcam n'est pas disponible.";
+
+// info
+"Rate %@" = "Notez %@";
+"Rate Birch Hill Temp" = "Notez Birch Hill Temp";
+"Open the App Store and submit a review of this app?" = "Ouvrez l'App Store?";
+"Open the App Store and submit a review of %@?" = "Ouvrez l'App Store et notez %@?";
+"Join NSCF" = "Join NSCF";
+"Proceed to the Nordic Ski Club Fairbanks online membership and donation system?" = "Proceed to the Nordic Ski Club Fairbanks online membership and donation system?";
+"Later" = "plus tard";
+"OK" = "oui";

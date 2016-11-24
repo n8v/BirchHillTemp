@@ -1,0 +1,74 @@
+/* 
+  Localizable.strings
+  BirchHillTemp
+
+  Created by Gary Holton on 1/3/13.
+
+*/
+
+// tab labels
+"Temp" = "Temp";
+"Trails" = "Loipen";
+"Forecast" = "Vorschau";
+"WebCam" = "Livecam";
+"News" = "Actuelles";
+
+// tab names
+"Birch Hill Temp" = "Birch Hill Temp";
+"Birch Hill Temperature" = "Birch Hill Temperature";
+"Birch Hill Trails" = "Birch Hill Loipenbericht";
+"NWS Forecast - Fairbanks" = "Wettervorhersage - Fairbanks";
+"Birch Hill WebCam" = "Birch Hill Livecam";
+"NSCF News" = "Actuelles zum NSCF";
+"About" = "Info";
+
+// sunrise
+"Rise" = "Aufgang";
+"Set" = "Untergang";
+"gain of %.fm %.fs from yesterday" = "gain of %.fm %.fs from yesterday";
+"loss of %.fm %.fs from yesterday" = "gain of %.fm %.fs from yesterday";
+
+
+"HIGH" = "MAX";
+"LOW" = "MIN";
+"HUMIDITY" = "LUFTFEUCHTIGKEIT";
+"AIRPORT" = "FLUGHAFEN";
+"CHILL" = "WINDKÄLTE";
+"WINDCHILL" = "WINDKÄLTE";
+
+// wind labels
+"WIND" = "WIND";
+"AVERAGE" = "AVERAGE";
+"MAX" = "MAX";
+
+// weather
+"Updated" = "aktuelisiert am";
+"Now" = "Jetzt";
+"Today" = "Heute";
+"Tonight" = "Abends";
+"Tomorrow" = "Morgen";
+"Sunday" = "Sonntag";
+"Monday" = "Montag";
+"Tuesday" = "Dienstag";
+"Wednesday" = "Mittwoch";
+"Thursday" = "Donnerstag";
+"Friday" = "Freitag";
+"Saturday" = "Samstag";
+"Sunday Night" = "Sonnstagnacht";
+"Monday Night" = "Montagnacht";
+"Tuesday Night" = "Dienstagnacht";
+"Wednesday Night" = "Mittwochnacht";
+"Thursday Night" = "Donnerstagnacht";
+"Friday Night" = "Freitagnacht";
+"Saturday Night" = "Samstagnacht";
+"and" = "und";
+"Temperatures in Fahrenheit" = "Die Temperaturen in Fahrenheit";
+
+"Last updated" = "Last updated";
+
+
+// info
+"Rate Birch Hill Temp" = "Rate Birch Hill Temp";
+"Open the App Store and submit a review of this app?" = "Open the App Store and submit a review of this app?";
+"Later" = "Later";
+"OK" = "OK";

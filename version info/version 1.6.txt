@@ -1,0 +1,12 @@
+vers. 1.6
+
+This version includes several improvements to the user interface, as well as more robust and reliable connectivity.
+
+• The info button now displays a settings page.
+• Users can choose between high contrast (dark background) and low contrast (light background) dislay. 
+• Display now includes wind chill, where applicable. (This can be disabled in settings.)
+• Trails, forecast, and news displays now use table views, following standard iOS practice. All of these table use pull-to-refresh behavior.
+• Trails display has been updated to include new trails, as well as information about trail difficulty and length, and a general overview of trail conditions.
+• Fixed a bug in daylight savings time calculation for sunrise-sunset times.
+• NSCF news feed now caches previous stories.
+• Limited language support for French, German, Swedish, and Nowegian. (Please submit corrections/additions to help improve language support.)

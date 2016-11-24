@@ -1,0 +1,18 @@
+/* high-contrast styles for webviews  */
+
+body
+{
+    background-color: black;
+    color: white;
+    
+} 
+
+p, td, li, h1, h2, h3
+{
+    color: white;
+}
+
+body, p, td, li
+{
+    font-family: Verdana, Arial, sans-serif; 
+}

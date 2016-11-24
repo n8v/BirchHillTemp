@@ -1,0 +1,4 @@
+vers. 1.5
+
+--adds support for iPhone 5
+--Current, average and maximum wind speeds now displayed on iPhone 5.

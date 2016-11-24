@@ -1,0 +1,1 @@
+Minor bug fixes. Update to work with trail conditions and news feed from new NSCF web site.

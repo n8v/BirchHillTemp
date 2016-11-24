@@ -1,0 +1,831 @@
+TBirchHill
+v7
+r0
+t317012566.632323
+cCheck dependencies
+cCpResource build/Debug-iphoneos/BirchHill.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist
+cProcessInfoPlistFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/Info.plist BirchHill-Info.plist
+cCompileXIB /Users/gary/Documents/apps/ScrollTest/MainWindow.xib
+cCompileXIB /Users/gary/Documents/apps/ScrollTest/ScrollViewController.xib
+cCopyPNGFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/Default.png Default.png
+cCopyPNGFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/blue_arrow.png blue_arrow.png
+cCopyPNGFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/nscf_logo.png nscf_logo.png
+cCopyPNGFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/nscficon.png nscficon.png
+cCopyPNGFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/red_arrow.png red_arrow.png
+cCpResource build/Debug-iphoneos/BirchHill.app/Settings.bundle Settings.bundle
+cCompileXIB /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.xib
+cProcessPCH /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-bleibpefrmkterdhfibwdcqnizjs/BirchHill_Prefix.pch.gch BirchHill_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-fcernuscvuuzyxepwwolhoxhjebe/BirchHill_Prefix.pch.gch BirchHill_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/main.o /Users/gary/Documents/apps/ScrollTest/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/ScrollAppDelegate.o /Users/gary/Documents/apps/ScrollTest/Classes/ScrollAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/ScrollViewController.o /Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/RegexKitLite.o /Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/PopUpViewController.o /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/main.o /Users/gary/Documents/apps/ScrollTest/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/ScrollAppDelegate.o /Users/gary/Documents/apps/ScrollTest/Classes/ScrollAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/ScrollViewController.o /Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/RegexKitLite.o /Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/BirchHill normal armv6
+cCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/PopUpViewController.o /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/BirchHill normal armv7
+cCreateUniversalBinary /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/BirchHill normal "armv6 armv7"
+cGenerateDSYMFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app.dSYM /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/BirchHill
+cProcessProductPackaging "/Users/gary/Library/MobileDevice/Provisioning Profiles/1DCCD481-7C27-4D3E-BBF1-9CAFA54856D0.mobileprovision" /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/embedded.mobileprovision
+cTouch /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app
+cProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill.xcent
+cCodeSign /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk
+c000000004CC7DC9E0000000000000110
+t1288166558
+s272
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist
+c000000004CB3DFCF00000000000001A7
+t1286856655
+s423
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist
+c000000004CB3DFCF00000000000001E5
+t1286856655
+s485
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFArray.h
+c000000004CC10D700000000000007AC8
+t1287720304
+s31432
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFBase.h
+c000000004CC10D7000000000000045F5
+t1287720304
+s17909
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFString.h
+c000000004CC10D70000000000000B765
+t1287720304
+s46949
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004CC10EF500000000003532B0
+t1287720693
+s3486384
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004CC10F4700000000003E1F20
+t1287720775
+s4071200
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004CC10F1C0000000000001466
+t1287720732
+s5222
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSArray.h
+c000000004CC10F1C0000000000001B27
+t1287720732
+s6951
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDictionary.h
+c000000004CC10F1C0000000000000E3B
+t1287720732
+s3643
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSError.h
+c000000004CC10F1C0000000000001DE5
+t1287720732
+s7653
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSException.h
+c000000004CC10F1C0000000000002033
+t1287720732
+s8243
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNotification.h
+c000000004CC10F1C000000000000059D
+t1287720732
+s1437
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObjCRuntime.h
+c000000004CC10F1C0000000000002D96
+t1287720732
+s11670
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRange.h
+c000000004CC10F1C000000000000049D
+t1287720732
+s1181
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRunLoop.h
+c000000004CC10F1C0000000000000915
+t1287720732
+s2325
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h
+c000000004CC10F1C0000000000006506
+t1287720732
+s25862
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004CC11AE60000000000000AA1
+t1287723750
+s2721
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004CC11B750000000000C769F0
+t1287723893
+s13068784
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/usr/include/AvailabilityMacros.h
+c000000004CB3FBB8000000000000673C
+t1286863800
+s26428
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/usr/include/TargetConditionals.h
+c000000004CB3FBB800000000000031E9
+t1286863800
+s12777
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/usr/include/dlfcn.h
+c000000004CC104810000000000000B1C
+t1287718017
+s2844
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/usr/include/libkern/OSAtomic.h
+c000000004CB3E4B80000000000002519
+t1286857912
+s9497
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/usr/include/mach-o/loader.h
+c000000004CC10920000000000000F81C
+t1287719200
+s63516
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/usr/include/objc/runtime.h
+c000000004CC1098E00000000000053F9
+t1287719310
+s21497
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/usr/include/stdio.h
+c000000004CB3E4B800000000000040AC
+t1286857912
+s16556
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/usr/include/stdlib.h
+c000000004CB3E4B80000000000002DF5
+t1286857912
+s11765
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/usr/include/string.h
+c000000004CB3E4B80000000000001731
+t1286857912
+s5937
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/usr/include/sys/types.h
+c000000004CBFACD90000000000002905
+t1287630041
+s10501
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/usr/lib/gcc/arm-apple-darwin10/4.2.1/include/limits.h
+c000000004C5A56870000000000000C7E
+t1280988807
+s3198
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/usr/lib/gcc/arm-apple-darwin10/4.2.1/include/stdarg.h
+c000000004C5A568700000000000010DD
+t1280988807
+s4317
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/usr/lib/gcc/arm-apple-darwin10/4.2.1/include/stdint.h
+c000000004C5A5787000000000000190C
+t1280989063
+s6412
+
+N/Users/gary/Documents/apps/ScrollTest/BirchHill_Prefix.pch
+c000000004D1E066E00000000000000BD
+t1293813358
+s189
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.h
+c000000004D3480C400000000000002A4
+t1295286468
+s676
+i<UIKit/UIKit.h>
+i"RegexKitLite.h"
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m
+c000000004D34835F00000000000012C9
+t1295287135
+s4809
+i"PopUpViewController.h"
+i"ScrollViewController.h"
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.xib
+c000000004D332A41000000000000666C
+t1295198785
+s26220
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.h
+c000000004BC5E8E10000000000004130
+t1271261409
+s16688
+i<Foundation/NSArray.h>
+i<Foundation/NSError.h>
+i<Foundation/NSObjCRuntime.h>
+i<Foundation/NSRange.h>
+i<Foundation/NSString.h>
+i<limits.h>
+i<stdint.h>
+i<sys/types.h>
+i<TargetConditionals.h>
+i<AvailabilityMacros.h>
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m
+c000000004BCB02C90000000000032498
+t1271595721
+s205976
+i<CoreFoundation/CFBase.h>
+i<CoreFoundation/CFArray.h>
+i<CoreFoundation/CFString.h>
+i<Foundation/NSArray.h>
+i<Foundation/NSDictionary.h>
+i<Foundation/NSError.h>
+i<Foundation/NSException.h>
+i<Foundation/NSNotification.h>
+i<Foundation/NSRunLoop.h>
+i<Foundation/NSGarbageCollector.h>
+i<objc/runtime.h>
+i<objc/objc-runtime.h>
+i<libkern/OSAtomic.h>
+i<mach-o/loader.h>
+i<AvailabilityMacros.h>
+i<dlfcn.h>
+i<string.h>
+i<stdarg.h>
+i<stdlib.h>
+i<stdio.h>
+i"RegexKitLite.h"
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/ScrollAppDelegate.h
+c000000004D34799900000000000001EE
+t1295284633
+s494
+i<UIKit/UIKit.h>
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/ScrollAppDelegate.m
+c000000004D3479990000000000000AA7
+t1295284633
+s2727
+i"ScrollAppDelegate.h"
+i"ScrollViewController.h"
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.h
+c000000004D3479DB0000000000000971
+t1295284699
+s2417
+i<UIKit/UIKit.h>
+i"RegexKitLite.h"
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m
+c000000004D35067F0000000000006568
+t1295320703
+s25960
+i"ScrollViewController.h"
+i"PopUpViewController.h"
+
+N/Users/gary/Documents/apps/ScrollTest/Default.png
+c000000004D1CD57500000000000148C6
+t1293735285
+s84166
+
+N/Users/gary/Documents/apps/ScrollTest/MainWindow.xib
+c000000004D347A090000000000007091
+t1295284745
+s28817
+
+N/Users/gary/Documents/apps/ScrollTest/ScrollViewController.xib
+c000000004D330B1A000000000000D1E1
+t1295190810
+s53729
+
+N/Users/gary/Documents/apps/ScrollTest/Settings.bundle
+c000000004D2151C800000000000000AA
+t1294029256
+s170
+
+N/Users/gary/Documents/apps/ScrollTest/blue_arrow.png
+c000000004D1CC3880000000000001026
+t1293730696
+s4134
+
+N/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill.xcent
+t1295319759
+s424
+
+N/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/BirchHill
+t1295319758
+s180716
+
+N/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/BirchHill.LinkFileList
+c000000004D3502CB0000000000000287
+t1295319755
+s647
+
+N/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/PopUpViewController.o
+t1295319758
+s60004
+
+N/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/RegexKitLite.o
+t1295319758
+s204156
+
+N/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/ScrollAppDelegate.o
+t1295319757
+s52796
+
+N/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/ScrollViewController.o
+t1295319758
+s107092
+
+N/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/main.o
+t1295319757
+s6444
+
+N/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/BirchHill
+t1295319759
+s155380
+
+N/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/BirchHill.LinkFileList
+c000000004D3502CB0000000000000287
+t1295319755
+s647
+
+N/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/PopUpViewController.o
+t1295319759
+s59732
+
+N/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/RegexKitLite.o
+t1295319759
+s181628
+
+N/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/ScrollAppDelegate.o
+t1295319758
+s52716
+
+N/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/ScrollViewController.o
+t1295319758
+s104824
+
+N/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/main.o
+t1295319758
+s6428
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app
+t1295319766
+s612
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app.dSYM
+t1295319759
+s102
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/BirchHill
+t1295319759
+s354512
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/Default.png
+t1295319757
+s80001
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/Info.plist
+t1295319755
+s822
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/MainWindow.nib
+t1295319755
+s1121
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/PkgInfo
+t1295319755
+s8
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/PopUpViewController.nib
+t1295319756
+s1945
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/ResourceRules.plist
+t1295319755
+s485
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/ScrollViewController.nib
+t1295319756
+s4631
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/Settings.bundle
+t1295319756
+s170
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/blue_arrow.png
+t1295319756
+s4179
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/embedded.mobileprovision
+t1295319759
+s7178
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/nscf_logo.png
+t1295319756
+s26501
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/nscficon.png
+t1295319756
+s18125
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/red_arrow.png
+t1295319756
+s4111
+
+N/Users/gary/Documents/apps/ScrollTest/main.m
+c000000004D1E066E0000000000000179
+t1293813358
+s377
+i<UIKit/UIKit.h>
+
+N/Users/gary/Documents/apps/ScrollTest/nscf_logo.png
+c000000004D16D1D000000000000075E5
+t1293341136
+s30181
+
+N/Users/gary/Documents/apps/ScrollTest/nscficon.png
+c00000000474F20050000000000004915
+t1196367877
+s18709
+
+N/Users/gary/Documents/apps/ScrollTest/red_arrow.png
+c000000004D1CC37C000000000000104B
+t1293730684
+s4171
+
+N/Users/gary/Library/MobileDevice/Provisioning Profiles/1DCCD481-7C27-4D3E-BBF1-9CAFA54856D0.mobileprovision
+c000000004D3500730000000000001C0A
+t1295319155
+s7178
+
+N/var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-bleibpefrmkterdhfibwdcqnizjs/BirchHill_Prefix.pch.gch
+t1295319757
+s9983704
+
+N/var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-fcernuscvuuzyxepwwolhoxhjebe/BirchHill_Prefix.pch.gch
+t1295319757
+s10446552
+
+NBirchHill-Info.plist
+c000000004D215247000000000000038E
+t1294029383
+s910
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies317012555#317012555#0(0"0(0#1#0"3343187568374212096#0"0#
+
+CCodeSign /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app
+s317012559.187704
+e317012566.632182
+r1
+xCodeSign
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app
+lSLF07#2@43"CodeSign build/Debug-iphoneos/BirchHill.app317012559#317012566#0(0"0(0#0#72"/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app8610226560#653"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: Gary Holton (B8RTMVCFS5)" --resource-rules=/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/ResourceRules.plist --entitlements /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill.xcent /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app0#
+
+CCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/PopUpViewController.o /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s317012558.040159
+e317012558.127688
+r1
+xCompileC
+xbuild/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/PopUpViewController.o
+x/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m:166: warning: incomplete implementation of class 'PopUpViewController'
+o/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m:166: warning: method definition for '-dismissView:' not found
+lSLF07#2@75"Compile /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m317012558#317012558#0(269"/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m:166: warning: incomplete implementation of class 'PopUpViewController'/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m:166: warning: method definition for '-dismissView:' not found2(22@56"Incomplete implementation of class 'PopUpViewController'317012558#0#139#0(6@67"/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m316979935#166#0#166#0#38"incomplete implementation of class '*'0(22@47"Method definition for '-dismissView:' not found317012558#139#130#0(6@67"/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m316979935#166#0#166#0#35"method definition for '*' not found0(0#0#67"/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m7939128661845044224#1791"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/include -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources/armv6 -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources -include /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-bleibpefrmkterdhfibwdcqnizjs/BirchHill_Prefix.pch -c /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m -o /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/PopUpViewController.o0#
+
+CCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/RegexKitLite.o /Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s317012557.836900
+e317012558.867112
+r1
+xCompileC
+xbuild/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/RegexKitLite.o
+x/Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@68"Compile /Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m317012557#317012558#0(0"0(0#0#60"/Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m8611283968#1777"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/include -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources/armv6 -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources -include /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-bleibpefrmkterdhfibwdcqnizjs/BirchHill_Prefix.pch -c /Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m -o /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/RegexKitLite.o0#
+
+CCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/ScrollAppDelegate.o /Users/gary/Documents/apps/ScrollTest/Classes/ScrollAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s317012557.741003
+e317012557.836805
+r1
+xCompileC
+xbuild/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/ScrollAppDelegate.o
+x/Users/gary/Documents/apps/ScrollTest/Classes/ScrollAppDelegate.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@73"Compile /Users/gary/Documents/apps/ScrollTest/Classes/ScrollAppDelegate.m317012557#317012557#0(0"0(0#0#65"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollAppDelegate.m8610902272#1787"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/include -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources/armv6 -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources -include /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-bleibpefrmkterdhfibwdcqnizjs/BirchHill_Prefix.pch -c /Users/gary/Documents/apps/ScrollTest/Classes/ScrollAppDelegate.m -o /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/ScrollAppDelegate.o0#
+
+CCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/ScrollViewController.o /Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s317012557.812493
+e317012558.040064
+r1
+xCompileC
+xbuild/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/ScrollViewController.o
+x/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:374:29: warning: unknown escape sequence '\&'
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:376:32: warning: unknown escape sequence '\&'
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:377:33: warning: unknown escape sequence '\&'
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:777: warning: incomplete implementation of class 'ScrollViewController'
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:777: warning: method definition for '-didReceiveMessage:' not found
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:777: warning: class 'ScrollViewController' does not fully implement the 'ModalViewDelegate' protocol
+lSLF07#2@76"Compile /Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m317012557#317012558#0(793"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:374:29: warning: unknown escape sequence '\&'/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:376:32: warning: unknown escape sequence '\&'/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:377:33: warning: unknown escape sequence '\&'/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:777: warning: incomplete implementation of class 'ScrollViewController'/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:777: warning: method definition for '-didReceiveMessage:' not found/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:777: warning: class 'ScrollViewController' does not fully implement the 'ModalViewDelegate' protocol6(22@28"Unknown escape sequence '\&'317012557#0#115#0(6@68"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m316979935#374#0#374#0#0"0(22@28"Unknown escape sequence '\&'317012557#115#115#0(6@68"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m316979935#376#0#376#0#0"0(22@28"Unknown escape sequence '\&'317012557#230#115#0(6@68"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m316979935#377#0#377#0#0"0(22@57"Incomplete implementation of class 'ScrollViewController'317012557#345#141#0(6@68"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m316979935#777#0#777#0#38"incomplete implementation of class '*'0(22@53"Method definition for '-didReceiveMessage:' not found317012557#486#137#0(6@68"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m316979935#777#0#777#0#35"method definition for '*' not found0(22@86"Class 'ScrollViewController' does not fully implement the 'ModalViewDelegate' protocol317012557#623#170#0(6@68"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m316979935#777#0#777#0#51"class '*' does not fully implement the '*' protocol0(0#0#68"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m8613219200#1793"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/include -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources/armv6 -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources -include /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-bleibpefrmkterdhfibwdcqnizjs/BirchHill_Prefix.pch -c /Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m -o /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/ScrollViewController.o0#
+
+CCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/main.o /Users/gary/Documents/apps/ScrollTest/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s317012557.740027
+e317012557.812398
+r1
+xCompileC
+xbuild/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/main.o
+x/Users/gary/Documents/apps/ScrollTest/main.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@52"Compile /Users/gary/Documents/apps/ScrollTest/main.m317012557#317012557#0(0"0(0#0#44"/Users/gary/Documents/apps/ScrollTest/main.m8611235936#1753"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/include -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources/armv6 -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources -include /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-bleibpefrmkterdhfibwdcqnizjs/BirchHill_Prefix.pch -c /Users/gary/Documents/apps/ScrollTest/main.m -o /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/main.o0#
+
+CCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/PopUpViewController.o /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s317012558.949255
+e317012559.048244
+r1
+xCompileC
+xbuild/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/PopUpViewController.o
+x/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m:166: warning: incomplete implementation of class 'PopUpViewController'
+o/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m:166: warning: method definition for '-dismissView:' not found
+lSLF07#2@75"Compile /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m317012558#317012559#0(269"/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m:166: warning: incomplete implementation of class 'PopUpViewController'/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m:166: warning: method definition for '-dismissView:' not found2(22@56"Incomplete implementation of class 'PopUpViewController'317012559#0#139#0(6@67"/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m316979935#166#0#166#0#38"incomplete implementation of class '*'0(22@47"Method definition for '-dismissView:' not found317012559#139#130#0(6@67"/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m316979935#166#0#166#0#35"method definition for '*' not found0(0#0#67"/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m8613119072#1791"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/include -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources/armv7 -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources -include /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-fcernuscvuuzyxepwwolhoxhjebe/BirchHill_Prefix.pch -c /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m -o /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/PopUpViewController.o0#
+
+CCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/RegexKitLite.o /Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s317012558.473414
+e317012559.060766
+r1
+xCompileC
+xbuild/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/RegexKitLite.o
+x/Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@68"Compile /Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m317012558#317012559#0(0"0(0#0#60"/Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m8610293984#1777"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/include -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources/armv7 -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources -include /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-fcernuscvuuzyxepwwolhoxhjebe/BirchHill_Prefix.pch -c /Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m -o /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/RegexKitLite.o0#
+
+CCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/ScrollAppDelegate.o /Users/gary/Documents/apps/ScrollTest/Classes/ScrollAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s317012558.195732
+e317012558.273857
+r1
+xCompileC
+xbuild/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/ScrollAppDelegate.o
+x/Users/gary/Documents/apps/ScrollTest/Classes/ScrollAppDelegate.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@73"Compile /Users/gary/Documents/apps/ScrollTest/Classes/ScrollAppDelegate.m317012558#317012558#0(0"0(0#0#65"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollAppDelegate.m8613497632#1787"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/include -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources/armv7 -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources -include /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-fcernuscvuuzyxepwwolhoxhjebe/BirchHill_Prefix.pch -c /Users/gary/Documents/apps/ScrollTest/Classes/ScrollAppDelegate.m -o /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/ScrollAppDelegate.o0#
+
+CCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/ScrollViewController.o /Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s317012558.273956
+e317012558.473172
+r1
+xCompileC
+xbuild/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/ScrollViewController.o
+x/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:374:29: warning: unknown escape sequence '\&'
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:376:32: warning: unknown escape sequence '\&'
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:377:33: warning: unknown escape sequence '\&'
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:777: warning: incomplete implementation of class 'ScrollViewController'
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:777: warning: method definition for '-didReceiveMessage:' not found
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:777: warning: class 'ScrollViewController' does not fully implement the 'ModalViewDelegate' protocol
+lSLF07#2@76"Compile /Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m317012558#317012558#0(793"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:374:29: warning: unknown escape sequence '\&'/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:376:32: warning: unknown escape sequence '\&'/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:377:33: warning: unknown escape sequence '\&'/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:777: warning: incomplete implementation of class 'ScrollViewController'/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:777: warning: method definition for '-didReceiveMessage:' not found/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m:777: warning: class 'ScrollViewController' does not fully implement the 'ModalViewDelegate' protocol6(22@28"Unknown escape sequence '\&'317012558#0#115#0(6@68"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m316979935#374#0#374#0#0"0(22@28"Unknown escape sequence '\&'317012558#115#115#0(6@68"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m316979935#376#0#376#0#0"0(22@28"Unknown escape sequence '\&'317012558#230#115#0(6@68"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m316979935#377#0#377#0#0"0(22@57"Incomplete implementation of class 'ScrollViewController'317012558#345#141#0(6@68"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m316979935#777#0#777#0#38"incomplete implementation of class '*'0(22@53"Method definition for '-didReceiveMessage:' not found317012558#486#137#0(6@68"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m316979935#777#0#777#0#35"method definition for '*' not found0(22@86"Class 'ScrollViewController' does not fully implement the 'ModalViewDelegate' protocol317012558#623#170#0(6@68"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m316979935#777#0#777#0#51"class '*' does not fully implement the '*' protocol0(0#0#68"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m8611244704#1793"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/include -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources/armv7 -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources -include /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-fcernuscvuuzyxepwwolhoxhjebe/BirchHill_Prefix.pch -c /Users/gary/Documents/apps/ScrollTest/Classes/ScrollViewController.m -o /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/ScrollViewController.o0#
+
+CCompileC build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/main.o /Users/gary/Documents/apps/ScrollTest/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s317012558.127790
+e317012558.195634
+r1
+xCompileC
+xbuild/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/main.o
+x/Users/gary/Documents/apps/ScrollTest/main.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@52"Compile /Users/gary/Documents/apps/ScrollTest/main.m317012558#317012558#0(0"0(0#0#44"/Users/gary/Documents/apps/ScrollTest/main.m8607521856#1753"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/include -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources/armv7 -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources -include /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-fcernuscvuuzyxepwwolhoxhjebe/BirchHill_Prefix.pch -c /Users/gary/Documents/apps/ScrollTest/main.m -o /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/main.o0#
+
+CCompileXIB /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.xib
+s317012556.399167
+e317012556.857485
+r1
+xCompileXIB
+x/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.xib
+lSLF07#2@42"CompileXIB Classes/PopUpViewController.xib317012556#317012556#0(0"0(0#0#69"/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.xib8610653664#567"    cd /Users/gary/Documents/apps/ScrollTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/PopUpViewController.nib /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk0#
+
+CCompileXIB /Users/gary/Documents/apps/ScrollTest/MainWindow.xib
+s317012555.464171
+e317012555.929938
+r1
+xCompileXIB
+x/Users/gary/Documents/apps/ScrollTest/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib317012555#317012555#0(0"0(0#0#52"/Users/gary/Documents/apps/ScrollTest/MainWindow.xib8598507552#541"    cd /Users/gary/Documents/apps/ScrollTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/MainWindow.nib /Users/gary/Documents/apps/ScrollTest/MainWindow.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk0#
+
+CCompileXIB /Users/gary/Documents/apps/ScrollTest/ScrollViewController.xib
+s317012555.465649
+e317012556.217784
+r1
+xCompileXIB
+x/Users/gary/Documents/apps/ScrollTest/ScrollViewController.xib
+lSLF07#2@35"CompileXIB ScrollViewController.xib317012555#317012556#0(0"0(0#0#62"/Users/gary/Documents/apps/ScrollTest/ScrollViewController.xib8611280992#561"    cd /Users/gary/Documents/apps/ScrollTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/ScrollViewController.nib /Users/gary/Documents/apps/ScrollTest/ScrollViewController.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk0#
+
+CCopyPNGFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/Default.png Default.png
+s317012555.930025
+e317012557.009335
+r1
+xCopyPNGFile
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/Default.png
+xDefault.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/BirchHill.app/Default.png Default.png317012555#317012557#0(0"0(0#0#49"/Users/gary/Documents/apps/ScrollTest/Default.png8609912224#561"    cd /Users/gary/Documents/apps/ScrollTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/gary/Documents/apps/ScrollTest/Default.png /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/Default.png0#
+
+CCopyPNGFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/blue_arrow.png blue_arrow.png
+s317012556.217876
+e317012556.246652
+r1
+xCopyPNGFile
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/blue_arrow.png
+xblue_arrow.png
+lSLF07#2@76"CopyPNGFile build/Debug-iphoneos/BirchHill.app/blue_arrow.png blue_arrow.png317012556#317012556#0(0"0(0#0#52"/Users/gary/Documents/apps/ScrollTest/blue_arrow.png8608020512#567"    cd /Users/gary/Documents/apps/ScrollTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/gary/Documents/apps/ScrollTest/blue_arrow.png /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/blue_arrow.png0#
+
+CCopyPNGFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/nscf_logo.png nscf_logo.png
+s317012556.246744
+e317012556.319652
+r1
+xCopyPNGFile
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/nscf_logo.png
+xnscf_logo.png
+lSLF07#2@74"CopyPNGFile build/Debug-iphoneos/BirchHill.app/nscf_logo.png nscf_logo.png317012556#317012556#0(0"0(0#0#51"/Users/gary/Documents/apps/ScrollTest/nscf_logo.png8590319616#565"    cd /Users/gary/Documents/apps/ScrollTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/gary/Documents/apps/ScrollTest/nscf_logo.png /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/nscf_logo.png0#
+
+CCopyPNGFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/nscficon.png nscficon.png
+s317012556.319739
+e317012556.369915
+r1
+xCopyPNGFile
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/nscficon.png
+xnscficon.png
+lSLF07#2@72"CopyPNGFile build/Debug-iphoneos/BirchHill.app/nscficon.png nscficon.png317012556#317012556#0(0"0(0#0#50"/Users/gary/Documents/apps/ScrollTest/nscficon.png8607587776#563"    cd /Users/gary/Documents/apps/ScrollTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/gary/Documents/apps/ScrollTest/nscficon.png /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/nscficon.png0#
+
+CCopyPNGFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/red_arrow.png red_arrow.png
+s317012556.369999
+e317012556.397985
+r1
+xCopyPNGFile
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/red_arrow.png
+xred_arrow.png
+lSLF07#2@74"CopyPNGFile build/Debug-iphoneos/BirchHill.app/red_arrow.png red_arrow.png317012556#317012556#0(0"0(0#0#51"/Users/gary/Documents/apps/ScrollTest/red_arrow.png8613059232#565"    cd /Users/gary/Documents/apps/ScrollTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/gary/Documents/apps/ScrollTest/red_arrow.png /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/red_arrow.png0#
+
+CCpResource build/Debug-iphoneos/BirchHill.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist
+s317012555.441770
+e317012555.464095
+r1
+xCpResource
+xbuild/Debug-iphoneos/BirchHill.app/ResourceRules.plist
+x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist
+lSLF07#2@94"Copy /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist317012555#317012555#0(0"0(0#0#89"/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist8307809061684012032#494"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app0#
+
+CCpResource build/Debug-iphoneos/BirchHill.app/Settings.bundle Settings.bundle
+s317012556.398068
+e317012556.404751
+r1
+xCpResource
+xbuild/Debug-iphoneos/BirchHill.app/Settings.bundle
+xSettings.bundle
+lSLF07#2@20"Copy Settings.bundle317012556#317012556#0(0"0(0#0#53"/Users/gary/Documents/apps/ScrollTest/Settings.bundle8610753440#458"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/gary/Documents/apps/ScrollTest/Settings.bundle /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app0#
+
+CCreateUniversalBinary /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/BirchHill normal "armv6 armv7"
+s317012559.117733
+e317012559.131090
+r1
+xCreateUniversalBinary
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/BirchHill
+xnormal
+xarmv6 armv7
+lSLF07#2@87"CreateUniversalBinary build/Debug-iphoneos/BirchHill.app/BirchHill normal "armv6 armv7"317012559#317012559#0(0"0(0#0#49"/Users/gary/Documents/apps/ScrollTest/armv6 armv78607617664#530"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/lipo -create /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/BirchHill /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/BirchHill -output /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/BirchHill0#
+
+CGenerateDSYMFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app.dSYM /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/BirchHill
+s317012559.131188
+e317012559.178863
+r1
+xGenerateDSYMFile
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app.dSYM
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/BirchHill
+lSLF07#2@101"GenerateDSYMFile build/Debug-iphoneos/BirchHill.app.dSYM build/Debug-iphoneos/BirchHill.app/BirchHill317012559#317012559#0(0"0(0#0#82"/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/BirchHill8613466784#365"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/BirchHill -o /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app.dSYM0#
+
+CLd /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/BirchHill normal armv6
+s317012558.867271
+e317012558.949157
+r1
+xLd
+x/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/BirchHill
+xnormal
+xarmv6
+lSLF07#2@126"Link /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/BirchHill317012558#317012558#0(0"0(0#0#0"8613516672#876"    cd /Users/gary/Documents/apps/ScrollTest    setenv IPHONEOS_DEPLOYMENT_TARGET 4.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -L/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos -filelist /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/BirchHill.LinkFileList -dead_strip -licucore -miphoneos-version-min=4.2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv6/BirchHill0#
+
+CLd /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/BirchHill normal armv7
+s317012559.060852
+e317012559.117653
+r1
+xLd
+x/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/BirchHill
+xnormal
+xarmv7
+lSLF07#2@126"Link /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/BirchHill317012559#317012559#0(0"0(0#0#0"8610104032#876"    cd /Users/gary/Documents/apps/ScrollTest    setenv IPHONEOS_DEPLOYMENT_TARGET 4.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -L/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos -filelist /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/BirchHill.LinkFileList -dead_strip -licucore -miphoneos-version-min=4.2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/Objects-normal/armv7/BirchHill0#
+
+CProcessInfoPlistFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/Info.plist BirchHill-Info.plist
+s317012555.446085
+e317012555.457489
+r1
+xProcessInfoPlistFile
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/Info.plist
+xBirchHill-Info.plist
+lSLF07#2@28"Process BirchHill-Info.plist317012555#317012555#0(0"0(0#0#58"/Users/gary/Documents/apps/ScrollTest/BirchHill-Info.plist8611306528#566"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility BirchHill-Info.plist -genpkginfo /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/ResourceRules.plist -o /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/Info.plist0#
+
+CProcessPCH /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-bleibpefrmkterdhfibwdcqnizjs/BirchHill_Prefix.pch.gch BirchHill_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+s317012557.009565
+e317012557.680520
+r1
+xProcessPCH
+x/var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-bleibpefrmkterdhfibwdcqnizjs/BirchHill_Prefix.pch.gch
+xBirchHill_Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile BirchHill_Prefix.pch317012557#317012557#0(0"0(0#0#58"/Users/gary/Documents/apps/ScrollTest/BirchHill_Prefix.pch8608577824#1650"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/include -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources/armv6 -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources -c /Users/gary/Documents/apps/ScrollTest/BirchHill_Prefix.pch -o /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-bleibpefrmkterdhfibwdcqnizjs/BirchHill_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-fcernuscvuuzyxepwwolhoxhjebe/BirchHill_Prefix.pch.gch BirchHill_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+s317012557.010491
+e317012557.739931
+r1
+xProcessPCH
+x/var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-fcernuscvuuzyxepwwolhoxhjebe/BirchHill_Prefix.pch.gch
+xBirchHill_Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile BirchHill_Prefix.pch317012557#317012557#0(0"0(0#0#58"/Users/gary/Documents/apps/ScrollTest/BirchHill_Prefix.pch8607217536#1650"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/include -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources/armv7 -I/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/DerivedSources -c /Users/gary/Documents/apps/ScrollTest/BirchHill_Prefix.pch -o /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BirchHill_Prefix-fcernuscvuuzyxepwwolhoxhjebe/BirchHill_Prefix.pch.gch0#
+
+CProcessProductPackaging "/Users/gary/Library/MobileDevice/Provisioning Profiles/1DCCD481-7C27-4D3E-BBF1-9CAFA54856D0.mobileprovision" /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/embedded.mobileprovision
+s317012559.178965
+e317012559.180430
+r1
+xProcessProductPackaging
+x/Users/gary/Library/MobileDevice/Provisioning Profiles/1DCCD481-7C27-4D3E-BBF1-9CAFA54856D0.mobileprovision
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/embedded.mobileprovision
+lSLF07#2@193"ProcessProductPackaging "/Users/gary/Library/MobileDevice/Provisioning Profiles/1DCCD481-7C27-4D3E-BBF1-9CAFA54856D0.mobileprovision" build/Debug-iphoneos/BirchHill.app/embedded.mobileprovision317012559#317012559#0(0"0(0#0#97"/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/embedded.mobileprovision8611086400#422"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/gary/Library/MobileDevice/Provisioning Profiles/1DCCD481-7C27-4D3E-BBF1-9CAFA54856D0.mobileprovision" -o /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app/embedded.mobileprovision0#
+
+CProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill.xcent
+s317012559.185318
+e317012559.187643
+r1
+xProcessProductPackaging
+x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist
+x/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill.xcent
+lSLF07#2@181"ProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill.xcent317012559#317012559#0(0"0(0#0#106"/Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill.xcent8610350144#436"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist -entitlements -format xml -o /Users/gary/Documents/apps/ScrollTest/build/BirchHill.build/Debug-iphoneos/BirchHill.build/BirchHill.xcent0#
+
+CTouch /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app
+s317012559.180492
+e317012559.185235
+r1
+xTouch
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app
+lSLF07#2@78"Touch /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app317012559#317012559#0(0"0(0#0#0"8610723872#264"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/gary/Documents/apps/ScrollTest/build/Debug-iphoneos/BirchHill.app0#
+

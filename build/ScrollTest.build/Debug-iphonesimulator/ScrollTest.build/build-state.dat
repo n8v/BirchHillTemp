@@ -1,0 +1,657 @@
+TScrollTest
+v7
+r0
+t317013596.047611
+cCheck dependencies
+cProcessInfoPlistFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/Info.plist ScrollTest-Info.plist
+cCompileXIB /Users/gary/Documents/apps/ScrollTest/MainWindow.xib
+cCompileXIB /Users/gary/Documents/apps/ScrollTest/ScrollTestViewController.xib
+cCpResource build/Debug-iphonesimulator/ScrollTest.app/Default.png Default.png
+cCpResource build/Debug-iphonesimulator/ScrollTest.app/blue_arrow.png blue_arrow.png
+cCpResource build/Debug-iphonesimulator/ScrollTest.app/nscf_logo.png nscf_logo.png
+cCpResource build/Debug-iphonesimulator/ScrollTest.app/nscficon.png nscficon.png
+cCpResource build/Debug-iphonesimulator/ScrollTest.app/red_arrow.png red_arrow.png
+cCpResource build/Debug-iphonesimulator/ScrollTest.app/Settings.bundle Settings.bundle
+cCompileXIB /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.xib
+cProcessPCH /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ScrollTest_Prefix-ftryvlmruyhwhfhdfvhknvocmzwo/ScrollTest_Prefix.pch.gch ScrollTest_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/main.o /Users/gary/Documents/apps/ScrollTest/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/ScrollTestAppDelegate.o /Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/ScrollTestViewController.o /Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/RegexKitLite.o /Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/PopUpViewController.o /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/ScrollTest normal i386
+cGenerateDSYMFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app.dSYM /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/ScrollTest
+cTouch /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk
+c000000004CC128950000000000000110
+t1287727253
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFArray.h
+c000000004CC1219E0000000000007AC8
+t1287725470
+s31432
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFBase.h
+c000000004CC1219E00000000000045F5
+t1287725470
+s17909
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFString.h
+c000000004CC1219F000000000000B765
+t1287725471
+s46949
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004CC12246000000000029B310
+t1287725638
+s2732816
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004CC1226D000000000029D5D0
+t1287725677
+s2741712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004CC1225F0000000000001466
+t1287725663
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSArray.h
+c000000004CC1225F0000000000001B27
+t1287725663
+s6951
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDictionary.h
+c000000004CC1225F0000000000000E3B
+t1287725663
+s3643
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSError.h
+c000000004CC1225F0000000000001DE5
+t1287725663
+s7653
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSException.h
+c000000004CC1225F0000000000002033
+t1287725663
+s8243
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNotification.h
+c000000004CC1225F000000000000059D
+t1287725663
+s1437
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObjCRuntime.h
+c000000004CC1225F0000000000002D96
+t1287725663
+s11670
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRange.h
+c000000004CC1225F000000000000049D
+t1287725663
+s1181
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRunLoop.h
+c000000004CC1225F0000000000000915
+t1287725663
+s2325
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h
+c000000004CC1225F0000000000006506
+t1287725663
+s25862
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004CC1281F0000000000000AA1
+t1287727135
+s2721
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004CC12883000000000074D7B0
+t1287727235
+s7657392
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/AvailabilityMacros.h
+c000000004CB3FA08000000000000673C
+t1286863368
+s26428
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/TargetConditionals.h
+c000000004CB3FA0800000000000031E9
+t1286863368
+s12777
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/dlfcn.h
+c000000004AB98DF40000000000000B1C
+t1253674484
+s2844
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libkern/OSAtomic.h
+c000000004CB3E4860000000000002519
+t1286857862
+s9497
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/mach-o/loader.h
+c000000004A4D4DFA000000000000EF91
+t1246580218
+s61329
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/objc/objc-runtime.h
+c000000004CB935700000000000000032
+t1287206256
+s50
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/objc/runtime.h
+c000000004CB9357000000000000053F9
+t1287206256
+s21497
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/stdio.h
+c000000004CB3E48600000000000040AC
+t1286857862
+s16556
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/stdlib.h
+c000000004CB3E4860000000000002DF5
+t1286857862
+s11765
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/string.h
+c000000004CB3E4860000000000001731
+t1286857862
+s5937
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/sys/types.h
+c000000004CBFACAC0000000000002905
+t1287629996
+s10501
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
+c000000004A1198340000000000000C7E
+t1242667060
+s3198
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+c000000004A11983400000000000010DD
+t1242667060
+s4317
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+c000000004A11A512000000000000190C
+t1242670354
+s6412
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/PopUp.h
+c000000004D3310CD00000000000000DD
+t1295192269
+s221
+i<UIKit/UIKit.h>
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/PopUp.m
+c000000004D3310CD0000000000000594
+t1295192269
+s1428
+i"PopUp.h"
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/PopUp.xib
+c000000004D3310CD000000000000184A
+t1295192269
+s6218
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.h
+c000000004D33247E0000000000000253
+t1295197310
+s595
+i<UIKit/UIKit.h>
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m
+c000000004D332AEB000000000000084E
+t1295198955
+s2126
+i"PopUpViewController.h"
+i"ScrollTestViewController.h"
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.xib
+c000000004D332A41000000000000666C
+t1295198785
+s26220
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.h
+c000000004BC5E8E10000000000004130
+t1271261409
+s16688
+i<Foundation/NSArray.h>
+i<Foundation/NSError.h>
+i<Foundation/NSObjCRuntime.h>
+i<Foundation/NSRange.h>
+i<Foundation/NSString.h>
+i<limits.h>
+i<stdint.h>
+i<sys/types.h>
+i<TargetConditionals.h>
+i<AvailabilityMacros.h>
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m
+c000000004BCB02C90000000000032498
+t1271595721
+s205976
+i<CoreFoundation/CFBase.h>
+i<CoreFoundation/CFArray.h>
+i<CoreFoundation/CFString.h>
+i<Foundation/NSArray.h>
+i<Foundation/NSDictionary.h>
+i<Foundation/NSError.h>
+i<Foundation/NSException.h>
+i<Foundation/NSNotification.h>
+i<Foundation/NSRunLoop.h>
+i<Foundation/NSGarbageCollector.h>
+i<objc/runtime.h>
+i<objc/objc-runtime.h>
+i<libkern/OSAtomic.h>
+i<mach-o/loader.h>
+i<AvailabilityMacros.h>
+i<dlfcn.h>
+i<string.h>
+i<stdarg.h>
+i<stdlib.h>
+i<stdio.h>
+i"RegexKitLite.h"
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestAppDelegate.h
+c000000004D21354A00000000000001FE
+t1294021962
+s510
+i<UIKit/UIKit.h>
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestAppDelegate.m
+c000000004D2135700000000000000AB3
+t1294022000
+s2739
+i"ScrollTestAppDelegate.h"
+i"ScrollTestViewController.h"
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.h
+c000000004D3325700000000000000975
+t1295197552
+s2421
+i<UIKit/UIKit.h>
+i"RegexKitLite.h"
+
+N/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m
+c000000004D333BDB0000000000006455
+t1295203291
+s25685
+i"ScrollTestViewController.h"
+i"PopUpViewController.h"
+
+N/Users/gary/Documents/apps/ScrollTest/Default.png
+c000000004D1CD57500000000000148C6
+t1293735285
+s84166
+
+N/Users/gary/Documents/apps/ScrollTest/MainWindow.xib
+c000000004D1E066E0000000000004E4D
+t1293813358
+s20045
+
+N/Users/gary/Documents/apps/ScrollTest/ScrollTestViewController.xib
+c000000004D330B1A000000000000D1E1
+t1295190810
+s53729
+
+N/Users/gary/Documents/apps/ScrollTest/ScrollTest_Prefix.pch
+c000000004D1E066E00000000000000BD
+t1293813358
+s189
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/gary/Documents/apps/ScrollTest/Settings.bundle
+c000000004D2151C800000000000000AA
+t1294029256
+s170
+
+N/Users/gary/Documents/apps/ScrollTest/blue_arrow.png
+c000000004D1CC3880000000000001026
+t1293730696
+s4134
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app
+t1295320796
+s476
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app.dSYM
+t1295320796
+s102
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/Default.png
+t1293860068
+s84166
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/Info.plist
+t1294029385
+s635
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/MainWindow.nib
+t1293813881
+s1129
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/PkgInfo
+t1294029385
+s8
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/PopUp.nib
+t2
+s0
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/PopUpViewController.nib
+t1295198787
+s1945
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/ScrollTest
+t1295320796
+s160212
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/ScrollTestViewController.nib
+t1295190812
+s4636
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/Settings.bundle
+t1294029324
+s170
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/blue_arrow.png
+t1293860068
+s4134
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/nscf_logo.png
+t1293860068
+s30181
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/nscficon.png
+t1293860068
+s18709
+
+N/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/red_arrow.png
+t1293860068
+s4171
+
+N/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/PopUp.o
+t2
+s0
+
+N/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/PopUpViewController-14F46646B9273466.o
+t2
+s0
+
+N/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/PopUpViewController.o
+t1295198956
+s48384
+
+N/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/RegexKitLite.o
+t1293860069
+s190084
+
+N/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/ScrollTest.LinkFileList
+c000000004D3317A300000000000002B7
+t1295194019
+s695
+
+N/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/ScrollTestAppDelegate.o
+t1295197552
+s53408
+
+N/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/ScrollTestViewController.o
+t1295320795
+s109556
+
+N/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/main.o
+t1293813882
+s6300
+
+N/Users/gary/Documents/apps/ScrollTest/main.m
+c000000004D1E066E0000000000000179
+t1293813358
+s377
+i<UIKit/UIKit.h>
+
+N/Users/gary/Documents/apps/ScrollTest/nscf_logo.png
+c000000004D16D1D000000000000075E5
+t1293341136
+s30181
+
+N/Users/gary/Documents/apps/ScrollTest/nscficon.png
+c00000000474F20050000000000004915
+t1196367877
+s18709
+
+N/Users/gary/Documents/apps/ScrollTest/red_arrow.png
+c000000004D1CC37C000000000000104B
+t1293730684
+s4171
+
+N/var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ScrollTest_Prefix-ftryvlmruyhwhfhdfvhknvocmzwo/ScrollTest_Prefix.pch.gch
+t1293813882
+s15453392
+
+NScrollTest-Info.plist
+c000000004D215247000000000000038E
+t1294029383
+s910
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies317013595#317013595#0(0"0(0#1#0"8616372288#0"0#
+
+CCompileC build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/PopUp.o /Users/gary/Documents/apps/ScrollTest/Classes/PopUp.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/PopUpViewController-14F46646B9273466.o /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/PopUpViewController.o /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s316891756.719245
+e316891756.926035
+r1
+xCompileC
+xbuild/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/PopUpViewController.o
+x/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@75"Compile /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m316891756#316891756#0(0"0(0#0#67"/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m8644935488#2001"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/include -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/DerivedSources/i386 -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/DerivedSources -include /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ScrollTest_Prefix-ftryvlmruyhwhfhdfvhknvocmzwo/ScrollTest_Prefix.pch -c /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.m -o /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/PopUpViewController.o0#
+
+CCompileC build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/RegexKitLite.o /Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s315552869.348058
+e315552869.761316
+r1
+xCompileC
+xbuild/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/RegexKitLite.o
+x/Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@68"Compile /Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m315552869#315552869#0(0"0(0#0#60"/Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m8620094432#1987"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/include -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/DerivedSources/i386 -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/DerivedSources -include /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ScrollTest_Prefix-ftryvlmruyhwhfhdfvhknvocmzwo/ScrollTest_Prefix.pch -c /Users/gary/Documents/apps/ScrollTest/Classes/RegexKitLite.m -o /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/RegexKitLite.o0#
+
+CCompileC build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/ScrollTestAppDelegate.o /Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s316890352.763047
+e316890352.960707
+r1
+xCompileC
+xbuild/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/ScrollTestAppDelegate.o
+x/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@77"Compile /Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestAppDelegate.m316890352#316890352#0(0"0(0#0#69"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestAppDelegate.m8646534688#2005"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/include -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/DerivedSources/i386 -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/DerivedSources -include /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ScrollTest_Prefix-ftryvlmruyhwhfhdfvhknvocmzwo/ScrollTest_Prefix.pch -c /Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestAppDelegate.m -o /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/ScrollTestAppDelegate.o0#
+
+CCompileC build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/ScrollTestViewController.o /Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s317013595.815346
+e317013595.980230
+r1
+xCompileC
+xbuild/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/ScrollTestViewController.o
+x/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m:374:29: warning: unknown escape sequence '\&'
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m:376:32: warning: unknown escape sequence '\&'
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m:377:33: warning: unknown escape sequence '\&'
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m: In function '-[ScrollTestViewController NSCFwebPage:]':
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m:675: warning: unused variable 'requestObj'
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m: At top level:
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m:769: warning: incomplete implementation of class 'ScrollTestViewController'
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m:769: warning: method definition for '-didReceiveMessage:' not found
+o/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m:769: warning: class 'ScrollTestViewController' does not fully implement the 'ModalViewDelegate' protocol
+lSLF07#2@80"Compile /Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m317013595#317013595#0(1159"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m:374:29: warning: unknown escape sequence '\&'/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m:376:32: warning: unknown escape sequence '\&'/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m:377:33: warning: unknown escape sequence '\&'/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m: In function '-[ScrollTestViewController NSCFwebPage:]':/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m:675: warning: unused variable 'requestObj'/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m: At top level:/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m:769: warning: incomplete implementation of class 'ScrollTestViewController'/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m:769: warning: method definition for '-didReceiveMessage:' not found/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m:769: warning: class 'ScrollTestViewController' does not fully implement the 'ModalViewDelegate' protocol8(22@28"Unknown escape sequence '\&'317013595#0#119#0(6@72"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m316896091#374#0#374#0#0"0(22@28"Unknown escape sequence '\&'317013595#119#119#0(6@72"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m316896091#376#0#376#0#0"0(22@28"Unknown escape sequence '\&'317013595#238#119#0(6@72"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m316896091#377#0#377#0#0"0(22@28"Unused variable 'requestObj'317013595#487#116#0(6@72"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m316896091#675#0#675#0#19"unused variable '*'0(23@13"At top level:317013595#603#88#0(6@72"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m316896091#0#0#0#0#0"0(22@61"Incomplete implementation of class 'ScrollTestViewController'317013595#691#149#0(6@72"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m316896091#769#0#769#0#38"incomplete implementation of class '*'0(22@53"Method definition for '-didReceiveMessage:' not found317013595#840#141#0(6@72"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m316896091#769#0#769#0#35"method definition for '*' not found0(22@90"Class 'ScrollTestViewController' does not fully implement the 'ModalViewDelegate' protocol317013595#981#178#0(6@72"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m316896091#769#0#769#0#51"class '*' does not fully implement the '*' protocol0(0#0#72"/Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m8614506912#2011"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/include -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/DerivedSources/i386 -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/DerivedSources -include /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ScrollTest_Prefix-ftryvlmruyhwhfhdfvhknvocmzwo/ScrollTest_Prefix.pch -c /Users/gary/Documents/apps/ScrollTest/Classes/ScrollTestViewController.m -o /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/ScrollTestViewController.o0#
+
+CCompileC build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/main.o /Users/gary/Documents/apps/ScrollTest/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s315506682.531626
+e315506682.593247
+r1
+xCompileC
+xbuild/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/main.o
+x/Users/gary/Documents/apps/ScrollTest/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@52"Compile /Users/gary/Documents/apps/ScrollTest/main.m315506682#315506682#0(0"0(0#0#44"/Users/gary/Documents/apps/ScrollTest/main.m8617885920#1963"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/include -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/DerivedSources/i386 -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/DerivedSources -include /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ScrollTest_Prefix-ftryvlmruyhwhfhdfvhknvocmzwo/ScrollTest_Prefix.pch -c /Users/gary/Documents/apps/ScrollTest/main.m -o /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/gary/Documents/apps/ScrollTest/Classes/PopUp.xib
+r0
+
+CCompileXIB /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.xib
+s316891586.975674
+e316891587.435915
+r1
+xCompileXIB
+x/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.xib
+lSLF07#2@42"CompileXIB Classes/PopUpViewController.xib316891586#316891587#0(0"0(0#0#69"/Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.xib8633573376#596"    cd /Users/gary/Documents/apps/ScrollTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/PopUpViewController.nib /Users/gary/Documents/apps/ScrollTest/Classes/PopUpViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /Users/gary/Documents/apps/ScrollTest/MainWindow.xib
+s315506681.333270
+e315506681.795683
+r1
+xCompileXIB
+x/Users/gary/Documents/apps/ScrollTest/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib315506681#315506681#0(0"0(0#0#52"/Users/gary/Documents/apps/ScrollTest/MainWindow.xib8618236704#570"    cd /Users/gary/Documents/apps/ScrollTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/MainWindow.nib /Users/gary/Documents/apps/ScrollTest/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /Users/gary/Documents/apps/ScrollTest/ScrollTestViewController.xib
+s316883611.736306
+e316883612.261783
+r1
+xCompileXIB
+x/Users/gary/Documents/apps/ScrollTest/ScrollTestViewController.xib
+lSLF07#2@39"CompileXIB ScrollTestViewController.xib316883611#316883612#0(0"0(0#0#66"/Users/gary/Documents/apps/ScrollTest/ScrollTestViewController.xib8608917184#598"    cd /Users/gary/Documents/apps/ScrollTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/ScrollTestViewController.nib /Users/gary/Documents/apps/ScrollTest/ScrollTestViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCpResource build/Debug-iphonesimulator/ScrollTest.app/Default.png Default.png
+s315552868.958110
+e315552868.983420
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/ScrollTest.app/Default.png
+xDefault.png
+lSLF07#2@16"Copy Default.png315552868#315552868#0(0"0(0#0#49"/Users/gary/Documents/apps/ScrollTest/Default.png8622196448#469"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/gary/Documents/apps/ScrollTest/Default.png /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app0#
+
+CCpResource build/Debug-iphonesimulator/ScrollTest.app/Settings.bundle Settings.bundle
+s315722124.532935
+e315722124.540746
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/ScrollTest.app/Settings.bundle
+xSettings.bundle
+lSLF07#2@20"Copy Settings.bundle315722124#315722124#0(0"0(0#0#53"/Users/gary/Documents/apps/ScrollTest/Settings.bundle8606460960#473"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/gary/Documents/apps/ScrollTest/Settings.bundle /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app0#
+
+CCpResource build/Debug-iphonesimulator/ScrollTest.app/blue_arrow.png blue_arrow.png
+s315552868.958759
+e315552868.983534
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/ScrollTest.app/blue_arrow.png
+xblue_arrow.png
+lSLF07#2@19"Copy blue_arrow.png315552868#315552868#0(0"0(0#0#52"/Users/gary/Documents/apps/ScrollTest/blue_arrow.png8621611136#472"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/gary/Documents/apps/ScrollTest/blue_arrow.png /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app0#
+
+CCpResource build/Debug-iphonesimulator/ScrollTest.app/nscf_logo.png nscf_logo.png
+s315552868.959793
+e315552868.983631
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/ScrollTest.app/nscf_logo.png
+xnscf_logo.png
+lSLF07#2@18"Copy nscf_logo.png315552868#315552868#0(0"0(0#0#51"/Users/gary/Documents/apps/ScrollTest/nscf_logo.png8620078624#471"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/gary/Documents/apps/ScrollTest/nscf_logo.png /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app0#
+
+CCpResource build/Debug-iphonesimulator/ScrollTest.app/nscficon.png nscficon.png
+s315552868.973157
+e315552868.983886
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/ScrollTest.app/nscficon.png
+xnscficon.png
+lSLF07#2@17"Copy nscficon.png315552868#315552868#0(0"0(0#0#50"/Users/gary/Documents/apps/ScrollTest/nscficon.png8619674368#470"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/gary/Documents/apps/ScrollTest/nscficon.png /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app0#
+
+CCpResource build/Debug-iphonesimulator/ScrollTest.app/red_arrow.png red_arrow.png
+s315552868.974184
+e315552868.983990
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/ScrollTest.app/red_arrow.png
+xred_arrow.png
+lSLF07#2@18"Copy red_arrow.png315552868#315552868#0(0"0(0#0#51"/Users/gary/Documents/apps/ScrollTest/red_arrow.png8618014592#471"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/gary/Documents/apps/ScrollTest/red_arrow.png /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app0#
+
+CGenerateDSYMFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app.dSYM /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/ScrollTest
+s317013596.016646
+e317013596.045032
+r1
+xGenerateDSYMFile
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app.dSYM
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/ScrollTest
+lSLF07#2@118"GenerateDSYMFile build/Debug-iphonesimulator/ScrollTest.app.dSYM build/Debug-iphonesimulator/ScrollTest.app/ScrollTest317013596#317013596#0(0"0(0#0#91"/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/ScrollTest8611191360#389"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/ScrollTest -o /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app.dSYM0#
+
+CLd /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/ScrollTest normal i386
+s317013595.980317
+e317013596.016554
+r1
+xLd
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/ScrollTest
+xnormal
+xi386
+lSLF07#2@96"Link /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/ScrollTest317013595#317013596#0(0"0(0#0#0"8613419968#920"    cd /Users/gary/Documents/apps/ScrollTest    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -L/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator -filelist /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/Objects-normal/i386/ScrollTest.LinkFileList -mmacosx-version-min=10.6 -licucore -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/ScrollTest0#
+
+CProcessInfoPlistFile /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/Info.plist ScrollTest-Info.plist
+s315722185.774745
+e315722185.796403
+r1
+xProcessInfoPlistFile
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/Info.plist
+xScrollTest-Info.plist
+lSLF07#2@29"Process ScrollTest-Info.plist315722185#315722185#0(0"0(0#0#59"/Users/gary/Documents/apps/ScrollTest/ScrollTest-Info.plist8602155520#485"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility ScrollTest-Info.plist -genpkginfo /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app/Info.plist0#
+
+CProcessPCH /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ScrollTest_Prefix-ftryvlmruyhwhfhdfvhknvocmzwo/ScrollTest_Prefix.pch.gch ScrollTest_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s315506681.795858
+e315506682.531536
+r1
+xProcessPCH
+x/var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ScrollTest_Prefix-ftryvlmruyhwhfhdfvhknvocmzwo/ScrollTest_Prefix.pch.gch
+xScrollTest_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@32"Precompile ScrollTest_Prefix.pch315506681#315506682#0(0"0(0#0#59"/Users/gary/Documents/apps/ScrollTest/ScrollTest_Prefix.pch8391161943992070144#1853"    cd /Users/gary/Documents/apps/ScrollTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-generated-files.hmap -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-own-target-headers.hmap -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-all-target-headers.hmap -iquote /Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/ScrollTest-project-headers.hmap -F/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator -I/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/include -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/DerivedSources/i386 -I/Users/gary/Documents/apps/ScrollTest/build/ScrollTest.build/Debug-iphonesimulator/ScrollTest.build/DerivedSources -c /Users/gary/Documents/apps/ScrollTest/ScrollTest_Prefix.pch -o /var/folders/+M/+M3ALy89HUi9P59sYlxUz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ScrollTest_Prefix-ftryvlmruyhwhfhdfvhknvocmzwo/ScrollTest_Prefix.pch.gch0#
+
+CTouch /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app
+s317013596.045138
+e317013596.047566
+r1
+xTouch
+x/Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app
+lSLF07#2@86"Touch /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app317013596#317013596#0(0"0(0#0#0"8607731616#279"    cd /Users/gary/Documents/apps/ScrollTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/gary/Documents/apps/ScrollTest/build/Debug-iphonesimulator/ScrollTest.app0#
+

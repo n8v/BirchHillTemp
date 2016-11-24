@@ -1,0 +1,4 @@
+This app shows the current temperature at the Birch Hill Cross Country Ski Area in Fairbanks, Alaska. Also reports daily high and low temperatures, as well as temperatures at the University of Alaska Fairbanks ski trails and at the Fairbanks International Airport. Separate pages display current trail conditions, National Weather Service Forecast, Birch Hill web cam, and a news feed from the Nordic Ski Club Fairbanks. 
+
+
+ski,Birch Hill,Fairbanks,Temperature,weather

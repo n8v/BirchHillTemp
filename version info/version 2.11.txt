@@ -1,0 +1,1 @@
+Fixed a bug which could cause the weather forecast to display incorrectly.

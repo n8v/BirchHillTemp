@@ -1,0 +1,38 @@
+/* styles for webviews in trails and forecast displays */
+
+body
+{
+    background-color: white;
+    
+} 
+
+p, td, li
+{
+    color: black;
+    /* font-size: 11pt; */
+}
+
+body, p, td, li
+{
+    font-family: Verdana, Arial, sans-serif; 
+}
+
+#trails p
+{
+    
+}
+
+.trail_name
+{
+    font-weight: bold;
+}
+
+.trail_condition
+{
+
+}
+
+.trail_date
+{
+
+}

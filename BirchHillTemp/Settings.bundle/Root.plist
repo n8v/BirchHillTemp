@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Info</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>FooterText</key>
+			<string>If you like this App please consider joining the Nordic Ski Club of Fairbanks and making a donation to the Trails Fund.</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>http://nscfairbanks.org/</string>
+			<key>Key</key>
+			<string>url</string>
+			<key>Title</key>
+			<string>Web</string>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>gary.holton@gmail.com</string>
+			<key>Key</key>
+			<string>email</string>
+			<key>Title</key>
+			<string>Support</string>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>Gary Holton © 2013</string>
+			<key>Key</key>
+			<string>copyright</string>
+			<key>Title</key>
+			<string>Copyright</string>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>2.0</string>
+			<key>Key</key>
+			<string>version</string>
+			<key>Title</key>
+			<string>Version</string>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
+</dict>
+</plist>
