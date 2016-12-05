@@ -58,7 +58,6 @@
 		4E61DB6B16A6F164009FDE36 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E61DB6A16A6F164009FDE36 /* Helpers.m */; };
 		4E69FA0614C1CE780012217A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E69FA0514C1CE780012217A /* QuartzCore.framework */; };
 		4E76AC0A16A5231F003E2A43 /* contrast.css in Resources */ = {isa = PBXBuildFile; fileRef = 4E76AC0916A5231F003E2A43 /* contrast.css */; };
-		4E77F30116A9AC2000BD16CF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E77F30016A9AC2000BD16CF /* Reachability.m */; };
 		4E78A96616A5097300C6E45F /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E78A96516A5097300C6E45F /* ForecastViewController.m */; };
 		4E7C40D216ADB24100DF0605 /* RoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7C40D016ADA5BD00DF0605 /* RoundedView.m */; };
 		4E7E3EA816B0DDEC009787E1 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E3EA716B0DDEC009787E1 /* MapViewController.m */; };
@@ -121,6 +120,7 @@
 		4EFAA4931814451D00FD7900 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EFAA4801814451D00FD7900 /* Icon-Small@2x.png */; };
 		4EFAA4941814451D00FD7900 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EFAA4811814451D00FD7900 /* Icon.png */; };
 		4EFAA4951814451D00FD7900 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EFAA4821814451D00FD7900 /* Icon@2x.png */; };
+		D8FC50DB1DEBD8C9000E6410 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FC50DA1DEBD8C9000E6410 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -204,8 +204,6 @@
 		4E61DB6A16A6F164009FDE36 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Helpers.m; path = BirchHillTemp/Helpers.m; sourceTree = SOURCE_ROOT; };
 		4E69FA0514C1CE780012217A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4E76AC0916A5231F003E2A43 /* contrast.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = contrast.css; path = BirchHillTemp/contrast.css; sourceTree = "<group>"; };
-		4E77F2FF16A9AC2000BD16CF /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = BirchHillTemp/Reachability.h; sourceTree = "<group>"; };
-		4E77F30016A9AC2000BD16CF /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = BirchHillTemp/Reachability.m; sourceTree = "<group>"; };
 		4E78A96416A5097300C6E45F /* ForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForecastViewController.h; path = BirchHillTemp/ForecastViewController.h; sourceTree = SOURCE_ROOT; };
 		4E78A96516A5097300C6E45F /* ForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForecastViewController.m; path = BirchHillTemp/ForecastViewController.m; sourceTree = SOURCE_ROOT; };
 		4E7C40CF16ADA5BD00DF0605 /* RoundedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoundedView.h; path = BirchHillTemp/RoundedView.h; sourceTree = "<group>"; };
@@ -280,6 +278,8 @@
 		4EFAA4801814451D00FD7900 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "BirchHillTemp/images/Icon-Small@2x.png"; sourceTree = "<group>"; };
 		4EFAA4811814451D00FD7900 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = BirchHillTemp/images/Icon.png; sourceTree = "<group>"; };
 		4EFAA4821814451D00FD7900 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "BirchHillTemp/images/Icon@2x.png"; sourceTree = "<group>"; };
+		D8FC50D91DEBD8C9000E6410 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		D8FC50DA1DEBD8C9000E6410 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -471,8 +471,8 @@
 				4E7C40D016ADA5BD00DF0605 /* RoundedView.m */,
 				4E61DB6916A6F164009FDE36 /* Helpers.h */,
 				4E61DB6A16A6F164009FDE36 /* Helpers.m */,
-				4E77F2FF16A9AC2000BD16CF /* Reachability.h */,
-				4E77F30016A9AC2000BD16CF /* Reachability.m */,
+				D8FC50D91DEBD8C9000E6410 /* Reachability.h */,
+				D8FC50DA1DEBD8C9000E6410 /* Reachability.m */,
 				4E61DB6016A67AA7009FDE36 /* SafariAlertView.h */,
 				4E61DB6116A67AA7009FDE36 /* SafariAlertView.m */,
 				4EB2A92216A30A9C00B46559 /* LineView.h */,
@@ -577,7 +577,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0810;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 9ZK8488AP5;
@@ -594,7 +594,6 @@
 				French,
 				German,
 				en,
-				ca,
 				fr,
 				nb,
 				de,
@@ -715,12 +714,12 @@
 				4E52B2D7148C1FF00054BDF7 /* WebCamViewController.m in Sources */,
 				4E9120CA14C0EDDA00ABA499 /* InfoViewController.m in Sources */,
 				4E14A8D31695E03F00874801 /* Appirater.m in Sources */,
+				D8FC50DB1DEBD8C9000E6410 /* Reachability.m in Sources */,
 				4EB2A92416A30A9C00B46559 /* LineView.m in Sources */,
 				4E78A96616A5097300C6E45F /* ForecastViewController.m in Sources */,
 				4E61DB6216A67AA7009FDE36 /* SafariAlertView.m in Sources */,
 				4E61DB6816A6EEF5009FDE36 /* TrailDetailViewController.m in Sources */,
 				4E61DB6B16A6F164009FDE36 /* Helpers.m in Sources */,
-				4E77F30116A9AC2000BD16CF /* Reachability.m in Sources */,
 				4E147F2D16AB79EC00369CD3 /* TrailsViewController.m in Sources */,
 				4E147F3316AB85F800369CD3 /* ForecastDetailViewController.m in Sources */,
 				4E1E3EA516AFBB0A00109179 /* ColorButton.m in Sources */,
@@ -792,8 +791,9 @@
 				GENERATE_PROFILING_CODE = NO;
 				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "";
 				INFOPLIST_FILE = "BirchHillTemp/BirchHillTemp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarmotMedia.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = BirchHillTemp;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -816,8 +816,9 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PROFILING_CODE = NO;
 				INFOPLIST_FILE = "BirchHillTemp/BirchHillTemp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarmotMedia.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = BirchHillTemp;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -828,10 +829,26 @@
 		4E4038AD146F2B16003B8DC5 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -855,8 +872,9 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PROFILING_CODE = NO;
 				INFOPLIST_FILE = "BirchHillTemp/BirchHillTemp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarmotMedia.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = BirchHillTemp;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "888A9989-6ABC-461E-B93B-431DA54FF2EE";
@@ -868,10 +886,27 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
@@ -884,10 +919,26 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";

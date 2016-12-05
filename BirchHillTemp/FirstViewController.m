@@ -579,12 +579,18 @@
     
     if (htmlString.length > 0)
     {
-        NSArray *timeArray = getCapturesFromRegex(@"<caption>Conditions at local time ([0-9][0-9]:[0-9][0-9]) on (.*?[0-9]{4})", htmlString);
+        
+//        NSArray *timeArray = getCapturesFromRegex(@"<caption>Conditions at local time ([0-9][0-9]:[0-9][0-9]) on (.*?[0-9]{4})", htmlString);
+//        NSArray *timeArray = getCapturesFromRegex(@"<span id=\"update-time\">([^<]+)</span>", htmlString);
+        NSLog(htmlString);
+//        NSArray *timeArray = getCapturesFromRegex(@"<div class=\"local-time\">.*<span>((\\d{1,2}:\\d\\d \\w+ \\w+) on (\\w+ \\d{1,2}, \\d{4}))</span>", htmlString);
+        NSArray *timeArray = getCapturesFromRegex(@"Updated: <b>((\\d{1,2}:\\d\\d \\w+ \\w+) on (\\w+ \\d{1,2}, \\d{4}))</b>", htmlString);
         if (timeArray.count > 0)
         {
-            NSString *gsTime = [timeArray objectAtIndex:0];
-            NSString *gsDate = [NSString stringWithFormat:@"%@ %@", [timeArray objectAtIndex:1], gsTime];
-//            NSLog(@"GS string: %@", gsDate);
+            NSString *gsTime = [timeArray objectAtIndex:1];
+            NSString *gsDate = [NSString stringWithFormat:@"%@ %@", [timeArray objectAtIndex:2], gsTime];
+            
+            NSLog(@"GS string: %@", gsDate);
 //            NSArray *tempArray = getCapturesFromRegex(@"<td>Temperature</td>\n\\s*<td>([0-9\\.\\-]*?)&", htmlString);
 //            if (tempArray.count > 0)  { NSLog(@"GS Temp: %@", [tempArray objectAtIndex:0]); }
             
@@ -599,7 +605,9 @@
             else
             {
                 /// date is good, so get the temp
-                NSArray *tempArray = getCapturesFromRegex(@"<td>Temperature</td>\n\\s*<td>([0-9\\.\\-]*?)&", htmlString);
+//                NSArray *tempArray = getCapturesFromRegex(@"<td>Temperature</td>\n\\s*<td>([0-9\\.\\-]*?)&", htmlString);
+//                NSArray *tempArray = getCapturesFromRegex(@"<span class=\"wx-value\">([\\d.-]+)</span>", htmlString);
+                NSArray *tempArray = getCapturesFromRegex(@"<td[^>]*>Temperature</td>\\s*<td>\\s*<b>([\\d.-]+)</b>", htmlString);
                 if (tempArray.count > 0)
                 {
                     float tempF = [[tempArray objectAtIndex:0] floatValue];
@@ -610,6 +618,9 @@
             }
             [goldstreamRounded setFooterTextWithFade:formatTimeString(gsTime, @"H:mm")];
             
+        }
+        else {
+            NSLog(@"No time/date found");
         }
     }
 

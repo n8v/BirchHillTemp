@@ -10,12 +10,12 @@
 #define BirchHillTemp_Constants_h
 
 // contact
-#define kContactEmail @"gary.holton@gmail.com"
+#define kContactEmail @"nathan@tonallyaweso.me"
 
 // fonts
 #define kDefaultFontSize 16;
 
-//  device verison
+//  device version
 #define IS_IPHONE_5 (fabs((double)[[UIScreen mainScreen]bounds].size.height - (double)568.0) < 1.0)
 #define IS_IPHONE ( [ [ [ UIDevice currentDevice ] model ] isEqualToString: @"iPhone" ] )
 #define IS_IPOD   ( [ [ [ UIDevice currentDevice ] model ] isEqualToString: @"iPod touch" ] )
@@ -62,8 +62,8 @@
 #define kNSCFxml @"http://www.nscfairbanks.org/index.php?format=feed&type=rss"   // news feed
 #define kNSCFDonationPage @"https://nscf.memberclicks.net/index.php?option=com_mc&view=mc&mcid=form_108585&test=1"
 
-#define kGoldstreamSportsWeather @"http://goldstreamsports.com/weather/index.htm"
-
+//#define kGoldstreamSportsWeather @"http://goldstreamsports.com/weather/index.htm"
+#define kGoldstreamSportsWeather @"https://www.wunderground.com/cgi-bin/findweather/getForecast?query=pws:KAKFAIRB49"
 // custom alert message uploaded here
 #define kCustomAlert @"http://nscfairbanks.org/weatherpage/wap/alert.json"
 

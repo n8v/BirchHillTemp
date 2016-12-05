@@ -119,7 +119,8 @@
 
 				@try {
 					UIPopoverController *popover = [super valueForKey:@"_hiddenPopoverController"];
-					objc_msgSend(theDelegate, @selector(splitViewController:willHideViewController:withBarButtonItem:forPopoverController:), self, master, button, popover);
+//					objc_msgSend(theDelegate, @selector(splitViewController:willHideViewController:withBarButtonItem:forPopoverController:), self, master, button, popover);
+                    
 				}
 				@catch (NSException * e) {
 					NSLog(@"There was a nasty error while notifyng splitviewcontrollers of an orientation change: %@", [e description]);
@@ -129,7 +130,7 @@
 		else if (UIInterfaceOrientationIsLandscape(toOrientation)) {
 			if (theDelegate && [theDelegate respondsToSelector:@selector(splitViewController:willShowViewController:invalidatingBarButtonItem:)]) {
 				@try {
-					objc_msgSend(theDelegate, @selector(splitViewController:willShowViewController:invalidatingBarButtonItem:), self, master, button);
+//					objc_msgSend(theDelegate, @selector(splitViewController:willShowViewController:invalidatingBarButtonItem:), self, master, button);
 				}
 				@catch (NSException * e) {
 					NSLog(@"There was a nasty error while notifyng splitviewcontrollers of an orientation change: %@", [e description]);
