@@ -702,8 +702,6 @@
 // procss raw text file from NSCF weatherpage
 {
     NSString *rawString = [[NSString alloc] initWithData:[myfetcher data] encoding:NSASCIIStringEncoding];
-    NSData *jsonData = [rawString dataUsingEncoding:NSUTF8StringEncoding];
-    //[rawString]
     NSArray *tokens = [rawString componentsSeparatedByString:@" "];
     NSArray *keys = [@"dateyyyymmdd timehhmmss temp hum dew wspeed wlatest bearing rrate rfall press currentwdir beaufortnumber windunit tempunitnodeg pressunit rainunit windrun presstrendval rmonth ryear rfally intemp inhum wchill temptrend tempth ttempth temptl ttemptl windtm twindtm wgusttm twgusttm pressth tpressth presstl tpresstl version build wgust heatindex humidex uv et solarrad avgbearing rhour forecastnumber isdaylight sensorcontactlost wdir cloudbasevalue cloudbaseunit apptemp sunshinehours currentsolarmax issunny" componentsSeparatedByString:@" "];
     
