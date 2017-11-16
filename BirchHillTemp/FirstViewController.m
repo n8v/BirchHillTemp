@@ -582,7 +582,7 @@
         
 //        NSArray *timeArray = getCapturesFromRegex(@"<caption>Conditions at local time ([0-9][0-9]:[0-9][0-9]) on (.*?[0-9]{4})", htmlString);
 //        NSArray *timeArray = getCapturesFromRegex(@"<span id=\"update-time\">([^<]+)</span>", htmlString);
-        NSLog(htmlString);
+        NSLog(@"%@", htmlString);
 //        NSArray *timeArray = getCapturesFromRegex(@"<div class=\"local-time\">.*<span>((\\d{1,2}:\\d\\d \\w+ \\w+) on (\\w+ \\d{1,2}, \\d{4}))</span>", htmlString);
         NSArray *timeArray = getCapturesFromRegex(@"Updated: <b>((\\d{1,2}:\\d\\d \\w+ \\w+) on (\\w+ \\d{1,2}, \\d{4}))</b>", htmlString);
         if (timeArray.count > 0)
@@ -702,7 +702,9 @@
 // procss raw text file from NSCF weatherpage
 {
     NSString *rawString = [[NSString alloc] initWithData:[myfetcher data] encoding:NSASCIIStringEncoding];
-    NSArray *tokens = [rawString componentsSeparatedByString:@" "];
+    NSString *chompedString = [[rawString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    NSArray *tokens = [chompedString componentsSeparatedByString:@" "] ;
     NSArray *keys = [@"dateyyyymmdd timehhmmss temp hum dew wspeed wlatest bearing rrate rfall press currentwdir beaufortnumber windunit tempunitnodeg pressunit rainunit windrun presstrendval rmonth ryear rfally intemp inhum wchill temptrend tempth ttempth temptl ttemptl windtm twindtm wgusttm twgusttm pressth tpressth presstl tpresstl version build wgust heatindex humidex uv et solarrad avgbearing rhour forecastnumber isdaylight sensorcontactlost wdir cloudbasevalue cloudbaseunit apptemp sunshinehours currentsolarmax issunny" componentsSeparatedByString:@" "];
     
     NSDictionary* fields = [NSDictionary dictionaryWithObjects:tokens forKeys:keys];    
