@@ -459,10 +459,10 @@
         connectionCount += 1;
         
         
-        HTTPFetcher *fetcherNSCFjson = [[HTTPFetcher alloc] initWithURLString:kNSCFjson
+        HTTPFetcher *fetcherNSCFraw = [[HTTPFetcher alloc] initWithURLString:kNSCFraw
                                                                         receiver:self
-                                                                          action:@selector(receivedJson:)];
-        [fetcherNSCFjson start];
+                                                                          action:@selector(receivedCumulusTxt:)];
+        [fetcherNSCFraw start];
         connectionCount += 1;
 
         HTTPFetcher *fetcherGoldstreamSports = [[HTTPFetcher alloc] initWithURLString:kGoldstreamSportsWeather
@@ -698,39 +698,36 @@
     }
 }
 
--(void)receivedJson:(HTTPFetcher *)myfetcher
-// procss index.wml json file from NSCF weatherpage
+-(void)receivedCumulusTxt:(HTTPFetcher *)myfetcher
+// procss raw text file from NSCF weatherpage
 {
-    NSString *jsonString = [[NSString alloc] initWithData:[myfetcher data] encoding:NSASCIIStringEncoding];
-    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *error;
-    NSDictionary* json = [NSJSONSerialization
-                          JSONObjectWithData:jsonData
-                          options:NSJSONReadingAllowFragments
-                          error:&error];
+    NSString *rawString = [[NSString alloc] initWithData:[myfetcher data] encoding:NSASCIIStringEncoding];
+    NSData *jsonData = [rawString dataUsingEncoding:NSUTF8StringEncoding];
+    //[rawString]
+    NSArray *tokens = [rawString componentsSeparatedByString:@" "];
+    NSArray *keys = [@"dateyyyymmdd timehhmmss temp hum dew wspeed wlatest bearing rrate rfall press currentwdir beaufortnumber windunit tempunitnodeg pressunit rainunit windrun presstrendval rmonth ryear rfally intemp inhum wchill temptrend tempth ttempth temptl ttemptl windtm twindtm wgusttm twgusttm pressth tpressth presstl tpresstl version build wgust heatindex humidex uv et solarrad avgbearing rhour forecastnumber isdaylight sensorcontactlost wdir cloudbasevalue cloudbaseunit apptemp sunshinehours currentsolarmax issunny" componentsSeparatedByString:@" "];
     
-    if (error)
-        NSLog(@"Json Error: %@", error.description);
+    NSDictionary* fields = [NSDictionary dictionaryWithObjects:tokens forKeys:keys];    
 
-    if (json.count>0)
+    if (fields.count>0)
     {
         // high/low since midnight times  h:mm a
-        NSString *highTime = [json objectForKey:@"hightime"];
-        NSString *lowTime = [json objectForKey:@"lowtime"];
+        NSString *highTime = [fields objectForKey:@"ttempth"];
+        NSString *lowTime = [fields objectForKey:@"ttemptl"];
         [highTempRounded setFooterTextWithFade:formatTime(highTime)];
         [lowTempRounded setFooterTextWithFade:formatTime(lowTime)];
         
         // current temp time
         // NSString *tempTimeFormat = @"";  // may have a different format
-        NSString *tempTime = [json objectForKey:@"temptime"];
+        NSString *tempTime = [fields objectForKey:@"timehhmmss"];
         [currentTempRounded setFooterTextWithFade:formatTime(tempTime)];
         
         // current, high/low since midnight temps
-        float tempF = [[json valueForKey:@"temp"] floatValue];
-//        float highTemp = [[json valueForKey:@"hightemp"] floatValue];
-//        float lowTemp = [[json valueForKey:@"lowtemp"] floatValue];
-//        float windChill = [[json valueForKey:@"chill"] floatValue];
-        float windMph = [[json valueForKey:@"windcurrent"] floatValue];
+        float tempF = [[fields valueForKey:@"temp"] floatValue];
+//        float highTemp = [[fields valueForKey:@"hightemp"] floatValue];
+//        float lowTemp = [[fields valueForKey:@"lowtemp"] floatValue];
+//        float windChill = [[fields valueForKey:@"wchill"] floatValue];
+        float windMph = [[fields valueForKey:@"wspeed"] floatValue];
 
         // wind chill
         bool displayChill =  IS_IPAD || [[NSUserDefaults standardUserDefaults] boolForKey:kPrefChill];
@@ -740,11 +737,11 @@
 //                windChill = FAHRENHEIT_TO_CELSIUS(windChill);
             if (IS_IPAD)
             {
-                [chillRounded setMainTextWithFade:[self getTempStringForKey:@"chill" fromDictionary:json]];
+                [chillRounded setMainTextWithFade:[self getTempStringForKey:@"wchill" fromDictionary:fields]];
             }
             else
             {
-                [chillRounded.mainText setText:[self getTempStringForKey:@"chill" fromDictionary:json]];
+                [chillRounded.mainText setText:[self getTempStringForKey:@"wchill" fromDictionary:fields]];
                 [self fade:chillRounded];
             }
         }
@@ -777,13 +774,13 @@
 //        else
 //            [lowTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", lowTemp]];
         
-        NSString *currentTemp = [self getTempStringForKey:@"temp" fromDictionary:json];
+        NSString *currentTemp = [self getTempStringForKey:@"temp" fromDictionary:fields];
         self.currentTempString = [NSMutableString stringWithFormat:@"%@ %@",
                                   currentTemp,
                                   isCelsius ? @"C" : @"F"];
         [currentTempRounded setMainTextWithFade:currentTemp];
-        [highTempRounded setMainTextWithFade:[self getTempStringForKey:@"hightemp" fromDictionary:json]];
-        [lowTempRounded setMainTextWithFade:[self getTempStringForKey:@"lowtemp" fromDictionary:json]];
+        [highTempRounded setMainTextWithFade:[self getTempStringForKey:@"tempth" fromDictionary:fields]];
+        [lowTempRounded setMainTextWithFade:[self getTempStringForKey:@"temptl" fromDictionary:fields]];
 //        if (isCelsius)
 //        {
 //            self.currentTempString = [NSMutableString stringWithFormat:@"%.f\u00B0 C",FAHRENHEIT_TO_CELSIUS(tempF)];
@@ -803,7 +800,7 @@
         
         
         // temp trend
-        float tempChangeF = [[json valueForKey:@"change"] floatValue];
+        float tempChangeF = [[fields valueForKey:@"temptrend"] floatValue];
         
         if (tempChangeF > 1.0)
             [currentTempRounded setImage:[UIImage imageNamed:@"red_arrow.png"]];
@@ -813,7 +810,7 @@
             [currentTempRounded setImage:nil];
 
         // humidity
-        float humidity = [[json objectForKey:@"humidity"] floatValue];
+        float humidity = [[fields objectForKey:@"hum"] floatValue];
         [humidityRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f",humidity]];
         humidityRounded.unitsText.text = @"%";
         
@@ -822,10 +819,10 @@
         if (IS_IPHONE_5 || IS_IPAD)
         {
             
-            float windAveMph = [[json valueForKey:@"windmax"] floatValue];
-            float windMaxMph = [[json valueForKey:@"windgust"] floatValue];
-            int windDirection = [[json valueForKey:@"winddeg"] intValue];
-            NSString *windDirectionLabel = [json objectForKey:@"windlabel"];
+            float windAveMph = [[fields valueForKey:@"wspeed"] floatValue];
+            float windMaxMph = [[fields valueForKey:@"wgust"] floatValue];
+            int windDirection = [[fields valueForKey:@"bearing"] intValue];
+            NSString *windDirectionLabel = [fields objectForKey:@"currentwdir"];
             
             NSLog(@"Wind direction: %@ (%d)", windDirectionLabel, windDirection);
             
@@ -851,23 +848,23 @@
         }
         
         // sunrise/sunset times
-        if (!self.sunsetTime)
-        {
-            self.sunriseTime = formatTime([json objectForKey:@"sunrise"]);
-            self.sunsetTime = formatTime([json objectForKey:@"sunset"]);
-            NSArray *lodArray = [[json objectForKey:@"daylight"] componentsSeparatedByString:@":"];
-            int lodHour = [[lodArray objectAtIndex:0] integerValue];
-            int lodMinute = [[lodArray objectAtIndex:1] integerValue];
-            NSString *lodHourPlural = (lodHour > 1) ? @"s" : @"";
-            NSString *lodMinutePlural = (lodMinute > 1) ? @"s" : @"";
-            self.lodTime = [NSString stringWithFormat:@"%d hour%@ %d minute%@", lodHour, lodHourPlural, lodMinute, lodMinutePlural];
-            NSLog(@"Sunrise/set from weather station: %@, %@", self.sunriseTime, self.sunsetTime);
-        }
-        if (IS_IPAD)
-        {
-            sunriseLabel.text =[NSString stringWithFormat:@"Sunrise: %@\nSunset: %@\nDaylight: %@", _sunriseTime, _sunsetTime, _lodTime];
-            sunriseContainer.alpha = 1;
-        }
+//        if (!self.sunsetTime)
+//        {
+//            self.sunriseTime = formatTime([fields objectForKey:@"sunrise"]);
+//            self.sunsetTime = formatTime([fields objectForKey:@"sunset"]);
+//            NSArray *lodArray = [[fields objectForKey:@"daylight"] componentsSeparatedByString:@":"];
+//            int lodHour = [[lodArray objectAtIndex:0] integerValue];
+//            int lodMinute = [[lodArray objectAtIndex:1] integerValue];
+//            NSString *lodHourPlural = (lodHour > 1) ? @"s" : @"";
+//            NSString *lodMinutePlural = (lodMinute > 1) ? @"s" : @"";
+//            self.lodTime = [NSString stringWithFormat:@"%d hour%@ %d minute%@", lodHour, lodHourPlural, lodMinute, lodMinutePlural];
+//            NSLog(@"Sunrise/set from weather station: %@, %@", self.sunriseTime, self.sunsetTime);
+//        }
+//        if (IS_IPAD)
+//        {
+//            sunriseLabel.text =[NSString stringWithFormat:@"Sunrise: %@\nSunset: %@\nDaylight: %@", _sunriseTime, _sunsetTime, _lodTime];
+//            sunriseContainer.alpha = 1;
+//        }
         
         
         
@@ -879,7 +876,187 @@
         [self loadTempsFinished:YES];
 
 }
-
+/*
+ {
+ NSString *jsonString = [[NSString alloc] initWithData:[myfetcher data] encoding:NSASCIIStringEncoding];
+ NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+ NSError *error;
+ NSDictionary* json = [NSJSONSerialization
+ JSONObjectWithData:jsonData
+ options:NSJSONReadingAllowFragments
+ error:&error];
+ 
+ if (error)
+ NSLog(@"Json Error: %@", error.description);
+ 
+ if (json.count>0)
+ {
+ // high/low since midnight times  h:mm a
+ NSString *highTime = [json objectForKey:@"hightime"];
+ NSString *lowTime = [json objectForKey:@"lowtime"];
+ [highTempRounded setFooterTextWithFade:formatTime(highTime)];
+ [lowTempRounded setFooterTextWithFade:formatTime(lowTime)];
+ 
+ // current temp time
+ // NSString *tempTimeFormat = @"";  // may have a different format
+ NSString *tempTime = [json objectForKey:@"temptime"];
+ [currentTempRounded setFooterTextWithFade:formatTime(tempTime)];
+ 
+ // current, high/low since midnight temps
+ float tempF = [[json valueForKey:@"temp"] floatValue];
+ //        float highTemp = [[json valueForKey:@"hightemp"] floatValue];
+ //        float lowTemp = [[json valueForKey:@"lowtemp"] floatValue];
+ //        float windChill = [[json valueForKey:@"chill"] floatValue];
+ float windMph = [[json valueForKey:@"windcurrent"] floatValue];
+ 
+ // wind chill
+ bool displayChill =  IS_IPAD || [[NSUserDefaults standardUserDefaults] boolForKey:kPrefChill];
+ if ( displayChill &&  (windMph>3 && tempF<=50 && windMph<110 && tempF>-50))
+ {
+ //            if (isCelsius)
+ //                windChill = FAHRENHEIT_TO_CELSIUS(windChill);
+ if (IS_IPAD)
+ {
+ [chillRounded setMainTextWithFade:[self getTempStringForKey:@"chill" fromDictionary:json]];
+ }
+ else
+ {
+ [chillRounded.mainText setText:[self getTempStringForKey:@"chill" fromDictionary:json]];
+ [self fade:chillRounded];
+ }
+ }
+ else
+ {
+ if (IS_IPAD)
+ {
+ [chillRounded setMainTextWithFade:@"--"];
+ }
+ else
+ {
+ [self fadeOut:chillRounded];
+ }
+ }
+ 
+ 
+ // deal with erroneous high/low temp readings
+ 
+ //        if (fabsf(highTemp) >= 100.0)
+ //             [highTempRounded setMainTextWithFade:@"--"];
+ //        else if (isCelsius)
+ //            [highTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0",FAHRENHEIT_TO_CELSIUS(highTemp)]];
+ //        else
+ //            [highTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", highTemp]];
+ //
+ //        if (fabsf(lowTemp) >= 100.0)
+ //            [lowTempRounded setMainTextWithFade:@"--"];
+ //        else if (isCelsius)
+ //            [lowTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0",FAHRENHEIT_TO_CELSIUS(lowTemp)]];
+ //        else
+ //            [lowTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", lowTemp]];
+ 
+ NSString *currentTemp = [self getTempStringForKey:@"temp" fromDictionary:json];
+ self.currentTempString = [NSMutableString stringWithFormat:@"%@ %@",
+ currentTemp,
+ isCelsius ? @"C" : @"F"];
+ [currentTempRounded setMainTextWithFade:currentTemp];
+ [highTempRounded setMainTextWithFade:[self getTempStringForKey:@"hightemp" fromDictionary:json]];
+ [lowTempRounded setMainTextWithFade:[self getTempStringForKey:@"lowtemp" fromDictionary:json]];
+ //        if (isCelsius)
+ //        {
+ //            self.currentTempString = [NSMutableString stringWithFormat:@"%.f\u00B0 C",FAHRENHEIT_TO_CELSIUS(tempF)];
+ //            [currentTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0",FAHRENHEIT_TO_CELSIUS(tempF)]];
+ //            //[highTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0",FAHRENHEIT_TO_CELSIUS(highTemp)]];
+ //            //[lowTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", FAHRENHEIT_TO_CELSIUS(lowTemp)]];
+ //            //[chillRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", FAHRENHEIT_TO_CELSIUS(windChill)]];
+ //        }
+ //        else
+ //        {
+ //            self.currentTempString = [NSMutableString stringWithFormat:@"%.f\u00B0 F",tempF];
+ //            [currentTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0",tempF]];
+ //            // [highTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", highTemp]];
+ //            //[lowTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", lowTemp]];
+ //            //[chillRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", windChill]];
+ //        }
+ 
+ 
+ // temp trend
+ float tempChangeF = [[json valueForKey:@"change"] floatValue];
+ 
+ if (tempChangeF > 1.0)
+ [currentTempRounded setImage:[UIImage imageNamed:@"red_arrow.png"]];
+ else if (tempChangeF < -1.0)
+ [currentTempRounded setImage:[UIImage imageNamed:@"blue_arrow.png"]];
+ else
+ [currentTempRounded setImage:nil];
+ 
+ // humidity
+ float humidity = [[json objectForKey:@"humidity"] floatValue];
+ [humidityRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f",humidity]];
+ humidityRounded.unitsText.text = @"%";
+ 
+ 
+ // wind speed/direction
+ if (IS_IPHONE_5 || IS_IPAD)
+ {
+ 
+ float windAveMph = [[json valueForKey:@"windmax"] floatValue];
+ float windMaxMph = [[json valueForKey:@"windgust"] floatValue];
+ int windDirection = [[json valueForKey:@"winddeg"] intValue];
+ NSString *windDirectionLabel = [json objectForKey:@"windlabel"];
+ 
+ NSLog(@"Wind direction: %@ (%d)", windDirectionLabel, windDirection);
+ 
+ if (isCelsius)
+ {
+ [windCurrentRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f", MPH_TO_MPS(windMph)]];
+ [windAverageRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f", MPH_TO_MPS(windAveMph)]];
+ [windMaxRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f", MPH_TO_MPS(windMaxMph)]];
+ windCurrentRounded.unitsText.text = @"m  / s";
+ windMaxRounded.unitsText.text = @"m  / s";
+ windAverageRounded.unitsText.text = @"m  / s";
+ }
+ else
+ {
+ [windCurrentRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f", windMph]];
+ [windAverageRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f", windAveMph]];
+ [windMaxRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f", windMaxMph]];
+ windCurrentRounded.unitsText.text = @"mph";
+ windMaxRounded.unitsText.text = @"mph";
+ windAverageRounded.unitsText.text = @"mph";
+ }
+ 
+ }
+ 
+ // sunrise/sunset times
+ if (!self.sunsetTime)
+ {
+ self.sunriseTime = formatTime([json objectForKey:@"sunrise"]);
+ self.sunsetTime = formatTime([json objectForKey:@"sunset"]);
+ NSArray *lodArray = [[json objectForKey:@"daylight"] componentsSeparatedByString:@":"];
+ int lodHour = [[lodArray objectAtIndex:0] integerValue];
+ int lodMinute = [[lodArray objectAtIndex:1] integerValue];
+ NSString *lodHourPlural = (lodHour > 1) ? @"s" : @"";
+ NSString *lodMinutePlural = (lodMinute > 1) ? @"s" : @"";
+ self.lodTime = [NSString stringWithFormat:@"%d hour%@ %d minute%@", lodHour, lodHourPlural, lodMinute, lodMinutePlural];
+ NSLog(@"Sunrise/set from weather station: %@, %@", self.sunriseTime, self.sunsetTime);
+ }
+ if (IS_IPAD)
+ {
+ sunriseLabel.text =[NSString stringWithFormat:@"Sunrise: %@\nSunset: %@\nDaylight: %@", _sunriseTime, _sunsetTime, _lodTime];
+ sunriseContainer.alpha = 1;
+ }
+ 
+ 
+ 
+ 
+ }
+ 
+ connectionCount -= 1;
+ if (connectionCount == 0)
+ [self loadTempsFinished:YES];
+ 
+ }
+ */
 
 -(void) receivedNWS:(HTTPFetcher *)myfetcher
 {
