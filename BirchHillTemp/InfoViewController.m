@@ -354,14 +354,14 @@ static NSString *RateAppAlertMsg = @"Open the App Store and submit a review of %
         return cell;
     }
     
-
+    return cell;
 }
 
 -(void)updateSwitchAtIndexPath:(id)sender
 {
     UISwitch *mySwitch = (UISwitch *)sender;
-    int myIndex = mySwitch.tag;
-    NSLog(@"Switch: %d", mySwitch.tag );
+    NSInteger myIndex = [mySwitch tag];
+    NSLog(@"Switch: %ld", (long)myIndex );
     [[NSUserDefaults standardUserDefaults] setBool:mySwitch.on forKey:[settingsKeys objectAtIndex:myIndex]];
     [[NSUserDefaults standardUserDefaults] synchronize];
     self.defaultsChanged = YES;
@@ -399,7 +399,7 @@ static NSString *RateAppAlertMsg = @"Open the App Store and submit a review of %
     }
 
 }
-
+#warning just wut is this popover bubble color picker stuff
 #pragma mark -
 #pragma mark WEPopoverControllerDelegate implementation
 
@@ -464,7 +464,7 @@ static NSString *RateAppAlertMsg = @"Open the App Store and submit a review of %
 {
     
     UIColor *selectedColor = [GzColors colorFromHex:hexColor];
-    float *components = CGColorGetComponents(selectedColor.CGColor);
+    const CGFloat *components = CGColorGetComponents(selectedColor.CGColor);
     
 //    const CGFloat  *components = CGColorGetComponents(self.bubbleColor.CGColor);
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
@@ -505,7 +505,7 @@ static NSString *RateAppAlertMsg = @"Open the App Store and submit a review of %
     // e.g. self.myOutlet = nil;
 }
 
-- (NSUInteger)supportedInterfaceOrientations {
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
 }
 - (BOOL) shouldAutorotate {

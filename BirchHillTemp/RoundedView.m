@@ -94,10 +94,7 @@
         _unitsText.backgroundColor = [UIColor clearColor];
         _unitsText.textColor = [UIColor blackColor];
         _unitsText.font = [UIFont systemFontOfSize:12];
-        if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_6_0)
-            _unitsText.minimumScaleFactor = 0.1;
-        else
-            _unitsText.minimumFontSize = 6;
+        _unitsText.minimumScaleFactor = 0.1;
         _unitsText.adjustsFontSizeToFitWidth = YES;
         _unitsText.numberOfLines = 3;
         _unitsText.textAlignment = NSTextAlignmentCenter;
@@ -114,10 +111,7 @@
         
         CGRect mainRect = CGRectMake(0, (hasHeader ? kMainTextInset : 0), self.bounds.size.width, vHeight-kMainTextInset * (hasFooter ? 1 : 0) - kMainTextInset * (hasHeader ? 1 : 0));
         _mainText = [[UILabel alloc] initWithFrame:mainRect];
-        if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_6_0)
-            _unitsText.minimumScaleFactor = 0.1;
-        else
-            _unitsText.minimumFontSize = 6;
+        _mainText.minimumScaleFactor = 0.1;
         _mainText.numberOfLines = 1;
         _mainText.backgroundColor = [UIColor clearColor];
         _mainText.textColor = [UIColor blackColor];
@@ -131,9 +125,11 @@
         }
         else
         {
-            CGSize size = [@"XXX" sizeWithFont:[UIFont systemFontOfSize:12.0]];
+//            CGSize size = [@"XXX" sizeWithFont:[UIFont systemFontOfSize:12.0]];
+//CGRect rect = [@"XXX" boundingRectWithSize:CGSizeMake(tableWidth, 999) options: 0 context:nil];
+
 //            NSLog(@"Size: %f, %f", size.width, size.height);
-            _mainText.font = [UIFont systemFontOfSize:(_mainText.frame.size.height) * 12.0 / size.height *1.2];
+            _mainText.font = [UIFont systemFontOfSize:(_mainText.frame.size.height) * 12.0 / mainRect.size.height *1.2];
         }
 
         
@@ -234,8 +230,12 @@
 
 -(void)fitSize
 {
+//    NSAttributedString *myText = [NSAttributedString alloc] initWithString: [self.mainText.text isEqualToString:@""] ? @"XXX" : self.mainText.text];
+//    CGSize size = [myText sizeWithFont:[UIFont systemFontOfSize:12.0]];
     NSString *myText = [self.mainText.text isEqualToString:@""] ? @"XXX" : self.mainText.text;
-    CGSize size = [myText sizeWithFont:[UIFont systemFontOfSize:12.0]];
+
+    CGSize size = [myText sizeWithAttributes:nil];
+
     NSLog(@"Size: %f, %f", size.width, size.height);
     self.mainText.font = [UIFont systemFontOfSize:(self.mainText.frame.size.height) * 12.0 / size.height *1.2];
 }

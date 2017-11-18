@@ -87,8 +87,8 @@
  
     
     // add units selector button
-    unitsButton = [[UIBarButtonItem alloc] initWithTitle:@"°F" style:UIBarButtonItemStyleBordered target:self action:@selector(changeUnits:)];
-    [unitsButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:18], UITextAttributeFont,nil] forState:UIControlStateNormal];
+    unitsButton = [[UIBarButtonItem alloc] initWithTitle:@"°F" style:UIBarButtonItemStylePlain target:self action:@selector(changeUnits:)];
+    [unitsButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:18], NSFontAttributeName,nil] forState:UIControlStateNormal];
     _navBarItem.rightBarButtonItem = unitsButton;
     
     // localize tab bar titles
@@ -323,7 +323,7 @@
         NSLog(@"Last vc %@", [[self.tabBarController.viewControllers lastObject] description]);
         InfoViewController *ivc = [self.tabBarController.viewControllers lastObject];
         
-        if (UIDeviceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation))
+        if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation))
         {
             UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard_iPad" bundle:nil];
             UIViewController *vc = (UIViewController *)[sb instantiateViewControllerWithIdentifier:@"landscape"];
@@ -706,11 +706,12 @@
     
     NSArray *tokens = [chompedString componentsSeparatedByString:@" "] ;
     NSArray *keys = [@"dateyyyymmdd timehhmmss temp hum dew wspeed wlatest bearing rrate rfall press currentwdir beaufortnumber windunit tempunitnodeg pressunit rainunit windrun presstrendval rmonth ryear rfally intemp inhum wchill temptrend tempth ttempth temptl ttemptl windtm twindtm wgusttm twgusttm pressth tpressth presstl tpresstl version build wgust heatindex humidex uv et solarrad avgbearing rhour forecastnumber isdaylight sensorcontactlost wdir cloudbasevalue cloudbaseunit apptemp sunshinehours currentsolarmax issunny" componentsSeparatedByString:@" "];
+    NSDictionary* fields;
     
-    NSDictionary* fields = [NSDictionary dictionaryWithObjects:tokens forKeys:keys];    
-
-    if (fields.count>0)
+    if ([tokens count] == [keys count])
     {
+        fields = [NSDictionary dictionaryWithObjects:tokens forKeys:keys];
+
         // high/low since midnight times  h:mm a
         NSString *highTime = [fields objectForKey:@"ttempth"];
         NSString *lowTime = [fields objectForKey:@"ttemptl"];
@@ -1406,11 +1407,11 @@ NSString *timeTo24Hour(NSString *timeString)
         NSLog(@"Tag %d, %.f, %.f", i, [self.view viewWithTag:i].frame.origin.x, [vc.view viewWithTag:i].frame.origin.x);
         [self.view viewWithTag:i].frame = [vc.view viewWithTag:i].frame;
     }
-    humidityView.hidden = UIDeviceOrientationIsLandscape(toInterfaceOrientation);
+    humidityView.hidden = UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
     
 }
 
-- (NSUInteger)supportedInterfaceOrientations {
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
 }
 - (BOOL) shouldAutorotate {

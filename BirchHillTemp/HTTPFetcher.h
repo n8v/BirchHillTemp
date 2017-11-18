@@ -80,7 +80,7 @@
 
 - (id)initWithURLString:(NSString *)aURLString
                 timeout:(NSTimeInterval)aTimeoutInterval
-            cachePolicy:(NSURLCacheStoragePolicy)aCachePolicy
+            cachePolicy:(NSURLRequestCachePolicy)aCachePolicy
                receiver:(id)aReceiver
                  action:(SEL)receiverAction;
 

@@ -49,7 +49,7 @@ NSArray *getCapturesFromRegex(NSString *regexString, NSString *fromString)
 {
     
     // returns nil if no captures found
-    NSMutableArray *capturesArray = [[NSMutableArray alloc] initWithObjects: nil] ;
+    NSMutableArray *capturesArray = [[NSMutableArray alloc] init] ;
     NSError *error = NULL;
     NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:regexString
                                                                       options:NSRegularExpressionCaseInsensitive
@@ -100,7 +100,7 @@ NSString *stripHTML(NSString *html) {
     else
     {
         NSMutableString *stripped = [[regex stringByReplacingMatchesInString:html
-                                                                     options:NSRegularExpressionCaseInsensitive
+                                                                     options:NSMatchingReportCompletion
                                                                        range:NSMakeRange(0, [html length])
                                                                 withTemplate:@""] mutableCopy];
         stripped = [[stripped stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] mutableCopy];

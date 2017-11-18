@@ -261,7 +261,7 @@
         
         UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                        initWithTitle: NSLocalizedString(@"Back",@"Back")
-                                       style: UIBarButtonItemStyleBordered
+                                       style: UIBarButtonItemStylePlain
                                        target: nil action: nil];
         [self.navigationItem setBackBarButtonItem: backButton];
         [segue.destinationViewController setDetailText:alertSummary];
@@ -505,7 +505,7 @@
 //    
 //}
 
-- (NSUInteger)supportedInterfaceOrientations {
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return IS_IPAD ? UIInterfaceOrientationMaskAll : UIInterfaceOrientationMaskPortrait;
 }
 - (BOOL) shouldAutorotate {

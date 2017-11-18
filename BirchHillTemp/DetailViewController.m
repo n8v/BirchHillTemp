@@ -283,7 +283,7 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    if ( UIDeviceOrientationIsPortrait( [UIApplication sharedApplication].statusBarOrientation ))
+    if ( UIInterfaceOrientationIsPortrait( [UIApplication sharedApplication].statusBarOrientation ))
     {
         webView.frame = CGRectMake(0,0,768, 911);
     }
@@ -294,8 +294,8 @@
     activityIndicator.center = webView.center;
 }
 
-- (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationPortrait; // UIInterfaceOrientationMaskAll;
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait; // UIInterfaceOrientationMaskAll;
 }
 - (BOOL) shouldAutorotate {
     return NO;  // IS_IPAD;

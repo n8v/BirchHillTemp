@@ -100,9 +100,9 @@
 		// Looks like we're not "visible" ... propogate rotation info
 		[super willRotateToInterfaceOrientation:toOrientation duration:duration];
 		
-		UIViewController *master = [self.viewControllers objectAtIndex:0];
-		NSObject *theDelegate = (NSObject *)self.delegate;
-		
+//        UIViewController *master = [self.viewControllers objectAtIndex:0];
+//        NSObject *theDelegate = (NSObject *)self.delegate;
+/*
 #define YOU_DONT_FEEL_QUEAZY_ABOUT_THIS_BECAUSE_IT_PASSES_THE_APP_STORE 1		
 		
 #if YOU_DONT_FEEL_QUEAZY_ABOUT_THIS_BECAUSE_IT_PASSES_THE_APP_STORE
@@ -118,7 +118,7 @@
 			if (theDelegate && [theDelegate respondsToSelector:@selector(splitViewController:willHideViewController:withBarButtonItem:forPopoverController:)]) {
 
 				@try {
-					UIPopoverController *popover = [super valueForKey:@"_hiddenPopoverController"];
+//                    UIPopoverController *popover = [super valueForKey:@"_hiddenPopoverController"];
 //					objc_msgSend(theDelegate, @selector(splitViewController:willHideViewController:withBarButtonItem:forPopoverController:), self, master, button, popover);
                     
 				}
@@ -137,9 +137,11 @@
 				}
 			}
 		}
+ */
 	}
 	
 	//debug_NSLog(@"MINE WillRotate ---- sender = %@  to = %d   from = %d", [sender class], toOrientation, fromOrientation);
+ 
 }
 
 /*

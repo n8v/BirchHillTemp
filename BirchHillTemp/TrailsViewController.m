@@ -82,7 +82,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 //    NSLog(@"Cell %d - %d", indexPath.section, indexPath.row);
-    int mySection = indexPath.section-( includeOverview ? 1 : 0);
+    long mySection = indexPath.section - ( includeOverview ? 1 : 0);
     if (includeOverview && indexPath.section == 0 && ![overviewText isEqualToString:@""])
     {
             static NSString *CellIdentifier = @"OverviewCell";
@@ -146,7 +146,7 @@
     {
         // regular trail cell
         
-        int mySection = includeOverview ? indexPath.section - 1 : indexPath.section;
+        long mySection = includeOverview ? indexPath.section - 1 : indexPath.section;
         static NSString *CellIdentifier = @"TrailCell";
         UITableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil)
@@ -191,7 +191,7 @@
         
         // difficulty graphic
         NSString *difficulty = [[[[tableSections objectAtIndex:mySection] objectForKey:@"trails"] objectAtIndex:indexPath.row] objectForKey:@"difficulty"];
-        int diffIndex = [[NSArray arrayWithObjects:@"EASY", @"MORE DIFFICULT", @"DIFFICULT",  @"MOST DIFFICULT", @"VERY DIFFICULT", @"",nil]
+        unsigned long diffIndex = [[NSArray arrayWithObjects:@"EASY", @"MORE DIFFICULT", @"DIFFICULT",  @"MOST DIFFICULT", @"VERY DIFFICULT", @"",nil]
                          indexOfObject:difficulty];
         
         switch (diffIndex) {
@@ -284,7 +284,7 @@
 
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                    initWithTitle: NSLocalizedString(@"Back",@"Back")
-                                   style: UIBarButtonItemStyleBordered
+                                   style: UIBarButtonItemStylePlain
                                    target: nil action: nil];
     [self.navigationItem setBackBarButtonItem: backButton];
 
@@ -375,7 +375,7 @@
     
     
     trailsArray = [tempTrails mutableCopy];
-    NSLog(@"Got %d trails", trailsArray.count);
+    NSLog(@"Got %lu trails", (unsigned long)trailsArray.count);
     for (NSDictionary *trail in trailsArray)
         NSLog(@"%@",[trail objectForKey:@"condition"]);
     
@@ -652,7 +652,7 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (NSUInteger)supportedInterfaceOrientations {
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
 }
 - (BOOL) shouldAutorotate {

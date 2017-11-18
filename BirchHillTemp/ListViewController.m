@@ -201,10 +201,11 @@
     // probably shouldn't hard code this width, but for now it's the same on iPhone and iPad
     #define tableWidth 280.0
     
-    NSString *str = [[allEntries objectAtIndex:indexPath.row] valueForKey:@"title"];
-    CGSize size = [str sizeWithFont:[UIFont boldSystemFontOfSize:18] constrainedToSize:CGSizeMake(tableWidth, 9999) lineBreakMode:NSLineBreakByWordWrapping];
-    NSLog(@"%f",size.height);
-    return size.height + 30;
+    NSAttributedString *str = [[allEntries objectAtIndex:indexPath.row] valueForKey:@"title"];
+//    CGSize size = [str sizeWithFont:[UIFont boldSystemFontOfSize:18] constrainedToSize:CGSizeMake(tableWidth, 9999) lineBreakMode:NSLineBreakByWordWrapping];
+    CGRect rect = [str boundingRectWithSize:CGSizeMake(tableWidth, 999) options: 0 context:nil];
+    NSLog(@"size height %f",rect.size.height);
+    return rect.size.height + 30;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -220,7 +221,7 @@
     
     if (IS_IPAD)
     {
-        NSLog(@"Row %d", indexPath.row);
+        NSLog(@"Row %d", (int) indexPath.row);
         NSString *urlString = [[allEntries objectAtIndex:indexPath.row] valueForKey:@"link"];
         [_detailViewController setDetailURL:urlString];
         NSLog(@"URL: %@", urlString);
@@ -244,7 +245,7 @@
     
     if ([[segue identifier] isEqualToString:@"showRSSdetail"])
     {
-        int selectedRow = self.tableView.indexPathForSelectedRow.row;
+        NSInteger selectedRow = self.tableView.indexPathForSelectedRow.row;
         [[segue destinationViewController] setDetailURL:[[allEntries objectAtIndex:selectedRow] valueForKey:@"link"]];
 
         /* // format the date
@@ -271,7 +272,7 @@
         
         UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                        initWithTitle: NSLocalizedString(@"Back",@"Back")
-                                       style: UIBarButtonItemStyleBordered
+                                       style: UIBarButtonItemStylePlain
                                        target: nil action: nil];
         [self.navigationItem setBackBarButtonItem: backButton];
 
@@ -378,7 +379,7 @@ NSString *cleanHTML(NSString *str)
 }
 
 - (NSMutableArray *) getCapturesFromRegex:(NSString *)regexString fromString:(NSString *)fromString {
-    NSMutableArray *capturesArray = [[NSMutableArray alloc] initWithObjects: nil] ;
+    NSMutableArray *capturesArray = [[NSMutableArray alloc] init] ;
     NSError *error = NULL;
     NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:regexString
                                                                       options:NSRegularExpressionCaseInsensitive
@@ -407,7 +408,7 @@ NSString *cleanHTML(NSString *str)
     return capturesArray;
 }
 
-- (NSUInteger)supportedInterfaceOrientations {
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
 }
 - (BOOL) shouldAutorotate {

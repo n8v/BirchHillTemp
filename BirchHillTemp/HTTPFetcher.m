@@ -88,7 +88,7 @@
 //
 - (id)initWithURLString:(NSString *)aURLString
                 timeout:(NSTimeInterval)aTimeoutInterval
-            cachePolicy:(NSURLCacheStoragePolicy)aCachePolicy
+            cachePolicy:(NSURLRequestCachePolicy)aCachePolicy
                receiver:(id)aReceiver
                  action:(SEL)receiverAction
 {
@@ -180,8 +180,10 @@
 	connection = nil;
 	
 	challenge = nil;
-	
-	[receiver performSelector:action withObject:self];
+    if (receiver && action) {
+        [receiver performSelector:action withObject:self];
+    }
+    action = nil;
 	receiver = nil;
 
 	data = nil;

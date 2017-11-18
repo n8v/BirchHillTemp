@@ -1,4 +1,4 @@
-//
+
 //  MapViewController.m
 //  BirchHillTemp
 //
@@ -27,7 +27,7 @@
     
     mapImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"trails-2013-1.png"]];
     mapImageView.contentScaleFactor = .5;
-    CGRect rect = self.scrollView.frame;
+//    CGRect rect = self.scrollView.frame;
     [self.scrollView addSubview:mapImageView];
     self.scrollView.contentSize = mapImageView.frame.size;
     
@@ -108,7 +108,7 @@
     self.scrollView.contentSize = mapImageView.frame.size;
 }
 
-- (NSUInteger)supportedInterfaceOrientations {
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return  UIInterfaceOrientationMaskAll;
     
 }
