@@ -37,7 +37,7 @@ if (file_exists($cachefile)) {
 # https://stackoverflow.com/questions/32641072/current-observation-feed-from-weather-gov-forbidden-403
 $options = array(
   'http'=> array(
-    'header'=>"User-Agent: Birch Hill Ski Temperature iOS App/v2.15; nathan@tonallyaweso.me\r\n"
+    'header'=>"User-Agent: Birch Hill Ski Temperature iOS App/v2.15; contact tonallyaweso.me\r\n"
   )
 );
 
