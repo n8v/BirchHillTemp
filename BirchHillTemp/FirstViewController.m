@@ -575,54 +575,62 @@
 
 -(void)receivedGoldstreamSports:(HTTPFetcher *)myfetcher
 {
-    NSString *htmlString = [[NSString alloc] initWithData:[myfetcher data] encoding:NSASCIIStringEncoding];
+    NSString *rawString = [[NSString alloc] initWithData:[myfetcher data] encoding:NSASCIIStringEncoding];
+    NSString *chompedString = [[rawString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
-    if (htmlString.length > 0)
+    NSArray *tokens = [chompedString componentsSeparatedByString:@" "] ;
+    NSArray *keys = [@"dateyyyymmdd timehhmmss temp hum dew wspeed wlatest bearing rrate rfall press currentwdir beaufortnumber windunit tempunitnodeg pressunit rainunit windrun presstrendval rmonth ryear rfally intemp inhum wchill temptrend tempth ttempth temptl ttemptl windtm twindtm wgusttm twgusttm pressth tpressth presstl tpresstl version build wgust heatindex humidex uv et solarrad avgbearing rhour forecastnumber isdaylight sensorcontactlost wdir cloudbasevalue cloudbaseunit apptemp sunshinehours currentsolarmax issunny" componentsSeparatedByString:@" "];
+    NSDictionary* fields;
+    
+    if ([tokens count] == [keys count])
     {
+        fields = [NSDictionary dictionaryWithObjects:tokens forKeys:keys];
         
-//        NSArray *timeArray = getCapturesFromRegex(@"<caption>Conditions at local time ([0-9][0-9]:[0-9][0-9]) on (.*?[0-9]{4})", htmlString);
-//        NSArray *timeArray = getCapturesFromRegex(@"<span id=\"update-time\">([^<]+)</span>", htmlString);
-        NSLog(@"%@", htmlString);
-//        NSArray *timeArray = getCapturesFromRegex(@"<div class=\"local-time\">.*<span>((\\d{1,2}:\\d\\d \\w+ \\w+) on (\\w+ \\d{1,2}, \\d{4}))</span>", htmlString);
-        NSArray *timeArray = getCapturesFromRegex(@"Updated: <b>((\\d{1,2}:\\d\\d \\w+ \\w+) on (\\w+ \\d{1,2}, \\d{4}))</b>", htmlString);
-        if (timeArray.count > 0)
-        {
-            NSString *gsTime = [timeArray objectAtIndex:1];
-            NSString *gsDate = [NSString stringWithFormat:@"%@ %@", [timeArray objectAtIndex:2], gsTime];
-            
-            NSLog(@"GS string: %@", gsDate);
-//            NSArray *tempArray = getCapturesFromRegex(@"<td>Temperature</td>\n\\s*<td>([0-9\\.\\-]*?)&", htmlString);
-//            if (tempArray.count > 0)  { NSLog(@"GS Temp: %@", [tempArray objectAtIndex:0]); }
-            
-            NSString *formatString = @"d MMMM yyyy' 'H:mm";
-            if (secondsSinceTimeString(gsDate, formatString) > 24*3600)
-            {
-                // old date, don't use it
-                [goldstreamRounded setMainTextWithFade:@"--"];
-                [goldstreamRounded setFooterTextWithFade:@"--"];
-                
-            }
-            else
-            {
-                /// date is good, so get the temp
-//                NSArray *tempArray = getCapturesFromRegex(@"<td>Temperature</td>\n\\s*<td>([0-9\\.\\-]*?)&", htmlString);
-//                NSArray *tempArray = getCapturesFromRegex(@"<span class=\"wx-value\">([\\d.-]+)</span>", htmlString);
-                NSArray *tempArray = getCapturesFromRegex(@"<td[^>]*>Temperature</td>\\s*<td>\\s*<b>([\\d.-]+)</b>", htmlString);
-                if (tempArray.count > 0)
-                {
-                    float tempF = [[tempArray objectAtIndex:0] floatValue];
-                    [goldstreamRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", isCelsius ? FAHRENHEIT_TO_CELSIUS(tempF) : tempF ]];
-                    
-                }
+        // current temp time
+        // NSString *tempTimeFormat = @"";  // may have a different format
+//        [currentTempRounded setFooterTextWithFade:formatTime(tempTime)];
+        
+        // current, high/low since midnight temps
+        float tempF = [[fields valueForKey:@"temp"] floatValue];
+    
+        NSString *gsTime = [fields valueForKey:@"timehhmmss"];
+        NSString *gsDate = [fields valueForKey:@"dateyyyymmdd"]; // lies, it's 30/12/17
+        NSString *gsDateTime = [NSString stringWithFormat:@"%@ %@", gsDate, gsTime];
+    
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"dd/MM/yy' 'HH:mm:ss"];
+//        [df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+        NSDate *myDate = [df dateFromString:gsDateTime];
+        NSTimeInterval interval = [myDate timeIntervalSinceNow];
+//        return -interval;
 
-            }
-            [goldstreamRounded setFooterTextWithFade:formatTimeString(gsTime, @"H:mm")];
-            
+
+        NSLog(@"GS string: %@", gsDateTime);
+        NSLog(@"Parsed GS date: %@", myDate);
+        NSLog(@"Age in seconds: %f", interval);
+
+        // don't display if it's over 2 hours old
+        if (fabs(interval) > 2*60*60)
+        {
+            [goldstreamRounded setMainTextWithFade:@"--"];
+            [goldstreamRounded setFooterTextWithFade:@"--"];
         }
-        else {
-            NSLog(@"No time/date found");
+        else
+        {
+            [goldstreamRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", isCelsius ? FAHRENHEIT_TO_CELSIUS(tempF) : tempF ]];
         }
+
+        [df setDateFormat:@"H:mm"];
+        [df setTimeStyle:NSDateFormatterShortStyle];
+        NSString *timeDisplayString = [df stringFromDate:myDate];
+
+        [goldstreamRounded setFooterTextWithFade:timeDisplayString];
+        
     }
+    else {
+        NSLog(@"No time/date found");
+    }
+
 
     connectionCount -= 1;
     if (connectionCount == 0)

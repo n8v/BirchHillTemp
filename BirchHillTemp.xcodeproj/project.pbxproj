@@ -50,7 +50,6 @@
 		4E34DCE6148A9BC100A1822D /* HTTPFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E34DCAD148A9BC100A1822D /* HTTPFetcher.m */; };
 		4E34DCF0148A9BC100A1822D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4E34DCC2148A9BC100A1822D /* Settings.bundle */; };
 		4E34DCF6148A9BC100A1822D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E34DCCC148A9BC100A1822D /* main.m */; };
-		4E3B7B6C16B8E8520002611A /* nscf.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B7B6B16B8E8520002611A /* nscf.json */; };
 		4E52B2D7148C1FF00054BDF7 /* WebCamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E52B2D5148C1FF00054BDF7 /* WebCamViewController.m */; };
 		4E5CA31D16988B3B00E539F4 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 4E5CA31C16988B3B00E539F4 /* style.css */; };
 		4E61DB6216A67AA7009FDE36 /* SafariAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E61DB6116A67AA7009FDE36 /* SafariAlertView.m */; };
@@ -192,7 +191,6 @@
 		4E34DCCC148A9BC100A1822D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = BirchHillTemp/main.m; sourceTree = SOURCE_ROOT; };
 		4E34DCD3148A9BC100A1822D /* BirchHillTemp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BirchHillTemp_Prefix.pch; path = BirchHillTemp/BirchHillTemp_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		4E34DD0B148A9F3400A1822D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = BirchHillTemp/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
-		4E3B7B6B16B8E8520002611A /* nscf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = nscf.json; path = BirchHillTemp/nscf.json; sourceTree = "<group>"; };
 		4E52B2D5148C1FF00054BDF7 /* WebCamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebCamViewController.m; path = BirchHillTemp/WebCamViewController.m; sourceTree = SOURCE_ROOT; };
 		4E52B2D6148C1FF00054BDF7 /* WebCamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebCamViewController.h; path = BirchHillTemp/WebCamViewController.h; sourceTree = SOURCE_ROOT; };
 		4E5CA31C16988B3B00E539F4 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = style.css; path = BirchHillTemp/style.css; sourceTree = SOURCE_ROOT; };
@@ -341,7 +339,6 @@
 			isa = PBXGroup;
 			children = (
 				4E0C523018156D9300146FBF /* Info.plist */,
-				4E3B7B6B16B8E8520002611A /* nscf.json */,
 				4EDD509116AB276400D7F853 /* MainStoryboard_iPhone.storyboard */,
 				4E082D4616ADBDE200E16AB1 /* MainStoryboard_iPad.storyboard */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -580,7 +577,8 @@
 				LastUpgradeCheck = 0910;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = 9ZK8488AP5;
+						DevelopmentTeam = SM7R79HUTL;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -690,7 +688,6 @@
 				4E27248416B44A6F00B8E26B /* 19-gear.png in Resources */,
 				4E27248516B44A6F00B8E26B /* 103-map.png in Resources */,
 				4EFAA4871814451D00FD7900 /* Icon-7@2x.png in Resources */,
-				4E3B7B6C16B8E8520002611A /* nscf.json in Resources */,
 				4E9934A116BBFDB800A76F78 /* trails-2013-2.png in Resources */,
 				4E9934A216BBFDB800A76F78 /* trails-2013-1.png in Resources */,
 				4EFAA48A1814451D00FD7900 /* Icon-iPad-7@2x.png in Resources */,
@@ -782,7 +779,9 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = SM7R79HUTL;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -797,6 +796,7 @@
 				PRODUCT_NAME = BirchHillTemp;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;
 			};
@@ -810,7 +810,9 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = SM7R79HUTL;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BirchHillTemp/BirchHillTemp_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -821,6 +823,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MarmotMedia.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = BirchHillTemp;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -845,7 +848,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -857,9 +860,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "5DE7DD3D-C818-4C1D-AAA4-7BF6A2F3831E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5DE7DD3D-C818-4C1D-AAA4-7BF6A2F3831E";
+				PROVISIONING_PROFILE = "39e328a2-cad2-430a-b8d7-8c6b9e15b3d7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "39e328a2-cad2-430a-b8d7-8c6b9e15b3d7";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;
@@ -871,8 +875,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = SM7R79HUTL;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BirchHillTemp/BirchHillTemp_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -883,7 +889,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MarmotMedia.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = BirchHillTemp;
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "888A9989-6ABC-461E-B93B-431DA54FF2EE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -922,8 +929,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "39e328a2-cad2-430a-b8d7-8c6b9e15b3d7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "39e328a2-cad2-430a-b8d7-8c6b9e15b3d7";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -959,9 +966,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "A117D54E-81A0-4D5D-9C15-F211FAD09B67";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A117D54E-81A0-4D5D-9C15-F211FAD09B67";
+				PROVISIONING_PROFILE = "39e328a2-cad2-430a-b8d7-8c6b9e15b3d7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "39e328a2-cad2-430a-b8d7-8c6b9e15b3d7";
 				SDKROOT = iphoneos;
 			};
 			name = Release;

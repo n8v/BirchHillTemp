@@ -62,8 +62,7 @@
 #define kNSCFxml @"https://www.nscfairbanks.org/feed/"   // news feed
 #define kNSCFDonationPage @"http://nordicskicluboffairbanks.wildapricot.org/Donate"
 
-//#define kGoldstreamSportsWeather @"http://goldstreamsports.com/weather/index.htm"
-#define kGoldstreamSportsWeather @"https://www.wunderground.com/cgi-bin/findweather/getForecast?query=pws:KAKFAIRB49"
+#define kGoldstreamSportsWeather @"http://www.goldstreamsports.com/weather/realtime.txt"
 // custom alert message uploaded here
 #define kCustomAlert @"http://nscfairbanks.org/weatherpage/wap/alert.json"
 
