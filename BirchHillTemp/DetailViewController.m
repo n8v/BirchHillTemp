@@ -226,24 +226,25 @@
 -(void)receivedNews:(HTTPFetcher *)myFetcher
 {
     NSString *htmlstr = [[NSString alloc] initWithData:[myFetcher data] encoding:NSUTF8StringEncoding];
-    NSLog(@"Returned html: %@", htmlstr);
+//    NSLog(@"Returned html: %@", htmlstr);
     
 //    NSString *regex = @"(?s)<h2.*?>(.*?)</h2>.*<span class=.createdate.>(.*?)</span>.*<div class=.article-content.>(.*?)</div>";
-    NSString *regex = @"(?s)<h2.*?>(.*?)</h2>.*?</div>.*?</div>(.*?)<dd class=.modified.>.*?Last updated: (.*?)\\s*?</dd>";
-    NSArray *arrayWeb = getCapturesFromRegex(regex , htmlstr);
-
+//    NSString *regex = @"(?s)<h2.*?>(.*?)</h2>.*?</div>.*?</div>(.*?)<dd class=.modified.>.*?Last updated: (.*?)\\s*?</dd>";
+//    NSArray *arrayWeb = getCapturesFromRegex(regex , htmlstr);
+//
     NSString *htmlHeader = [NSString stringWithFormat: @"<head><style type='text/css'>%@</style><meta name='viewport' content='width=device-width; initial-scale=1.0; maximum-scale=2.0; user-scalable=1'/></head>", css];
-    if ([arrayWeb count] > 2)
+    if ([htmlstr length])
     {
         //NSString *createDate = [arrayWeb objectAtIndex:1];
-        NSString *pageHeader = [arrayWeb objectAtIndex:0];
-        NSString *body = [arrayWeb objectAtIndex:1];
-        NSString *pageFormat = @"<html>%@<body><h3>%@</h3>%@</body></html>";
-        NSString *htmlToLoad = [NSString stringWithFormat:pageFormat,htmlHeader,pageHeader, body] ;
+//        NSString *pageHeader = [arrayWeb objectAtIndex:0];
+//        NSString *body = [arrayWeb objectAtIndex:1];
+//        NSString *pageFormat = @"<html>%@<body><h3>%@</h3>%@</body></html>";
+//        NSString *htmlToLoad = [NSString stringWithFormat:pageFormat,htmlHeader,pageHeader, body] ;
 
-        // this base URL is crucial to make sure images and other page content load correctly
+//        // this base URL is crucial to make sure images and other page content load correctly
         NSURL *url = [NSURL URLWithString:kNSCFHomeUrl];
-        [webView loadHTMLString:htmlToLoad baseURL:url];
+//        [webView loadHTMLString:htmlToLoad baseURL:url];
+        [webView loadHTMLString:htmlstr baseURL:url];
 
 //        NSLog(@"HTML to load: %@", htmlToLoad);
         CGRect rect = webView.frame;

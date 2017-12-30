@@ -50,17 +50,17 @@
 #define kForecastxml @"http://pafc.arh.noaa.gov/rss/rssget.php?zone=AKZ222"
 #define kForecastText @"http://pafc.arh.noaa.gov/rss/fcst.php?zone=AKZ222"
 #define kNWSurl @"http://weather.noaa.gov/weather/current/PAFA.html"
-#define kNSCFurl @"http://www.nscfairbanks.org/weatherpage/wx.html"
-#define kTrailsURL @"http://www.nscfairbanks.org/new/index.php?option=com_content&view=category&layout=blog&id=16&Itemid=100014"
+#define kNSCFurl @"https://www.nscfairbanks.org/weather/"
+#define kTrailsURL @"https://www.nscfairbanks.org/trails/"
 #define kTrailsXML @"http://www.nscfairbanks.org/index.php?option=com_content&view=category&format=feed&type=rss&id=16"
 #define kNSCFHomeUrl @"http://www.nscfairbanks.org"
 #define kNSCFjson @"http://nscfairbanks.org/weatherpage/wap/index.wml"
-#define kNSCFraw @"https://sandbox.thinkfarbeyond.com/wx/test/realtime.txt"
+#define kNSCFraw @"https://www.nscfairbanks.org/wp-content/nscf/weather/realtime.txt"
 #define kNSCFrawextra @"http://nscfairbanks.org/weatherpage/clientrawextra.txt"
 #define kNSCFrawhour @"http://nscfairbanks.org/weatherpage/clientrawhour.txt"
 #define kSkiRaceUrl @"http://www.skiraces.sportalaska.com"
-#define kNSCFxml @"http://www.nscfairbanks.org/index.php?format=feed&type=rss"   // news feed
-#define kNSCFDonationPage @"https://nscf.memberclicks.net/index.php?option=com_mc&view=mc&mcid=form_108585&test=1"
+#define kNSCFxml @"https://www.nscfairbanks.org/feed/"   // news feed
+#define kNSCFDonationPage @"http://nordicskicluboffairbanks.wildapricot.org/Donate"
 
 //#define kGoldstreamSportsWeather @"http://goldstreamsports.com/weather/index.htm"
 #define kGoldstreamSportsWeather @"https://www.wunderground.com/cgi-bin/findweather/getForecast?query=pws:KAKFAIRB49"
