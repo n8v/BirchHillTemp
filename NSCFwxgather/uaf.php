@@ -2,7 +2,7 @@
 $tag = "UAF";
 $url = "http://akclimate.org/wview/wxrss.xml";
 $cachefile = './cache/uafwx.json';
-$cache_ttl_seconds = 60 * 0.0005;
+$cache_ttl_seconds = 60 * 1;
 
 date_default_timezone_set('America/Anchorage');
 $now = getdate();

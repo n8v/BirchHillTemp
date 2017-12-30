@@ -2,7 +2,7 @@
 $tag = "Airport";
 $url = "http://w1.weather.gov/xml/current_obs/PAFA.xml";
 $cachefile = './cache/airportwx.json';
-$cache_ttl_seconds = 60 * 0.0005;
+$cache_ttl_seconds = 60 * 0.5;
 
 date_default_timezone_set('America/Anchorage');
 $now = getdate();
