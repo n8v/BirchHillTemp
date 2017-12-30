@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+// var baseurl = 'https://www.nscfairbanks.org/NSCFwxgather';
+// var baseurl = 'http://127.0.0.1:8081/';
+// var baseurl = '/NSCFwxgather';
+var baseurl = '';
+
+function loadWx (relUrl, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          var myObj = JSON.parse(this.responseText);
+          var key = Object.keys(myObj)[0];
+          var pubDate = new Date(myObj[key].dateyyyymmdd.replace(/^(\d\d\d\d)(\d\d)(\d\d)$/, '$1-$2-$3 ') + myObj[key].timehhmmss)
+
+          callback(myObj[key], pubDate);
+      }
+  };
+  xhr.open("GET", baseurl+relUrl, true);
+  xhr.send();
+}
+
+
+loadWx('/index.php', function(wxobj, pubdate){
+    document.getElementById("BirchHillTemp").innerHTML = wxobj.temp;
+    document.getElementById("BirchHillTime").innerHTML = pubdate.toLocaleTimeString();
+})
+
+loadWx('/airport.php', function(wxobj, pubdate){
+    document.getElementById("AirportTemp").innerHTML = wxobj.temp;
+    document.getElementById("AirportTime").innerHTML = pubdate.toLocaleTimeString();
+})
+
+loadWx('/goldstream.php', function(wxobj, pubdate){
+    document.getElementById("GSTemp").innerHTML = wxobj.temp;
+    document.getElementById("GSTime").innerHTML = pubdate.toLocaleTimeString();
+})
+
+
+loadWx('/uaf.php', function(wxobj, pubdate){
+    document.getElementById("UAFTemp").innerHTML = wxobj.temp;
+    document.getElementById("UAFTime").innerHTML = pubdate.toLocaleTimeString();
+})
+
+
+
+</script>
+</head>
+<body>
+  <h2>Birch Hill</h2>
+  <div id="BirchHillTemp">loading...</div>
+  <div id="BirchHillTime">loading...</div>
+
+  <h2>Airport</h2>
+  <div id="AirportTemp">loading...</div>
+  <div id="AirportTime">loading...</div>
+
+  <h2>Goldstream Sports</h2>
+  <div id="GSTemp">loading...</div>
+  <div id="GSTime">loading...</div>
+
+  <h2>UAF</h2>
+  <div id="UAFTemp">loading...</div>
+  <div id="UAFTime">loading...</div>
+</body>
+</html>
