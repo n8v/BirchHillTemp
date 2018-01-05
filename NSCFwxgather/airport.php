@@ -4,8 +4,8 @@ $URL = "http://w1.weather.gov/xml/current_obs/PAFA.xml";
 
 
 
-
-$CACHE_TTL_SECONDS = 60 * 60;
+// NWS apparently takes 9+ minutes to publish data after observation/pubdate so don't look too early
+$CACHE_TTL_SECONDS = 70 * 60;
 $cachefile = './cache/airportwx.json';
 
 date_default_timezone_set('America/Anchorage');

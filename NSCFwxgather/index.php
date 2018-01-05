@@ -1,11 +1,11 @@
 <?php
 $TAG = "BirchHill";
 $URL = "https://www.nscfairbanks.org/wp-content/nscf/weather/realtime.txt";
-if (preg_match('/nscfairbanks.org/', $_SERVER['SERVER_NAME'])) {
+if (preg_match('/nscfairbanks.org/', $_SERVER['SERVER_NAME']) &&  file_exists("../wp-content/nscf/weather/realtime.txt")) {
   $URL = "../wp-content/nscf/weather/realtime.txt";
 }
 
-$CACHE_TTL_SECONDS = 60 * 5;
+$CACHE_TTL_SECONDS = 60 * 2;
 $cachefile = "./cache/$TAG.json";
 
 date_default_timezone_set('America/Anchorage');

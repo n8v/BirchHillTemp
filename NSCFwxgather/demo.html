@@ -146,36 +146,7 @@ td {
 // var baseurl = '/NSCFwxgather';
 var baseurl = '.';
 var timeagoInstance = timeago();
-
-function loadWx (relUrl, tag, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-          var wxobj = JSON.parse(this.responseText);
-
-          var pubdate = Date.parse(wxobj.dateyyyymmdd.replace(/^(\d\d\d\d)(\d\d)(\d\d)$/, '$1-$2-$3 ') + wxobj.timehhmmss)
-
-          var tempNode = document.getElementById(tag+'Temp');
-          tempNode.innerHTML = Math.round(wxobj.temp) + '&deg;';
-          // tempNode.innerHTML = wxobj.temp + '&deg;';
-          var timeNode = document.getElementById(tag+'Time');
-          timeago.cancel(timeNode);
-          timeNode.innerHTML = pubdate.toLocaleTimeString();
-          timeNode.setAttribute('datetime', pubdate.toISOString());
-          timeNode.setAttribute('title', pubdate.toLocaleTimeString());
-          timeagoInstance.render(timeNode);
-
-          console.log(new Date().toLocaleTimeString(), "Loaded data for " + tag + ", pubdate " + pubdate.toLocaleTimeString());
-
-          callback(wxobj, tag, pubdate);
-      }
-  };
-  xhr.open('GET', baseurl+relUrl, true);
-  xhr.send();
-}
-
-var bhwx;
-var bhpubdate;
+var RETRY_MS = 60 * 1000;
 
 function calculateRefreshIntervalMs (pubdate, ttl_s) {
   var defaultms = 15000;
@@ -185,6 +156,77 @@ function calculateRefreshIntervalMs (pubdate, ttl_s) {
   }
   return defaultms;
 }
+var wtfpubdate;
+function loadWx (relUrl, tag, callback, reloadFunc) {
+  var xhr = new XMLHttpRequest();
+  function retryWx (xhr, relUrl, tag, callback, reloadFunc) {
+    console.warn("Failure loading " + relUrl + " for " + tag + ", HTTP status " + xhr.status + ". Retrying in " + (RETRY_MS/1000) + " seconds...");
+    console.log(xhr);
+    setTimeout(function(){
+      loadWx (relUrl, tag, callback, reloadFunc);
+    }, RETRY_MS);
+  }
+  xhr.onreadystatechange = function() {
+      if (this.readyState == 4) {
+        if ( this.status == 200) {
+          var wxobj;
+          try {
+            wxobj = JSON.parse(this.responseText);
+          } catch(e) {
+            console.log("Exception parsing JSON:", e);
+            retryWx(this, relUrl, tag, callback, reloadFunc);
+            return;
+          }
+
+          var tempNode = document.getElementById(tag+'Temp');
+          tempNode.innerHTML = Math.round(wxobj.temp) + '&deg;';
+
+          // var pubdate = Date.parse(wxobj.dateyyyymmdd.replace(/^(\d\d\d\d)(\d\d)(\d\d)$/, '$1-$2-$3 ') + wxobj.timehhmmss)
+          var pubdate;
+          try {
+            // pubdate = Date.parse(wxobj.pubdate_atom);
+            pubdate = new Date(wxobj.pubdate_atom);
+          } catch(e) {
+            console.log("Exception parsing date:", e);
+            retryWx(relUrl, tag, callback, reloadFunc);
+            return;
+          }
+
+          if (!pubdate) {
+            console.warn("No pubdate found in " + wxobj.pubdate_atom);
+            wtfpubdate = pubdate;
+            // retryWx(this, relUrl, tag, callback, reloadFunc);
+            return;
+          }
+
+          // tempNode.innerHTML = wxobj.temp + '&deg;';
+          var timeNode = document.getElementById(tag+'Time');
+          timeago.cancel(timeNode);
+          timeNode.innerHTML = pubdate.toLocaleTimeString();
+          timeNode.setAttribute('datetime', pubdate.toISOString());
+          timeNode.setAttribute('title', pubdate.toLocaleTimeString());
+          timeagoInstance.render(timeNode);
+
+          callback(wxobj, tag, pubdate);
+
+          var mstorefresh = calculateRefreshIntervalMs(pubdate, wxobj.ttl_s);
+          console.log(new Date().toLocaleTimeString(), "Loaded data for " + tag + ", pubdate " + pubdate.toLocaleTimeString() + ". Next load in " + Math.round(mstorefresh/60000) + " minutes");
+          setTimeout(reloadFunc, mstorefresh);
+
+
+        } else {
+          // console.warn("Non OK response " + this.status);
+          retryWx(this, relUrl, tag, callback, reloadFunc);
+        }
+      }
+  };
+  xhr.open('GET', baseurl+relUrl, true);
+  xhr.send();
+}
+
+var bhwx, bhpubdate;
+
+
 function loadBirchHill () {
   loadWx('/index.php', 'BirchHill', function(wxobj, tag, pubdate) {
       bhwx = wxobj;
@@ -199,46 +241,31 @@ function loadBirchHill () {
       document.getElementById('WindAverage').innerHTML = wxobj.wspeed;
       document.getElementById('WindMax').innerHTML = wxobj.wgust;
 
+  }, loadBirchHill)
+}
 
-      var mstorefresh = calculateRefreshIntervalMs(pubdate, wxobj.ttl_s);
-      console.log("Next " + tag + " load in " + Math.round(mstorefresh/60000) + " minutes");
-      setTimeout(loadBirchHill, mstorefresh);
-  })
+// var awx, apubdate;
+function loadAirport() {
+  loadWx('/airport.php', 'Airport', function(wxobj, tag, pubdate){
+    // awx = wxobj;
+    // apubdate = pubdate;
+  }, loadAirport);
+}
+
+function loadUaf(){
+  loadWx('/uaf.php', 'UAF', function(wxobj, tag, pubdate){
+  }, loadUaf);
+}
+
+function loadGs(){
+  loadWx('/goldstream.php', 'GS', function(wxobj, tag, pubdate){
+  }, loadGs);
 }
 
 
 loadBirchHill();
-
-var awx, apubdate;
-function loadAirport() {
-  loadWx('/airport.php', 'Airport', function(wxobj, tag, pubdate){
-    var mstorefresh = calculateRefreshIntervalMs(pubdate, wxobj.ttl_s);
-    // NWS apparently takes 9+ minutes to publish data after observation/pubdate so don't look too early
-    mstorefresh += 10 * 60 * 1000;
-    console.log("Next Airport load in " + Math.round(mstorefresh/60000) + " minutes");
-    setTimeout(loadAirport, mstorefresh);
-    awx = wxobj;
-    apubdate = pubdate;
-  });
-}
 loadAirport();
-
-function loadUaf(){
-  loadWx('/uaf.php', 'UAF', function(wxobj, tag, pubdate){
-    var mstorefresh = calculateRefreshIntervalMs(pubdate, wxobj.ttl_s);
-    console.log("Next " + tag + " load in " + Math.round(mstorefresh/60000) + " minutes");
-    setTimeout(loadUaf, mstorefresh);
-  });
-}
 loadUaf();
-
-function loadGs(){
-  loadWx('/goldstream.php', 'GS', function(wxobj, tag, pubdate){
-    var mstorefresh = calculateRefreshIntervalMs(pubdate, wxobj.ttl_s);
-    console.log("Next " + tag + " load in " + Math.round(mstorefresh/60000) + " minutes");
-    setTimeout(loadGs, mstorefresh);
-  });
-}
 loadGs();
 
 
