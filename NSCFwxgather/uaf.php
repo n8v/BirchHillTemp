@@ -57,6 +57,8 @@ if (preg_match('/Temp: *([\d.-]+) *([FC])/', (string)$content, $matches)) {
 // You Aren't Gonna Need the other fields
 
 $datestring = (string)$x->channel->item[0]->pubDate;
+// $datestring = '10:36:10, 01/03/18'; // test stale date
+
 $d = DateTime::createFromFormat("H:i:s, m/d/y", $datestring);
 if (!$d) {
   http_response_code(500);

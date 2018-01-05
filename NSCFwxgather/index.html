@@ -7,12 +7,23 @@ body {
   font-family: sans-serif;
   text-align: center;
 }
-h2 {
-  text-transform: uppercase;
-  font-size: 1em;
-  font-weight: normal;
+h1,h2,h3 {
+  font-weight: lighter;
   color: #aaa;
   margin: .2em;
+}
+h1 {
+  font-size: 1.2em;
+  /*letter-spacing: 1.1em;*/
+}
+h2 {
+  font-size: .8em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: .5em;
+}
+h3 {
+  font-size: 1em;
 }
 td {
   text-align: center;
@@ -28,24 +39,38 @@ td {
   margin: .1em;
 }
 .biggestnumber {font-size: 5em}
+.stalepubdate {
+  color: #eaa;
+  font-size: .9em;
+  font-style: italic;
+  /*padding: .2em;*/
+}
+.stalenumber {
+  color: #eee;
+}
+
 </style>
 </head>
 <body style="background:white">
   <table width="100%">
     <tr><td colspan=3>
-      <h2>Birch Hill</h2>
+      <h1>Birch Hill</h1>
       <div id="BirchHillTemp" class="biggestnumber bignumber">...</div>
       <time id="BirchHillTime" class="tinylabel">...</time>
     </td></tr>
+    <tr><td colspan=3>
+      <br/>
+      <h2>Around Fairbanks</h2>
+    </td></tr>
     <tr>
       <td width="33%">
-        <h2>Airport</h2>
+        <h3>Airport</h3>
       </td>
       <td width="34%">
-        <h2>UAF</h2>
+        <h3>UAF ski hut</h3>
       </td>
       <td width="33%">
-        <h2>Goldstream Sports</h2>
+        <h3>Goldstream Sports</h3>
       </td>
     </tr>
     <tr>
@@ -70,15 +95,19 @@ td {
         <time id="GoldstreamSportsTime" class="tinylabel">...</time>
       </td>
     </tr>
+    <tr><td colspan=3>
+      <br/>
+      <h2>Birch Hill Details</h2>
+    </td></tr>
     <tr>
       <td>
-        <h2>High</h2>
+        <h3>High</h3>
       </td>
       <td>
-        <h2>Low</h2>
+        <h3>Low</h3>
       </td>
       <td>
-        <h2>Humidity</h2>
+        <h3>Humidity</h3>
       </td>
     </tr>
     <tr>
@@ -96,13 +125,13 @@ td {
     </tr>
     <tr>
       <td>
-        <h2>Wind</h2>
+        <h3>Wind</h3>
       </td>
       <td>
-        <h2>Average</h2>
+        <h3>Average</h3>
       </td>
       <td>
-        <h2>Max</h2>
+        <h3>Max</h3>
       </td>
     </tr>
     <tr>
@@ -191,7 +220,16 @@ function loadWx (relUrl, tag, callback, reloadFunc) {
           timeNode.innerHTML = pubdate.toLocaleTimeString();
           timeNode.setAttribute('datetime', pubdate.toISOString());
           timeNode.setAttribute('title', pubdate.toLocaleTimeString());
+          if (pubdate < Date.now() - 24*60*60*1000) {
+            timeNode.classList.add('stalepubdate');
+            tempNode.classList.add('stalenumber');
+          }
+          else {
+            timeNode.classList.remove('stalepubdate');
+            tempNode.classList.remove('stalenumber');
+          }
           timeagoInstance.render(timeNode);
+
 
           callback(wxobj, tag, pubdate);
 
