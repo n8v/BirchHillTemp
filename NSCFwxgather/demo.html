@@ -180,7 +180,7 @@ var bhpubdate;
 function calculateRefreshIntervalMs (pubdate, ttl_s) {
   var defaultms = 15000;
   if (pubdate > 0 && ttl_s > 0) {
-    var refreshintervalms = ttl_s * 1000;
+    var refreshintervalms = (ttl_s + 10) * 1000;
     return Math.max(defaultms, refreshintervalms - (Date.now() - pubdate));
   }
   return defaultms;
@@ -200,7 +200,9 @@ function loadBirchHill () {
       document.getElementById('WindMax').innerHTML = wxobj.wgust;
 
 
-      setTimeout(loadBirchHill, calculateRefreshIntervalMs(pubdate, wxobj.ttl_s));
+      var mstorefresh = calculateRefreshIntervalMs(pubdate, wxobj.ttl_s);
+      console.log("Next " + tag + " load in " + Math.round(mstorefresh/60000) + " minutes");
+      setTimeout(loadBirchHill, mstorefresh);
   })
 }
 
@@ -211,7 +213,9 @@ var awx, apubdate;
 function loadAirport() {
   loadWx('/airport.php', 'Airport', function(wxobj, tag, pubdate){
     var mstorefresh = calculateRefreshIntervalMs(pubdate, wxobj.ttl_s);
-    // console.log("Airport ttr = " + mstorefresh);
+    // NWS apparently takes 9+ minutes to publish data after observation/pubdate so don't look too early
+    mstorefresh += 10 * 60 * 1000;
+    console.log("Next Airport load in " + Math.round(mstorefresh/60000) + " minutes");
     setTimeout(loadAirport, mstorefresh);
     awx = wxobj;
     apubdate = pubdate;
@@ -221,14 +225,18 @@ loadAirport();
 
 function loadUaf(){
   loadWx('/uaf.php', 'UAF', function(wxobj, tag, pubdate){
-    setTimeout(loadUaf, calculateRefreshIntervalMs(pubdate, wxobj.ttl_s));
+    var mstorefresh = calculateRefreshIntervalMs(pubdate, wxobj.ttl_s);
+    console.log("Next " + tag + " load in " + Math.round(mstorefresh/60000) + " minutes");
+    setTimeout(loadUaf, mstorefresh);
   });
 }
 loadUaf();
 
 function loadGs(){
   loadWx('/goldstream.php', 'GS', function(wxobj, tag, pubdate){
-    setTimeout(loadGs, calculateRefreshIntervalMs(pubdate, wxobj.ttl_s));
+    var mstorefresh = calculateRefreshIntervalMs(pubdate, wxobj.ttl_s);
+    console.log("Next " + tag + " load in " + Math.round(mstorefresh/60000) + " minutes");
+    setTimeout(loadGs, mstorefresh);
   });
 }
 loadGs();
