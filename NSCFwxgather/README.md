@@ -3,6 +3,6 @@ These PHP scripts spider the source weather data sources for the BirchHillTemp i
 
 Advanced examples:
 
-https://www.nscfairbanks.org/NSCFwxgather/index.php?nocache=123
+https://www.nscfairbanks.org/NSCFwxgather/birchhill.php?nocache=123
 
-https://www.nscfairbanks.org/NSCFwxgather/index.php?nocache=123&jsonp=1
+https://www.nscfairbanks.org/NSCFwxgather/birchhill.php?nocache=123&jsonp=1

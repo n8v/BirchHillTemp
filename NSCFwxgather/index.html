@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<style>
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+h2 {
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: normal;
+  color: #aaa;
+  margin: .2em;
+}
+td {
+  text-align: center;
+  vertical-align: top;
+}
+.pubdate {
+  font-size: .6em;
+  color: #aaa;
+  margin-bottom: .4em;
+}
+.bignumber {
+  font-size: 3em;
+  margin: .1em;
+}
+.biggestnumber {font-size: 5em}
+</style>
+</head>
+<body>
+  <table width="100%">
+    <tr><td colspan=3>
+      <h2>Birch Hill</h2>
+      <div id="BirchHillTemp" class="biggestnumber bignumber">...</div>
+      <time id="BirchHillTime" class="timeago pubdate">...</time>
+    </td></tr>
+    <tr>
+      <td width="33%">
+        <h2>Airport</h2>
+      </td>
+      <td width="34%">
+        <h2>UAF</h2>
+      </td>
+      <td width="33%">
+        <h2>Goldstream Sports</h2>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div id="AirportTemp" class="bignumber">...</div>
+      </td>
+      <td>
+        <div id="UAFTemp" class="bignumber">...</div>
+      </td>
+      <td>
+        <div id="GSTemp" class="bignumber">...</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <time id="AirportTime" class="timeago pubdate">...</time>
+      </td>
+      <td>
+        <time id="UAFTime" class="timeago pubdate">...</time>
+      </td>
+      <td>
+        <time id="GSTime" class="timeago pubdate">...</time>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h2>High</h2>
+      </td>
+      <td>
+        <h2>Low</h2>
+      </td>
+      <td>
+        <h2>Humidity</h2>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span id="TempTodayHigh" class="bignumber">...</span><br/>
+        <time id="TimeTodayHigh" class="pubdate">...</time>
+      </td>
+      <td>
+        <span id="TempTodayLow" class="bignumber">...</span><br/>
+        <time id="TimeTodayLow" class="pubdate">...</time>
+      </td>
+      <td>
+        <span id="Humidity" class="bignumber">...</span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h2>Wind</h2>
+      </td>
+      <td>
+        <h2>Average</h2>
+      </td>
+      <td>
+        <h2>Max</h2>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span id="WindLatest" class="bignumber">...</span><br/>
+        <span class="pubdate">mph</span>
+      </td>
+      <td>
+        <span id="WindAverage" class="bignumber">...</span><br/>
+        <span class="pubdate">mph</span>
+      </td>
+      <td>
+        <span id="WindMax" class="bignumber">...</span><br/>
+        <span class="pubdate">mph</span>
+      </td>
+    </tr>
+
+  </table>
+<!--
+<br/><br/><br/><br/>
+<p style="text-align:left">
+<h1>TODO</h1>
+<ul>
+  <li>change backend to include some metadata, output ISO datetime, skip tag?</li>
+  <li>update minutely</li>
+  <li>mark stale if pubdate older than `Date.parse('now - 48 hours')`</li>
+  <li>use visibility api to quiesce in background</li>
+  <li>badge</li>
+  <li>faviconomatic</li>
+</ul>
+</p>
+ -->
+</body>
+<script src="./date.js"></script>
+<script>
+// http://timeago.org/
+!function(t,e){"object"==typeof module&&module.exports?(module.exports=e(),module.exports.default=module.exports):t.timeago=e()}("undefined"!=typeof window?window:this,function(){function t(t){return t instanceof Date?t:isNaN(t)?/^\d+$/.test(t)?new Date(e(t)):(t=(t||"").trim().replace(/\.\d+/,"").replace(/-/,"/").replace(/-/,"/").replace(/(\d)T(\d)/,"$1 $2").replace(/Z/," UTC").replace(/([\+\-]\d\d)\:?(\d\d)/," $1$2"),new Date(t)):new Date(e(t))}function e(t){return parseInt(t)}function n(t,n,r){n=l[n]?n:l[r]?r:"en";for(var o=0,i=t<0?1:0,a=t=Math.abs(t);t>=p[o]&&o<h;o++)t/=p[o];return t=e(t),o*=2,t>(0===o?9:1)&&(o+=1),l[n](t,o,a)[i].replace("%s",t)}function r(e,n){return((n=n?t(n):new Date)-t(e))/1e3}function o(t){for(var e=1,n=0,r=Math.abs(t);t>=p[n]&&n<h;n++)t/=p[n],e*=p[n];return r%=e,r=r?e-r:e,Math.ceil(r)}function i(t){return a(t,"data-timeago")||a(t,"datetime")}function a(t,e){return t.getAttribute?t.getAttribute(e):t.attr?t.attr(e):void 0}function u(t,e){return t.setAttribute?t.setAttribute(m,e):t.attr?t.attr(m,e):void 0}function c(t,e){this.nowDate=t,this.defaultLocale=e||"en"}function d(t,e){return new c(t,e)}var f="second_minute_hour_day_week_month_year".split("_"),s="秒_分钟_小时_天_周_月_年".split("_"),l={en:function(t,e){if(0===e)return["just now","right now"];var n=f[parseInt(e/2)];return t>1&&(n+="s"),[t+" "+n+" ago","in "+t+" "+n]},zh_CN:function(t,e){if(0===e)return["刚刚","片刻后"];var n=s[parseInt(e/2)];return[t+n+"前",t+n+"后"]}},p=[60,60,24,7,365/7/12,12],h=6,m="data-tid",w={};return c.prototype.doRender=function(t,e,i){var a,c=r(e,this.nowDate),d=this;t.innerHTML=n(c,i,this.defaultLocale),w[a=setTimeout(function(){d.doRender(t,e,i),delete w[a]},Math.min(1e3*o(c),2147483647))]=0,u(t,a)},c.prototype.format=function(t,e){return n(r(t,this.nowDate),e,this.defaultLocale)},c.prototype.render=function(t,e){void 0===t.length&&(t=[t]);for(var n=0,r=t.length;n<r;n++)this.doRender(t[n],i(t[n]),e)},c.prototype.setLocale=function(t){this.defaultLocale=t},d.register=function(t,e){l[t]=e},d.cancel=function(t){var e;if(t)(e=a(t,m))&&(clearTimeout(e),delete w[e]);else{for(e in w)clearTimeout(e);w={}}},d});
+
+// var baseurl = 'https://www.nscfairbanks.org/NSCFwxgather';
+// var baseurl = 'http://127.0.0.1:8081/';
+// var baseurl = '/NSCFwxgather';
+var baseurl = '.';
+var timeagoInstance = timeago();
+var RETRY_MS = 60 * 1000;
+
+function calculateRefreshIntervalMs (pubdate, ttl_s) {
+  var defaultms = 15000;
+  if (pubdate > 0 && ttl_s > 0) {
+    var refreshintervalms = (ttl_s + 10) * 1000;
+    return Math.max(defaultms, refreshintervalms - (Date.now() - pubdate));
+  }
+  return defaultms;
+}
+var wtfpubdate;
+function loadWx (relUrl, tag, callback, reloadFunc) {
+  var xhr = new XMLHttpRequest();
+  function retryWx (xhr, relUrl, tag, callback, reloadFunc) {
+    console.warn("Failure loading " + relUrl + " for " + tag + ", HTTP status " + xhr.status + ". Retrying in " + (RETRY_MS/1000) + " seconds...");
+    console.log(xhr);
+    setTimeout(function(){
+      loadWx (relUrl, tag, callback, reloadFunc);
+    }, RETRY_MS);
+  }
+  xhr.onreadystatechange = function() {
+      if (this.readyState == 4) {
+        if ( this.status == 200) {
+          var wxobj;
+          try {
+            wxobj = JSON.parse(this.responseText);
+          } catch(e) {
+            console.log("Exception parsing JSON:", e);
+            retryWx(this, relUrl, tag, callback, reloadFunc);
+            return;
+          }
+
+          var tempNode = document.getElementById(tag+'Temp');
+          tempNode.innerHTML = Math.round(wxobj.temp) + '&deg;';
+
+          // var pubdate = Date.parse(wxobj.dateyyyymmdd.replace(/^(\d\d\d\d)(\d\d)(\d\d)$/, '$1-$2-$3 ') + wxobj.timehhmmss)
+          var pubdate;
+          try {
+            // pubdate = Date.parse(wxobj.pubdate_atom);
+            pubdate = new Date(wxobj.pubdate_atom);
+          } catch(e) {
+            console.log("Exception parsing date:", e);
+            retryWx(relUrl, tag, callback, reloadFunc);
+            return;
+          }
+
+          if (!pubdate) {
+            console.warn("No pubdate found in " + wxobj.pubdate_atom);
+            wtfpubdate = pubdate;
+            // retryWx(this, relUrl, tag, callback, reloadFunc);
+            return;
+          }
+
+          // tempNode.innerHTML = wxobj.temp + '&deg;';
+          var timeNode = document.getElementById(tag+'Time');
+          timeago.cancel(timeNode);
+          timeNode.innerHTML = pubdate.toLocaleTimeString();
+          timeNode.setAttribute('datetime', pubdate.toISOString());
+          timeNode.setAttribute('title', pubdate.toLocaleTimeString());
+          timeagoInstance.render(timeNode);
+
+          callback(wxobj, tag, pubdate);
+
+          var mstorefresh = calculateRefreshIntervalMs(pubdate, wxobj.ttl_s);
+          console.log(new Date().toLocaleTimeString(), "Loaded data for " + tag + ", pubdate " + pubdate.toLocaleTimeString() + ". Next load in " + Math.round(mstorefresh/60000) + " minutes");
+          setTimeout(reloadFunc, mstorefresh);
+
+
+        } else {
+          // console.warn("Non OK response " + this.status);
+          retryWx(this, relUrl, tag, callback, reloadFunc);
+        }
+      }
+  };
+  xhr.open('GET', baseurl+relUrl, true);
+  xhr.send();
+}
+
+var bhwx, bhpubdate;
+
+
+function loadBirchHill () {
+  loadWx('/birchhill.php', 'BirchHill', function(wxobj, tag, pubdate) {
+      bhwx = wxobj;
+      bhpubdate = pubdate;
+      document.getElementById('Humidity').innerHTML = wxobj.hum + '%';
+      document.getElementById('TempTodayHigh').innerHTML = Math.round(wxobj.tempth) + '&deg;';
+      document.getElementById('TimeTodayHigh').innerHTML = wxobj.ttempth;
+      document.getElementById('TempTodayLow').innerHTML = Math.round(wxobj.temptl) + '&deg;';
+      document.getElementById('TimeTodayLow').innerHTML = wxobj.ttemptl;
+
+      document.getElementById('WindLatest').innerHTML = wxobj.wlatest;
+      document.getElementById('WindAverage').innerHTML = wxobj.wspeed;
+      document.getElementById('WindMax').innerHTML = wxobj.wgust;
+
+  }, loadBirchHill)
+}
+
+// var awx, apubdate;
+function loadAirport() {
+  loadWx('/airport.php', 'Airport', function(wxobj, tag, pubdate){
+    // awx = wxobj;
+    // apubdate = pubdate;
+  }, loadAirport);
+}
+
+function loadUaf(){
+  loadWx('/uaf.php', 'UAF', function(wxobj, tag, pubdate){
+  }, loadUaf);
+}
+
+function loadGs(){
+  loadWx('/goldstream.php', 'GS', function(wxobj, tag, pubdate){
+  }, loadGs);
+}
+
+
+loadBirchHill();
+loadAirport();
+loadUaf();
+loadGs();
+
+
+
+</script>
+</html>
