@@ -152,7 +152,7 @@ function loadWx (relUrl, tag, callback) {
   xhr.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
           var wxobj = JSON.parse(this.responseText);
-          
+
           var pubdate = Date.parse(wxobj.dateyyyymmdd.replace(/^(\d\d\d\d)(\d\d)(\d\d)$/, '$1-$2-$3 ') + wxobj.timehhmmss)
 
           var tempNode = document.getElementById(tag+'Temp');
@@ -164,6 +164,8 @@ function loadWx (relUrl, tag, callback) {
           timeNode.setAttribute('datetime', pubdate.toISOString());
           timeNode.setAttribute('title', pubdate.toLocaleTimeString());
           timeagoInstance.render(timeNode);
+
+          console.log(new Date().toLocaleTimeString(), "Loaded data for " + tag + ", pubdate " + pubdate.toLocaleTimeString());
 
           callback(wxobj, tag, pubdate);
       }
@@ -196,6 +198,7 @@ function loadBirchHill () {
       document.getElementById('WindLatest').innerHTML = wxobj.wlatest;
       document.getElementById('WindAverage').innerHTML = wxobj.wspeed;
       document.getElementById('WindMax').innerHTML = wxobj.wgust;
+
 
       setTimeout(loadBirchHill, calculateRefreshIntervalMs(pubdate, wxobj.ttl_s));
   })
