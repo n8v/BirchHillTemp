@@ -52,9 +52,7 @@ function addMetadataFields($f) {
 
 function serveAndCache($fields, $cachefile, $pubdate) {
   global $CACHE_TTL_SECONDS, $URL, $TAG;
-  $json = array();
-  $json[$TAG] = $fields;
-  $jsonout = json_encode($json);
+  $jsonout = json_encode($fields);
 
   file_put_contents($cachefile, $jsonout);
 

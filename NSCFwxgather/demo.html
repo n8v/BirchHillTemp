@@ -151,9 +151,8 @@ function loadWx (relUrl, tag, callback) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-          var key = Object.keys(myObj)[0];
-          var wxobj = myObj[key];
+          var wxobj = JSON.parse(this.responseText);
+          
           var pubdate = Date.parse(wxobj.dateyyyymmdd.replace(/^(\d\d\d\d)(\d\d)(\d\d)$/, '$1-$2-$3 ') + wxobj.timehhmmss)
 
           var tempNode = document.getElementById(tag+'Temp');

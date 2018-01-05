@@ -5,7 +5,7 @@ $URL = "http://w1.weather.gov/xml/current_obs/PAFA.xml";
 
 
 
-$CACHE_TTL_SECONDS = 60 * 30;
+$CACHE_TTL_SECONDS = 60 * 60;
 $cachefile = './cache/airportwx.json';
 
 date_default_timezone_set('America/Anchorage');

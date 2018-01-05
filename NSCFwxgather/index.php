@@ -1,5 +1,5 @@
 <?php
-$TAG = "NSCFWx";
+$TAG = "BirchHill";
 $URL = "https://www.nscfairbanks.org/wp-content/nscf/weather/realtime.txt";
 if (preg_match('/nscfairbanks.org/', $_SERVER['SERVER_NAME'])) {
   $URL = "../wp-content/nscf/weather/realtime.txt";

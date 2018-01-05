@@ -57,7 +57,7 @@ if (preg_match('/Temp: *([\d.-]+) *([FC])/', (string)$content, $matches)) {
 // You Aren't Gonna Need the other fields
 
 $datestring = (string)$x->channel->item[0]->pubDate;
-$d = DateTime::createFromFormat("H:i:s, d/m/y", $datestring);
+$d = DateTime::createFromFormat("H:i:s, m/d/y", $datestring);
 if (!$d) {
   http_response_code(500);
   echo "Errors parsing date '$datestring'";
