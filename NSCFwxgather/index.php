@@ -5,7 +5,7 @@ if (preg_match('/nscfairbanks.org/', $_SERVER['SERVER_NAME'])) {
   $URL = "../wp-content/nscf/weather/realtime.txt";
 }
 
-$CACHE_TTL_SECONDS = 60 * .5;
+$CACHE_TTL_SECONDS = 60 * 5;
 $cachefile = "./cache/$TAG.json";
 
 date_default_timezone_set('America/Anchorage');
