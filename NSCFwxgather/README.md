@@ -3,6 +3,9 @@ These PHP scripts spider the source weather data sources for the BirchHillTemp i
 ## TODO
 - refactor
 - set expire to pubdate + ttl instead of cachedate + ttl
-- nocache param
-- jsonp param
-- seek local realtime.txt
+- remove tag from json array
+
+
+
+https://www.nscfairbanks.org/NSCFwxgather/index.php?nocache=123
+https://www.nscfairbanks.org/NSCFwxgather/index.php?nocache=123&jsonp

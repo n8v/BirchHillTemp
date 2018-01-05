@@ -1,57 +1,41 @@
 <?php
-$tag = "UAF";
-$url = "http://akclimate.org/wview/wxrss.xml";
+$TAG = "UAF";
+$URL = "http://akclimate.org/wview/wxrss.xml";
+
+
+
+
+$CACHE_TTL_SECONDS = 60 * 5;
 $cachefile = './cache/uafwx.json';
-$cache_ttl_seconds = 60 * 1;
 
 date_default_timezone_set('America/Anchorage');
-$now = getdate();
+include 'functions.php';
 
-if (file_exists($cachefile)) {
-  $last_modified_time = filemtime($cachefile);
-
-  if ($now[0] < $last_modified_time + $cache_ttl_seconds) {
-    $etag = md5_file($cachefile);
-    header("Last-Modified: ".gmdate("D, d M Y H:i:s", $last_modified_time)." GMT");
-    header("Etag: $etag");
-
-    $expiretime = $last_modified_time + $cache_ttl_seconds;
-    header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', $expiretime));
-
-    if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) == $last_modified_time ||
-        @trim($_SERVER['HTTP_IF_NONE_MATCH']) == $etag) {
-        header("HTTP/1.1 304 Not Modified");
-        exit;
-    }
-    else {
-      readfile($cachefile);
-      exit;
-    }
-  }
+if ((! $_GET['nocache']) && serveFromCache($cachefile)) {
+  exit;
 }
 
+// ----- parse wview XML -------------------------------
 
+// into Cumulus style vars,
 // $keys  = explode(" ", "dateyyyymmdd timehhmmss temp hum dew wspeed wlatest bearing rrate rfall press currentwdir beaufortnumber windunit tempunitnodeg pressunit rainunit windrun presstrendval rmonth ryear rfally intemp inhum wchill temptrend tempth ttempth temptl ttemptl windtm twindtm wgusttm twgusttm pressth tpressth presstl tpresstl version build wgust heatindex humidex uv et solarrad avgbearing rhour forecastnumber isdaylight sensorcontactlost wdir cloudbasevalue cloudbaseunit apptemp sunshinehours currentsolarmax issunny");
 
-// -----------------------------
 # https://stackoverflow.com/questions/32641072/current-observation-feed-from-weather-gov-forbidden-403
 $options = array(
   'http'=> array(
-    'header'=>"User-Agent: Birch Hill Ski Temperature iOS App/v2.15; nathan@tonallyaweso.me\r\n"
+    'header'=>"User-Agent: Birch Hill Ski Temperature iOS App/v2.15; contact tonallyaweso.me\r\n"
   )
 );
 
 $context = stream_context_create($options);
 
-$raw = file_get_contents($url, false, $context);
+$raw = file_get_contents($URL, false, $context);
 
-/* $raw = preg_replace('/\<\!\[CDATA\[|\]\]\>|<br *\/?>/', '', $raw); */
-// echo "<pre>$raw</pre>";
 $fields = array();
 
 if (! preg_match("/^\<\?xml/", $raw)) {
   http_response_code(500);
-  echo "Inconceivable XML received from $url";
+  echo "Inconceivable XML received from $URL";
   exit;
 }
 
@@ -72,39 +56,26 @@ if (preg_match('/Temp: *([\d.-]+) *([FC])/', (string)$content, $matches)) {
 
 // You Aren't Gonna Need the other fields
 
-$obsdate = strtotime((string)$x->channel->item[0]->pubDate);
-// echo date('Ymd', $obsdate);
+$datestring = (string)$x->channel->item[0]->pubDate;
+$d = DateTime::createFromFormat("H:i:s, d/m/y", $datestring);
+if (!$d) {
+  http_response_code(500);
+  echo "Errors parsing date '$datestring'";
+  print_r(date_get_last_errors());
+  exit;
+}
 
-$fields['dateyyyymmdd'] = date('Ymd', $obsdate);
-$fields['timehhmmss'] = date('H:i:s', $obsdate);
-// print "<pre>"; print_r($fields); print "</pre>";
-// exit;
-
-
-// ------------
-
-
-$json = array();
-$json[$tag] = $fields;
-$jsonout = json_encode($json);
-
-file_put_contents($cachefile, $jsonout);
-
-$last_modified_time = $now[0];
-$etag = md5($jsonout);
-$expiretime = $last_modified_time + $cache_ttl_seconds;
-header("Last-Modified: ".gmdate("D, d M Y H:i:s", $last_modified_time)." GMT");
-header("Etag: $etag");
-header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', $expiretime));
+$fields['pubdate_raw'] = $datestring;
+$fields['dateyyyymmdd'] = $d->format('Ymd');
+$fields['timehhmmss'] = $d->format('H:i:s');
+$fields['pubdate_atom'] = $d->format(DATE_ATOM);
 
 
-echo $jsonout;
+// ------- END parse wview XML
 
-// echo "<br>";
-// echo md5($jsonout);
-// echo "<br>";
-// echo md5_file($cachefile);
 
-file_put_contents($cachefile, $jsonout);
 
-?>
+$fields = addMetadataFields($fields);
+
+
+serveAndCache($fields, $cachefile, $d);

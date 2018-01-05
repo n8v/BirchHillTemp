@@ -1,36 +1,23 @@
 <?php
-$tag = "Airport";
-$url = "http://w1.weather.gov/xml/current_obs/PAFA.xml";
+$TAG = "Airport";
+$URL = "http://w1.weather.gov/xml/current_obs/PAFA.xml";
+
+
+
+
+$CACHE_TTL_SECONDS = 60 * 30;
 $cachefile = './cache/airportwx.json';
-$cache_ttl_seconds = 60 * 0.5;
 
 date_default_timezone_set('America/Anchorage');
-$now = getdate();
+include 'functions.php';
 
-if (file_exists($cachefile)) {
-  $last_modified_time = filemtime($cachefile);
-
-  if ($now[0] < $last_modified_time + $cache_ttl_seconds) {
-    $etag = md5_file($cachefile);
-    header("Last-Modified: ".gmdate("D, d M Y H:i:s", $last_modified_time)." GMT");
-    header("Etag: $etag");
-
-    $expiretime = $last_modified_time + $cache_ttl_seconds;
-    header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', $expiretime));
-
-    if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) == $last_modified_time ||
-        @trim($_SERVER['HTTP_IF_NONE_MATCH']) == $etag) {
-        header("HTTP/1.1 304 Not Modified");
-        exit;
-    }
-    else {
-      readfile($cachefile);
-      exit;
-    }
-  }
+if ((! $_GET['nocache']) && serveFromCache($cachefile)) {
+  exit;
 }
 
+// ---- parse NWS XML file ----
 
+// into Cumulus style vars,
 // $keys  = explode(" ", "dateyyyymmdd timehhmmss temp hum dew wspeed wlatest bearing rrate rfall press currentwdir beaufortnumber windunit tempunitnodeg pressunit rainunit windrun presstrendval rmonth ryear rfally intemp inhum wchill temptrend tempth ttempth temptl ttemptl windtm twindtm wgusttm twgusttm pressth tpressth presstl tpresstl version build wgust heatindex humidex uv et solarrad avgbearing rhour forecastnumber isdaylight sensorcontactlost wdir cloudbasevalue cloudbaseunit apptemp sunshinehours currentsolarmax issunny");
 
 // -----------------------------
@@ -43,14 +30,14 @@ $options = array(
 
 $context = stream_context_create($options);
 
-$raw = file_get_contents($url, false, $context);
+$raw = file_get_contents($URL, false, $context);
 
 // echo "<pre>$raw</pre>";
 $fields = array();
 
 if (! preg_match("/^\<\?xml/", $raw)) {
   http_response_code(500);
-  echo "Inconceivable XML received from $url";
+  echo "Inconceivable XML received from $URL";
   exit;
 }
 
@@ -64,39 +51,26 @@ $fields['tempunitnodeg'] = "F";
 
 // You Aren't Gonna Need the other fields
 
-$obsdate = strtotime((string)$x->observation_time_rfc822);
+$datestring = (string)$x->observation_time_rfc822;
+$d = DateTime::createFromFormat(DATE_RFC2822, $datestring);
+if (!$d) {
+  http_response_code(500);
+  echo "Errors parsing date '$datestring'";
+  print_r(date_get_last_errors());
+  exit;
+}
+
 // echo date('Ymd', $obsdate);
 
-$fields['dateyyyymmdd'] = date('Ymd', $obsdate);
-$fields['timehhmmss'] = date('H:i:s', $obsdate);
-// print "<pre>"; print_r($fields); print "</pre>";
-// exit;
+$fields['pubdate_raw'] = $datestring;
+$fields['dateyyyymmdd'] = $d->format('Ymd');
+$fields['timehhmmss'] = $d->format('H:i:s');
+$fields['pubdate_atom'] = $d->format(DATE_ATOM);
 
 
-// ------------
+// ---- END parse NWS XML file ----
+
+$fields = addMetadataFields($fields);
 
 
-$json = array();
-$json[$tag] = $fields;
-$jsonout = json_encode($json);
-
-file_put_contents($cachefile, $jsonout);
-
-$last_modified_time = $now[0];
-$etag = md5($jsonout);
-$expiretime = $last_modified_time + $cache_ttl_seconds;
-header("Last-Modified: ".gmdate("D, d M Y H:i:s", $last_modified_time)." GMT");
-header("Etag: $etag");
-header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', $expiretime));
-
-
-echo $jsonout;
-
-// echo "<br>";
-// echo md5($jsonout);
-// echo "<br>";
-// echo md5_file($cachefile);
-
-file_put_contents($cachefile, $jsonout);
-
-?>
+serveAndCache($fields, $cachefile, $d);
