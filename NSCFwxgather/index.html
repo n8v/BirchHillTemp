@@ -7,23 +7,29 @@ body {
   font-family: sans-serif;
   text-align: center;
 }
-h1,h2,h3 {
+h1,h2,h3,h4 {
   font-weight: lighter;
   color: #aaa;
   margin: .2em;
 }
 h1 {
-  font-size: 1.2em;
+  font-size: 1.1em;
   /*letter-spacing: 1.1em;*/
 }
 h2 {
-  font-size: .8em;
+  font-size: .7em;
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: .5em;
+  margin-top:.6em;
 }
 h3 {
+  text-transform: uppercase;
   font-size: 1em;
+}
+h4 {
+  font-size: .6em;
+  margin:0;
 }
 td {
   text-align: center;
@@ -31,12 +37,14 @@ td {
 }
 .tinylabel {
   font-size: .6em;
+  /*font-weight: lighter;*/
   color: #aaa;
   margin-bottom: .4em;
 }
 .bignumber {
   font-size: 3em;
-  margin: .1em;
+  /*margin: .1em;*/
+  margin-bottom: -0.2em; /* no descenders */
 }
 .biggestnumber {font-size: 5em}
 .stalepubdate {
@@ -48,34 +56,41 @@ td {
 .stalenumber {
   color: #eee;
 }
-
+small {
+  font-size: .5em;
+  vertical-align: middle;
+}
 </style>
 </head>
 <body style="background:white">
   <table width="100%">
-    <tr><td colspan=3>
+    <tr><td colspan=4>
       <h1>Birch Hill</h1>
       <div id="BirchHillTemp" class="biggestnumber bignumber">...</div>
       <time id="BirchHillTime" class="tinylabel">...</time>
-    </td></tr>
-    <tr><td colspan=3>
       <br/>
       <h2>Around Fairbanks</h2>
     </td></tr>
     <tr>
-      <td width="33%">
-        <h3>Airport</h3>
+      <td width="25%">
+        <h3>FAI</h3>
       </td>
-      <td width="34%">
-        <h3>UAF ski hut</h3>
+      <td width="25%">
+        <h3>Base</h3>
       </td>
-      <td width="33%">
-        <h3>Goldstream Sports</h3>
+      <td width="25%">
+        <h3>UAF</h3>
+      </td>
+      <td width="25%">
+        <h3>GS</h3>
       </td>
     </tr>
     <tr>
       <td>
         <div id="AirportTemp" class="bignumber">...</div>
+      </td>
+      <td>
+        <div id="FtWainwrightTemp" class="bignumber">...</div>
       </td>
       <td>
         <div id="UAFTemp" class="bignumber">...</div>
@@ -86,27 +101,35 @@ td {
     </tr>
     <tr>
       <td>
+        <h4>Airport</h4>
         <time id="AirportTime" class="tinylabel">...</time>
       </td>
       <td>
+        <h4>Ft Wainwright</h4>
+        <time id="FtWainwrightTime" class="tinylabel">...</time>
+      </td>
+      <td>
+        <h4>IARC near ski hut</h4>
         <time id="UAFTime" class="tinylabel">...</time>
       </td>
       <td>
+        <h4>Goldstream Sports</h4>
         <time id="GoldstreamSportsTime" class="tinylabel">...</time>
       </td>
     </tr>
+  </table>
+  <table width="100%">
     <tr><td colspan=3>
-      <br/>
       <h2>Birch Hill Details</h2>
     </td></tr>
     <tr>
-      <td>
+      <td width="33%">
         <h3>High</h3>
       </td>
-      <td>
+      <td width="34%">
         <h3>Low</h3>
       </td>
-      <td>
+      <td width="33%">
         <h3>Humidity</h3>
       </td>
     </tr>
@@ -254,7 +277,7 @@ function loadBirchHill () {
   loadWx('/birchhill.php', 'BirchHill', function(wxobj, tag, pubdate) {
       // bhwx = wxobj;
       // bhpubdate = pubdate;
-      document.getElementById('Humidity').innerHTML = wxobj.hum + '%';
+      document.getElementById('Humidity').innerHTML = wxobj.hum + '<small>%</small>';
       document.getElementById('TempTodayHigh').innerHTML = Math.round(wxobj.tempth) + '&deg;';
       document.getElementById('TimeTodayHigh').innerHTML = wxobj.ttempth;
       document.getElementById('TempTodayLow').innerHTML = Math.round(wxobj.temptl) + '&deg;';
@@ -275,6 +298,11 @@ function loadAirport() {
   }, loadAirport);
 }
 
+function loadFtWainwright(){
+  loadWx('/ftwainwright.php', 'FtWainwright', function(wxobj, tag, pubdate){
+  }, loadFtWainwright);
+}
+
 function loadUaf(){
   loadWx('/uaf.php', 'UAF', function(wxobj, tag, pubdate){
   }, loadUaf);
@@ -288,6 +316,7 @@ function loadGs(){
 
 loadBirchHill();
 loadAirport();
+loadFtWainwright();
 loadUaf();
 loadGs();
 
