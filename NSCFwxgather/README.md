@@ -10,12 +10,50 @@ https://www.nscfairbanks.org/NSCFwxgather/birchhill.php?nocache=123&jsonp=1
 
 
 ## TODO
-- make backend more resilient eg avoid, '<br />↵<b>Warning</b>:  file_get_contents(http://www.goldstreamsports.com/weather/realtime.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
-↵ in <b>/Users/nathan/BirchHillTemp/NSCFwxgather/goldstream.php</b> on line <b>22</b><br />↵Errors parsing date ' 'Array↵(↵    [warning_count] => 0↵    [warnings] => Array↵        (↵        )↵↵    [error_count] => 3↵    [errors] => Array↵        (↵            [0] => A two digit day could not be found↵            [1] => Data missing↵        )↵↵)↵"
+- make backend more resilient eg avoid, ```
+<br />
+<b>Warning</b>:  file_get_contents(http://www.goldstreamsports.com/weather/realtime.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ in <b>/Users/nathan/BirchHillTemp/NSCFwxgather/goldstream.php</b> on line <b>22</b><br />
+Errors parsing date ' 'Array
+(
+    [warning_count] => 0
+    [warnings] => Array
+        (
+        )
+
+    [error_count] => 3
+    [errors] => Array
+        (
+            [0] => A two digit day could not be found
+            [1] => Data missing
+        )
+
+)
+"
 responseText
 :
-"<br />↵<b>Warning</b>:  file_get_contents(http://www.goldstreamsports.com/weather/realtime.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
-↵ in <b>/Users/nathan/BirchHillTemp/NSCFwxgather/goldstream.php</b> on line <b>22</b><br />↵Errors parsing date ' 'Array↵(↵    [warning_count] => 0↵    [warnings] => Array↵        (↵        )↵↵    [error_count] => 3↵    [errors] => Array↵        (↵            [0] => A two digit day could not be found↵            [1] => Data missing↵        )↵↵)↵"'
+"<br />
+<b>Warning</b>:  file_get_contents(http://www.goldstreamsports.com/weather/realtime.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ in <b>/Users/nathan/BirchHillTemp/NSCFwxgather/goldstream.php</b> on line <b>22</b><br />
+Errors parsing date ' 'Array
+(
+    [warning_count] => 0
+    [warnings] => Array
+        (
+        )
+
+    [error_count] => 3
+    [errors] => Array
+        (
+            [0] => A two digit day could not be found
+            [1] => Data missing
+        )
+
+)
+"
+```
 
 -  mark stale if pubdate older than `Date.parse('now - 48 hours')`
 -  use visibility api to quiesce in background
