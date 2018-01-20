@@ -10,6 +10,7 @@ https://www.nscfairbanks.org/NSCFwxgather/birchhill.php?nocache=123&jsonp=1
 
 
 ## TODO
+- rename/relocate
 - make backend more resilient eg avoid, ```
 <br />
 <b>Warning</b>:  file_get_contents(http://www.goldstreamsports.com/weather/realtime.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
@@ -55,7 +56,6 @@ Errors parsing date ' 'Array
 "
 ```
 
--  mark stale if pubdate older than `Date.parse('now - 48 hours')`
 -  use visibility api to quiesce in background
 -  faviconomatic ... wordpress site has favicon
 -  favicon badge temp
