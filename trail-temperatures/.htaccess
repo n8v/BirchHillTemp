@@ -9,3 +9,5 @@ Redirect 301 /NSCFwxgather/birchhill.php /trail-temperatures/birchhill.php
 Redirect 301 /NSCFwxgather/ftwainwright.php /trail-temperatures/ftwainwright.php
 Redirect 301 /NSCFwxgather/goldstream.php /trail-temperatures/goldstream.php
 Redirect 301 /NSCFwxgather/uaf.php /trail-temperatures/uaf.php
+
+Redirect 301 /trail-temperatures/demo.html /trail-temperatures/

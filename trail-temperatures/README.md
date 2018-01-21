@@ -3,19 +3,31 @@ These PHP scripts spider the source weather data sources for the BirchHillTemp i
 
 ## examples of additional params to backend:
 
-https://www.nscfairbanks.org/NSCFwxgather/birchhill.php?nocache=123
+https://www.nscfairbanks.org/trail-temperatures/birchhill.php?nocache=123
 
-https://www.nscfairbanks.org/NSCFwxgather/birchhill.php?nocache=123&jsonp=1
+https://www.nscfairbanks.org/trail-temperatures/birchhill.php?nocache=123&jsonp=1
 
+
+### test locally
+```
+php -t trail-temperatures/ -S 127.0.0.1:8081
+```
+
+### neat ftp tricks
+```
+NSCFPASS=xxxx
+lftp nordicskier:$NSCFPASS@www.nscfairbanks.org
+cd nscfairbanks.org/trail-temperatures
+repeat 30 mirror -R -v --exclude cache --exclude .git --dereference
+```
 
 
 ## TODO
-- rename/relocate
 - make backend more resilient eg avoid, ```
 <br />
 <b>Warning</b>:  file_get_contents(http://www.goldstreamsports.com/weather/realtime.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
 
- in <b>/Users/nathan/BirchHillTemp/NSCFwxgather/goldstream.php</b> on line <b>22</b><br />
+ in <b>/Users/nathan/BirchHillTemp/trail-temperatures/goldstream.php</b> on line <b>22</b><br />
 Errors parsing date ' 'Array
 (
     [warning_count] => 0
@@ -37,7 +49,7 @@ responseText
 "<br />
 <b>Warning</b>:  file_get_contents(http://www.goldstreamsports.com/weather/realtime.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
 
- in <b>/Users/nathan/BirchHillTemp/NSCFwxgather/goldstream.php</b> on line <b>22</b><br />
+ in <b>/Users/nathan/BirchHillTemp/trail-temperatures/goldstream.php</b> on line <b>22</b><br />
 Errors parsing date ' 'Array
 (
     [warning_count] => 0
