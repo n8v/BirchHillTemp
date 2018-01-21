@@ -79,3 +79,12 @@ function serveAndCache($fields, $cachefile, $pubdate) {
   // set lastmodified back to pubdate
   touch( $cachefile, $pubdate->getTimestamp() );
 }
+
+
+function emitError($message) {
+  http_response_code(500);
+  $fields = array();
+  $fields['ERROR'] = $message;
+  echo json_encode($fields);
+  exit;
+}

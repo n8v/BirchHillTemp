@@ -30,14 +30,18 @@ $options = array(
 
 $context = stream_context_create($options);
 
-$raw = file_get_contents($URL, false, $context);
+$raw = @file_get_contents($URL, false, $context);
+if ($raw === FALSE) {
+  $err = error_get_last();
+  emitError($err[message]);
+  exit;
+}
 
 // echo "<pre>$raw</pre>";
 $fields = array();
 
 if (! preg_match("/^\<\?xml/", $raw)) {
-  http_response_code(500);
-  echo "Inconceivable XML received from $URL";
+  emitError("Inconceivable XML received from $URL :" + print_r(error_get_last(), true));
   exit;
 }
 
@@ -54,9 +58,7 @@ $fields['tempunitnodeg'] = "F";
 $datestring = (string)$x->observation_time_rfc822;
 $d = DateTime::createFromFormat(DATE_RFC2822, $datestring);
 if (!$d) {
-  http_response_code(500);
-  echo "Errors parsing date '$datestring'";
-  print_r(date_get_last_errors());
+  emitError("Errors parsing date '$datestring'" + print_r(date_get_last_errors(), true));
   exit;
 }
 
