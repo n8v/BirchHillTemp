@@ -1,0 +1,27 @@
+
+Redirect 301 /NSCFwxgather /mobile-weather/
+Redirect 301 /NSCFwxgather/ /mobile-weather/
+Redirect 301 /NSCFwxgather/demo.html /mobile-weather/
+Redirect 301 /NSCFwxgather/index.html /mobile-weather/
+
+Redirect 301 /NSCFwxgather/airport.php /mobile-weather/airport.php
+Redirect 301 /NSCFwxgather/birchhill.php /mobile-weather/birchhill.php
+Redirect 301 /NSCFwxgather/ftwainwright.php /mobile-weather/ftwainwright.php
+Redirect 301 /NSCFwxgather/goldstream.php /mobile-weather/goldstream.php
+Redirect 301 /NSCFwxgather/uaf.php /mobile-weather/uaf.php
+
+Redirect 301 /mobile-weather/demo.html /mobile-weather/
+
+
+Redirect 301 /trail-temperatures /mobile-weather/
+Redirect 301 /trail-temperatures/ /mobile-weather/
+Redirect 301 /trail-temperatures/demo.html /mobile-weather/
+Redirect 301 /trail-temperatures/index.html /mobile-weather/
+
+Redirect 301 /trail-temperatures/airport.php /mobile-weather/airport.php
+Redirect 301 /trail-temperatures/birchhill.php /mobile-weather/birchhill.php
+Redirect 301 /trail-temperatures/ftwainwright.php /mobile-weather/ftwainwright.php
+Redirect 301 /trail-temperatures/goldstream.php /mobile-weather/goldstream.php
+Redirect 301 /trail-temperatures/uaf.php /mobile-weather/uaf.php
+
+Redirect 301 /mobile-weather/demo.html /mobile-weather/
