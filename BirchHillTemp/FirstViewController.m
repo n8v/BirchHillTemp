@@ -19,7 +19,9 @@
     BOOL needsRefresh;
     BOOL isCelsius;
 
-    
+    NSDateFormatter *shortTimeDf;
+    NSDateFormatter *df;
+    NSISO8601DateFormatter *pubDateDf;
 }
 @property (nonatomic, retain) NSTimer *refreshTimer;
 
@@ -71,6 +73,12 @@
         if (vw.tag > 20)
             vw.backgroundColor = [UIColor clearColor];
     }
+    
+    // init reusable date formatter instance vars
+    shortTimeDf = [[NSDateFormatter alloc] init];
+    [shortTimeDf setDateFormat: @"h:mm a"];
+    pubDateDf = [[NSISO8601DateFormatter alloc] init];
+
     
     // initialize date
     // old date will trigger call to load temps
@@ -1148,17 +1156,21 @@
         NSDate *pubdate = [self getDateFromISO8601:[json objectForKey:@"pubdate_atom"]];
         NSLog(@"%@ pubdate: %@", tag, pubdate);
         
-        if (isCelsius)
-        {
-            [targetView setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0",FAHRENHEIT_TO_CELSIUS(temp)]] ;
-        }
-        else
-        {
-            [targetView setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0",temp]] ;
-        }
-
-        [targetView setFooterTextWithFade:[self formatShortTimeStringFromDate:pubdate]];
+        NSTimeInterval interval = [pubdate timeIntervalSinceNow];
+        NSLog(@"%@ age in seconds: %f", tag, interval);
         
+        [targetView setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", isCelsius ? FAHRENHEIT_TO_CELSIUS(temp) : temp ]];
+
+        // flag stale if it's over x hours old
+        if (fabs(interval) > kStaleTempAgeSeconds)
+        {
+            [targetView setTextColor:[UIColor colorWithWhite:.5 alpha:1]];
+//            [targetView setMainTextWithFade:@"--"];
+            [targetView setFooterTextWithFade:[self formatAgeStringFromSeconds:interval]];
+        }
+        else {
+            [targetView setFooterTextWithFade:[self formatShortTimeStringFromDate:pubdate]];
+        }
     }
     
     
@@ -1228,22 +1240,27 @@ int secondsSinceTimeString(NSString *timeString, NSString *formatString)
 }
 
 - (NSDate *)getDateFromISO8601:(NSString *)strDate{
-//    todo make  this an instance var
-    NSISO8601DateFormatter *formatter = [[NSISO8601DateFormatter alloc] init];
-    NSDate *date = [formatter dateFromString: strDate];
+    NSDate *date = [pubDateDf dateFromString: strDate];
     return date;
 }
 - (NSString *)formatShortTimeStringFromDate:(NSDate *)date
 {
-    //    todo make  this an instance var
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-//    NSLocale *loc = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-//    [df setLocale:loc];
-//    [df setLocale:[NSLocale currentLocale]];
-    [df setDateFormat: @"h:mm a"];
-
-    NSString *newTime = [df stringFromDate:date];
+    NSString *newTime = [shortTimeDf stringFromDate:date];
     return newTime;
+}
+- (NSString *)formatAgeStringFromSeconds:(float)seconds
+{
+    seconds = fabs(seconds);
+    if ( seconds > 60*60*24 ) {
+        return [NSString stringWithFormat:@"%ld days ago", lroundf(seconds / (60*60*24))];
+    }
+    if ( seconds > 60*60 ) {
+        return [NSString stringWithFormat:@"%ld hours ago", lroundf(seconds / (60*60))];
+    }
+    if ( seconds > 60 ) {
+        return [NSString stringWithFormat:@"%ld min ago", lroundf(seconds / 60)];
+    }
+    return [NSString stringWithFormat:@"%ld sec ago", lroundf(seconds)];
 }
 
 NSString *formatTimeString(NSString *timeString, NSString *formatString)

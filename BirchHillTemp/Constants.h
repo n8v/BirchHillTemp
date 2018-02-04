@@ -39,11 +39,12 @@
 // #define kUAFurl @"http://akclimate.org/wxstation/files/text_summary.html"
 #define kUAFurl @"http://akclimate.org/wview/index.html"
 
-
 // temperature/weather URLs
 #ifdef NONETWORK
+#define kStaleTempAgeSeconds 1*60*60
 #define kWxRoot @"http://127.0.0.1:8081/"
 #else
+#define kStaleTempAgeSeconds 12*60*60
 #define kWxRoot @"https://www.nscfairbanks.org/mobile-weather/"
 #endif  /* NONETWORK */
 
