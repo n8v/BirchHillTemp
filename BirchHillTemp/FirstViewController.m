@@ -18,6 +18,7 @@
     BOOL isFirstLoad;
     BOOL needsRefresh;
     BOOL isCelsius;
+
     
 }
 @property (nonatomic, retain) NSTimer *refreshTimer;
@@ -441,8 +442,8 @@
         NSLog(@"Refreshing temps...");
         
         connectionCount = 0;
-
-        HTTPFetcher *fetcherUAF = [[HTTPFetcher alloc] initWithURLString:kUAFurl
+        NSLog(@"Getting UAF wx from %@", kWxUafUrl);
+        HTTPFetcher *fetcherUAF = [[HTTPFetcher alloc] initWithURLString:kWxUafUrl
                                                            timeout:60
                                                              cachePolicy:NSURLRequestReloadIgnoringCacheData
                                                              receiver:self
@@ -1117,59 +1118,61 @@
 }
 
 
--(void) receivedUAF:(HTTPFetcher *)myfetcher
+-(void) receivedWxJsonFor:(RoundedView *)targetView FromFetcher:(HTTPFetcher *)myfetcher
 {
-    NSString *htmlstr = [[NSString alloc] initWithData:[myfetcher data]
-                                              encoding:NSASCIIStringEncoding];
-    if ([htmlstr isEqualToString:@""])
+    NSLog(@"Received response from %@", [[myfetcher urlRequest] URL]);
+    NSString *jsonString = [[NSString alloc] initWithData:[myfetcher data] encoding:NSASCIIStringEncoding];
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    NSDictionary* json = [NSJSONSerialization
+                          JSONObjectWithData:jsonData
+                          options:NSJSONReadingAllowFragments
+                          error:&error];
+    
+    if (error) {
+        NSLog(@"Json Error: %@", error.description);
+    }
+    
+    
+    if (json.count < 1)
     {
-        //[uafTempRounded.mainText setText:@"--"];
+        [targetView.mainText setText:@"--"];
     }
     else
     {
-        // NSLog(@"UAF string: %@", htmlstr);
+        NSString *tag = [json objectForKey:@"tag"];
+        NSLog(@"%@ string: %@", tag, jsonString);
 
-        //  NSString *UAFregex = @"(?s)Time on the Station (.*?)([ap]).*?Outside Temperature (.*?) ";
+        float temp = [[json objectForKey:@"temp"] floatValue];
+        NSLog(@"%@ TEMP: %f", tag, temp);
+        NSDate *pubdate = [self getDateFromISO8601:[json objectForKey:@"pubdate_atom"]];
+        NSLog(@"%@ pubdate: %@", tag, pubdate);
         
-        // UAF weather station changed so added new regex 2014-10-04
-        NSString *UAFregex = @"(?s)<strong>Temperature:</strong>.*?<b>(.*?) F</b>.*?([01][0-9]:[0-9][0-9]):[0-9][0-9]";
-        NSArray *capturesArrayUAF = getCapturesFromRegex(UAFregex, htmlstr);
-        
-        
-        if ([capturesArrayUAF count] > 0)
+        if (isCelsius)
         {
-            float tempUAF = [[capturesArrayUAF objectAtIndex:0] floatValue];
-            NSLog(@"UAF TEMP: %f", tempUAF);
-            NSString *time = [capturesArrayUAF objectAtIndex:1];  //  in format 00:00
-            NSLog(@"UAF time: %@", time);
-            
-            if (isCelsius)
-            {
-                [uafTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0",FAHRENHEIT_TO_CELSIUS(tempUAF)]] ;
-            }
-            else
-            {
-                [uafTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0",tempUAF]] ;
-            }
-            [uafTempRounded setFooterTextWithFade:formatTimeString(time,@"HH:mm")];
-            
-            
+            [targetView setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0",FAHRENHEIT_TO_CELSIUS(temp)]] ;
         }
         else
         {
-            // [uafTempRounded.mainText setText:@"--"];
+            [targetView setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0",temp]] ;
         }
+
+        [targetView setFooterTextWithFade:[self formatShortTimeStringFromDate:pubdate]];
         
     }
     
     
     connectionCount -= 1;
-    if (connectionCount == 0)
-    [self loadTempsFinished:YES];
-    
-    
-} // done with UAF
+    if (connectionCount == 0) {
+        [self loadTempsFinished:YES];
+    }
+}
 
+-(void) receivedUAF:(HTTPFetcher *)myfetcher
+{
+    return [self receivedWxJsonFor:uafTempRounded FromFetcher:myfetcher];
+}
+    
 -(void) receivedTodayForecast:(HTTPFetcher *)myfetcher
 {
     NSString *htmlstr = [[NSString alloc] initWithData:[myfetcher data]
@@ -1222,6 +1225,25 @@ int secondsSinceTimeString(NSString *timeString, NSString *formatString)
     NSDate *myDate = [df dateFromString:timeString];
     NSTimeInterval interval = [myDate timeIntervalSinceNow];
     return -interval;
+}
+
+- (NSDate *)getDateFromISO8601:(NSString *)strDate{
+//    todo make  this an instance var
+    NSISO8601DateFormatter *formatter = [[NSISO8601DateFormatter alloc] init];
+    NSDate *date = [formatter dateFromString: strDate];
+    return date;
+}
+- (NSString *)formatShortTimeStringFromDate:(NSDate *)date
+{
+    //    todo make  this an instance var
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+//    NSLocale *loc = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+//    [df setLocale:loc];
+//    [df setLocale:[NSLocale currentLocale]];
+    [df setDateFormat: @"h:mm a"];
+
+    NSString *newTime = [df stringFromDate:date];
+    return newTime;
 }
 
 NSString *formatTimeString(NSString *timeString, NSString *formatString)

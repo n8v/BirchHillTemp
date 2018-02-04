@@ -100,6 +100,9 @@ NSString *windToMps(NSString *wind);
 
 - (void) loadTemps;
 -(NSString *)getTempStringForKey:(NSString *)keyValue fromDictionary:(NSDictionary *)dictionary;
+- (NSDate *)getDateFromISO8601:(NSString *)strDate;
+- (NSString *)formatShortTimeStringFromDate:(NSDate *)date;
+
 
 
 @property (nonatomic, weak) IBOutlet UINavigationItem *navBarItem;

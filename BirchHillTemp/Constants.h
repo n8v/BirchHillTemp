@@ -40,6 +40,19 @@
 #define kUAFurl @"http://akclimate.org/wview/index.html"
 
 
+// temperature/weather URLs
+#ifdef NONETWORK
+#define kWxRoot @"http://127.0.0.1:8081/"
+#else
+#define kWxRoot @"https://www.nscfairbanks.org/mobile-weather/"
+#endif  /* NONETWORK */
+
+#define kWxBirchHillUrl kWxRoot @"birchhill.php"
+#define kWxAirportUrl kWxRoot @"airport.php"
+#define kWxFtWainwrightUrl kWxRoot @"ftwainwright.php"
+#define kWxGoldstreamUrl kWxRoot @"goldstream.php"
+#define kWxUafUrl kWxRoot @"uaf.php"
+
 // URLs
 #define kForecastZone @"http://forecast.weather.gov/MapClick.php?zoneid=AKZ222&TextType=1"
 #define kAlertXML @"http://alerts.weather.gov/cap/wwaatmget.php?x=AKZ222&y=0"
