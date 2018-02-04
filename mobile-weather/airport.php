@@ -41,7 +41,7 @@ if ($raw === FALSE) {
 $fields = array();
 
 if (! preg_match("/^\<\?xml/", $raw)) {
-  emitError("Inconceivable XML received from $URL :" + print_r(error_get_last(), true));
+  emitError("Inconceivable XML received from $URL : $raw");
   exit;
 }
 

@@ -24,5 +24,5 @@ repeat 30 mirror -R -v --exclude cache --exclude .git --dereference
 
 ## TODO
 -  use visibility api to quiesce in background
--  faviconomatic ... wordpress site has favicon
+-  faviconomatic other sizes for mobile platforms... wordpress site has favicon
 -  favicon badge temp
