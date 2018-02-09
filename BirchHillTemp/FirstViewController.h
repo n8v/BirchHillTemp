@@ -1,12 +1,7 @@
 //
 //  FirstViewController.h
 //  First tab: main temperature displays
-//
-//  Created by Gary Holton on 11/21/11.
-//  Copyright (c) 2011 University of Alaska Fairbanks. All rights reserved.
-//
 
-//#import "NSURLConnectionWithTag.h"
 #import "InfoViewController.h"
 #import "LineView.h"
 #import "RoundedView.h"
@@ -54,7 +49,7 @@
     
     RoundedView *currentTempRounded;
     RoundedView *uafTempRounded;
-    RoundedView *nwsTempRounded;
+    RoundedView *airportTempRounded;
     RoundedView *goldstreamRounded;
     RoundedView *lowTempRounded;
     RoundedView *highTempRounded;
@@ -94,7 +89,6 @@
 NSString *tempInCelsius(NSString *temp);
 NSString *tempInFahrenheit(NSString *temp);
 NSString *tempRounded(NSString *temp);
-//NSString *timeTo24Hour(NSString *timeString);
 NSString *windToKph(NSString *wind);
 NSString *windToMps(NSString *wind);
 

@@ -787,7 +787,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BirchHillTemp/BirchHillTemp_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"NONETWORK=1",
+					"NONETWORK=0",
 					"DEBUG=1",
 				);
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;

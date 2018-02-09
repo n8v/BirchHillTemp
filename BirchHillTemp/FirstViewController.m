@@ -2,9 +2,6 @@
 //  FirstViewController.m
 //  Birch Hill Temp
 //
-//  Created by Gary Holton on 11/21/11.
-//  Copyright (c) 2011 University of Alaska Fairbanks. All rights reserved.
-//
 
 #import "FirstViewController.h"
 #import "HTTPFetcher.h"
@@ -19,8 +16,9 @@
     BOOL needsRefresh;
     BOOL isCelsius;
 
+    // relatively expensive, keep around https://stackoverflow.com/a/27356265/71650
     NSDateFormatter *shortTimeDf;
-    NSDateFormatter *df;
+    NSDateFormatter *hhmmTimeDf;
     NSISO8601DateFormatter *pubDateDf;
 }
 @property (nonatomic, retain) NSTimer *refreshTimer;
@@ -77,6 +75,8 @@
     // init reusable date formatter instance vars
     shortTimeDf = [[NSDateFormatter alloc] init];
     [shortTimeDf setDateFormat: @"h:mm a"];
+    hhmmTimeDf = [[NSDateFormatter alloc] init];
+    [hhmmTimeDf setDateFormat:@"HH:mm"];
     pubDateDf = [[NSISO8601DateFormatter alloc] init];
 
     
@@ -116,11 +116,11 @@
     // these work for both iPhone and iPad
     // RoundedView class size based on size of container in storyboard
     currentTempRounded = [[RoundedView alloc] initWithFrame:CGRectMake(0, 0, currentTempView.frame.size.width, currentTempView.frame.size.height) andFontSize:0 footer:YES header:NO];
-    nwsTempRounded = [[RoundedView alloc] initWithFrame:CGRectMake(0, 0, nwsTempView.frame.size.width, nwsTempView.frame.size.height) andFontSize:0]; // 44
+    airportTempRounded = [[RoundedView alloc] initWithFrame:CGRectMake(0, 0, nwsTempView.frame.size.width, nwsTempView.frame.size.height) andFontSize:0]; // 44
     uafTempRounded = [[RoundedView alloc] initWithFrame:CGRectMake(0, 0, uafTempView.frame.size.width, uafTempView.frame.size.height) andFontSize:0];
     goldstreamRounded = [[RoundedView alloc] initWithFrame:CGRectMake(0, 0, gsTempView.frame.size.width, gsTempView.frame.size.height) andFontSize:0];
     [currentTempView addSubview:currentTempRounded];
-    [nwsTempView addSubview:nwsTempRounded];
+    [nwsTempView addSubview:airportTempRounded];
     [uafTempView addSubview:uafTempRounded];
     [gsTempView addSubview:goldstreamRounded];
     
@@ -262,7 +262,7 @@
     
     currentTempRounded.headerText.text = IS_IPAD ? @"BIRCH HILL" : @"";
     uafTempRounded.headerText.text = @"UAF";
-    nwsTempRounded.headerText.text = NSLocalizedString(@"AIRPORT",nil);
+    airportTempRounded.headerText.text = NSLocalizedString(@"AIRPORT",nil);
     lowTempRounded.headerText.text = NSLocalizedString(@"LOW", nil);
     highTempRounded.headerText.text = NSLocalizedString(@"HIGH",nil);
     humidityRounded.headerText.text = NSLocalizedString(@"HUMIDITY", nil);
@@ -448,38 +448,39 @@
         _navBarItem.rightBarButtonItem.enabled = NO;
         
         NSLog(@"Refreshing temps...");
-        
-        connectionCount = 0;
-        NSLog(@"Getting UAF wx from %@", kWxUafUrl);
-        HTTPFetcher *fetcherUAF = [[HTTPFetcher alloc] initWithURLString:kWxUafUrl
-                                                           timeout:60
-                                                             cachePolicy:NSURLRequestReloadIgnoringCacheData
-                                                             receiver:self
-                                                               action:@selector(receivedUAF:)];
-        [fetcherUAF start];
-        connectionCount += 1;
-
-        HTTPFetcher *fetcherNWS = [[HTTPFetcher alloc] initWithURLString:kNWSxml
-                                                                 timeout:60
-                                                             cachePolicy:NSURLRequestReloadIgnoringCacheData
-                                                                receiver:self
-                                                                  action:@selector(receivedNWS:)];
-        [fetcherNWS start];
-        connectionCount += 1;
-        
-        
-        HTTPFetcher *fetcherNSCFraw = [[HTTPFetcher alloc] initWithURLString:kNSCFraw
-                                                                        receiver:self
-                                                                          action:@selector(receivedCumulusTxt:)];
+        HTTPFetcher *fetcherNSCFraw = [[HTTPFetcher alloc] initWithURLString:kWxBirchHillUrl
+                                                                     timeout:60
+                                                                 cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                                    receiver:self
+                                                                      action:@selector(receivedBirchHill:)];
         [fetcherNSCFraw start];
         connectionCount += 1;
 
-        HTTPFetcher *fetcherGoldstreamSports = [[HTTPFetcher alloc] initWithURLString:kGoldstreamSportsWeather
-                                                                              timeout:60
-                                                                          cachePolicy:NSURLRequestReloadIgnoringCacheData
-                                                                     receiver:self
-                                                                       action:@selector(receivedGoldstreamSports:)];
-        [fetcherGoldstreamSports start];
+        
+        connectionCount = 0;
+        HTTPFetcher *fetcherUAF = [[HTTPFetcher alloc] initWithURLString:kWxUafUrl
+                                                                 timeout:60
+                                                             cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                                receiver:self
+                                                                  action:@selector(receivedUAF:)];
+        [fetcherUAF start];
+        connectionCount += 1;
+
+        HTTPFetcher *fetcherNWS = [[HTTPFetcher alloc] initWithURLString:kWxAirportUrl
+                                                                 timeout:60
+                                                             cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                                receiver:self
+                                                                  action:@selector(receivedAirport:)];
+        [fetcherNWS start];
+        connectionCount += 1;
+        
+
+        HTTPFetcher *fetcherGoldstream = [[HTTPFetcher alloc] initWithURLString:kWxGoldstreamUrl
+                                                                        timeout:60
+                                                                    cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                                       receiver:self
+                                                                         action:@selector(receivedGoldstream:)];
+        [fetcherGoldstream start];
         connectionCount += 1;
         
         
@@ -487,8 +488,8 @@
         {
             // get today's forecast
             HTTPFetcher *fetcherTodayForecast = [[HTTPFetcher alloc] initWithURLString:kForecastxml
-                                                                                 receiver:self
-                                                                                   action:@selector(receivedTodayForecast:)];
+                                                                              receiver:self
+                                                                                action:@selector(receivedTodayForecast:)];
             [fetcherTodayForecast start];
             connectionCount += 1;
             
@@ -582,72 +583,6 @@
 }
 
 
--(void)receivedGoldstreamSports:(HTTPFetcher *)myfetcher
-{
-    NSString *rawString = [[NSString alloc] initWithData:[myfetcher data] encoding:NSASCIIStringEncoding];
-    NSString *chompedString = [[rawString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    
-    NSArray *tokens = [chompedString componentsSeparatedByString:@" "] ;
-    NSArray *keys = [@"dateyyyymmdd timehhmmss temp hum dew wspeed wlatest bearing rrate rfall press currentwdir beaufortnumber windunit tempunitnodeg pressunit rainunit windrun presstrendval rmonth ryear rfally intemp inhum wchill temptrend tempth ttempth temptl ttemptl windtm twindtm wgusttm twgusttm pressth tpressth presstl tpresstl version build wgust heatindex humidex uv et solarrad avgbearing rhour forecastnumber isdaylight sensorcontactlost wdir cloudbasevalue cloudbaseunit apptemp sunshinehours currentsolarmax issunny" componentsSeparatedByString:@" "];
-    NSDictionary* fields;
-    
-    if ([tokens count] == [keys count])
-    {
-        fields = [NSDictionary dictionaryWithObjects:tokens forKeys:keys];
-        
-        // current temp time
-        // NSString *tempTimeFormat = @"";  // may have a different format
-//        [currentTempRounded setFooterTextWithFade:formatTime(tempTime)];
-        
-        // current, high/low since midnight temps
-        float tempF = [[fields valueForKey:@"temp"] floatValue];
-    
-        NSString *gsTime = [fields valueForKey:@"timehhmmss"];
-        NSString *gsDate = [fields valueForKey:@"dateyyyymmdd"]; // lies, it's 30/12/17
-        NSString *gsDateTime = [NSString stringWithFormat:@"%@ %@", gsDate, gsTime];
-    
-        NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        [df setDateFormat:@"dd/MM/yy' 'HH:mm:ss"];
-//        [df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
-        NSDate *myDate = [df dateFromString:gsDateTime];
-        NSTimeInterval interval = [myDate timeIntervalSinceNow];
-//        return -interval;
-
-
-        NSLog(@"GS string: %@", gsDateTime);
-        NSLog(@"Parsed GS date: %@", myDate);
-        NSLog(@"Age in seconds: %f", interval);
-
-        // don't display if it's over 2 hours old
-        if (fabs(interval) > 2*60*60)
-        {
-            [goldstreamRounded setMainTextWithFade:@"--"];
-            [goldstreamRounded setFooterTextWithFade:@"--"];
-        }
-        else
-        {
-            [goldstreamRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", isCelsius ? FAHRENHEIT_TO_CELSIUS(tempF) : tempF ]];
-        }
-
-        [df setDateFormat:@"H:mm"];
-        [df setTimeStyle:NSDateFormatterShortStyle];
-        NSString *timeDisplayString = [df stringFromDate:myDate];
-
-        [goldstreamRounded setFooterTextWithFade:timeDisplayString];
-        
-    }
-    else {
-        NSLog(@"No time/date found");
-    }
-
-
-    connectionCount -= 1;
-    if (connectionCount == 0)
-        [self loadTempsFinished:YES];
-
-
-}
-
 -(void)receivedAlert:(HTTPFetcher *)myfetcher
 {
     NSString *jsonString = [[NSString alloc] initWithData:[myfetcher data] encoding:NSASCIIStringEncoding];
@@ -715,37 +650,64 @@
     }
 }
 
--(void)receivedCumulusTxt:(HTTPFetcher *)myfetcher
-// procss raw text file from NSCF weatherpage
+-(void)receivedBirchHill:(HTTPFetcher *)myfetcher
 {
-    NSString *rawString = [[NSString alloc] initWithData:[myfetcher data] encoding:NSASCIIStringEncoding];
-    NSString *chompedString = [[rawString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSLog(@"Received response from %@", [[myfetcher urlRequest] URL]);
+    NSString *jsonString = [[NSString alloc] initWithData:[myfetcher data] encoding:NSASCIIStringEncoding];
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    NSDictionary* json = [NSJSONSerialization
+                          JSONObjectWithData:jsonData
+                          options:NSJSONReadingAllowFragments
+                          error:&error];
     
-    NSArray *tokens = [chompedString componentsSeparatedByString:@" "] ;
-    NSArray *keys = [@"dateyyyymmdd timehhmmss temp hum dew wspeed wlatest bearing rrate rfall press currentwdir beaufortnumber windunit tempunitnodeg pressunit rainunit windrun presstrendval rmonth ryear rfally intemp inhum wchill temptrend tempth ttempth temptl ttemptl windtm twindtm wgusttm twgusttm pressth tpressth presstl tpresstl version build wgust heatindex humidex uv et solarrad avgbearing rhour forecastnumber isdaylight sensorcontactlost wdir cloudbasevalue cloudbaseunit apptemp sunshinehours currentsolarmax issunny" componentsSeparatedByString:@" "];
-    NSDictionary* fields;
+    if (error) {
+        NSLog(@"Json Error: %@", error.description);
+    }
     
-    if ([tokens count] == [keys count])
+    
+    if (json.count < 1)
     {
-        fields = [NSDictionary dictionaryWithObjects:tokens forKeys:keys];
-
+//        [targetView.mainText setText:@"--"];
+    }
+    else {
         // high/low since midnight times  h:mm a
-        NSString *highTime = [fields objectForKey:@"ttempth"];
-        NSString *lowTime = [fields objectForKey:@"ttemptl"];
-        [highTempRounded setFooterTextWithFade:formatTime(highTime)];
-        [lowTempRounded setFooterTextWithFade:formatTime(lowTime)];
+        NSString *highTime = [json objectForKey:@"ttempth"];
+        NSString *lowTime = [json objectForKey:@"ttemptl"];
+        [highTempRounded setFooterTextWithFade:[self formatShortTimeStringFromString:highTime]];
+        [lowTempRounded setFooterTextWithFade:[self formatShortTimeStringFromString:lowTime]];
         
-        // current temp time
-        // NSString *tempTimeFormat = @"";  // may have a different format
-        NSString *tempTime = [fields objectForKey:@"timehhmmss"];
-        [currentTempRounded setFooterTextWithFade:formatTime(tempTime)];
+//        // current temp time
+//        NSString *tempTime = [json objectForKey:@"timehhmmss"];
+//        [currentTempRounded setFooterTextWithFade:[self formatShortTimeStringFromString:tempTime]];
+
+        NSString *tag = [json objectForKey:@"tag"];
+        NSDate *pubdate = [self getDateFromISO8601:[json objectForKey:@"pubdate_atom"]];
+        NSLog(@"%@ pubdate: %@", tag, pubdate);
+        
+        NSTimeInterval interval = [pubdate timeIntervalSinceNow];
+        NSLog(@"%@ age in seconds: %f", tag, interval);
+        
+//        [targetView setMainTextWithFade:tempString];
+        
+        // flag stale if it's over x hours old
+        if (fabs(interval) > kStaleTempAgeSeconds)
+        {
+            [currentTempRounded setTextColor:[UIColor colorWithWhite:.5 alpha:1]];
+            //            [targetView setMainTextWithFade:@"--"];
+            [currentTempRounded setFooterTextWithFade:[self formatAgeStringFromSeconds:interval]];
+        }
+        else {
+            [currentTempRounded setFooterTextWithFade:[self formatShortTimeStringFromDate:pubdate]];
+        }
+
         
         // current, high/low since midnight temps
-        float tempF = [[fields valueForKey:@"temp"] floatValue];
-//        float highTemp = [[fields valueForKey:@"hightemp"] floatValue];
-//        float lowTemp = [[fields valueForKey:@"lowtemp"] floatValue];
-//        float windChill = [[fields valueForKey:@"wchill"] floatValue];
-        float windMph = [[fields valueForKey:@"wspeed"] floatValue];
+        float tempF = [[json valueForKey:@"temp"] floatValue];
+//        float highTemp = [[json valueForKey:@"hightemp"] floatValue];
+//        float lowTemp = [[json valueForKey:@"lowtemp"] floatValue];
+//        float windChill = [[json valueForKey:@"wchill"] floatValue];
+        float windMph = [[json valueForKey:@"wspeed"] floatValue];
 
         // wind chill
         bool displayChill =  IS_IPAD || [[NSUserDefaults standardUserDefaults] boolForKey:kPrefChill];
@@ -755,11 +717,11 @@
 //                windChill = FAHRENHEIT_TO_CELSIUS(windChill);
             if (IS_IPAD)
             {
-                [chillRounded setMainTextWithFade:[self getTempStringForKey:@"wchill" fromDictionary:fields]];
+                [chillRounded setMainTextWithFade:[self getTempStringForKey:@"wchill" fromDictionary:json]];
             }
             else
             {
-                [chillRounded.mainText setText:[self getTempStringForKey:@"wchill" fromDictionary:fields]];
+                [chillRounded.mainText setText:[self getTempStringForKey:@"wchill" fromDictionary:json]];
                 [self fade:chillRounded];
             }
         }
@@ -792,13 +754,13 @@
 //        else
 //            [lowTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", lowTemp]];
         
-        NSString *currentTemp = [self getTempStringForKey:@"temp" fromDictionary:fields];
+        NSString *currentTemp = [self getTempStringForKey:@"temp" fromDictionary:json];
         self.currentTempString = [NSMutableString stringWithFormat:@"%@ %@",
                                   currentTemp,
                                   isCelsius ? @"C" : @"F"];
         [currentTempRounded setMainTextWithFade:currentTemp];
-        [highTempRounded setMainTextWithFade:[self getTempStringForKey:@"tempth" fromDictionary:fields]];
-        [lowTempRounded setMainTextWithFade:[self getTempStringForKey:@"temptl" fromDictionary:fields]];
+        [highTempRounded setMainTextWithFade:[self getTempStringForKey:@"tempth" fromDictionary:json]];
+        [lowTempRounded setMainTextWithFade:[self getTempStringForKey:@"temptl" fromDictionary:json]];
 //        if (isCelsius)
 //        {
 //            self.currentTempString = [NSMutableString stringWithFormat:@"%.f\u00B0 C",FAHRENHEIT_TO_CELSIUS(tempF)];
@@ -818,7 +780,7 @@
         
         
         // temp trend
-        float tempChangeF = [[fields valueForKey:@"temptrend"] floatValue];
+        float tempChangeF = [[json valueForKey:@"temptrend"] floatValue];
         
         if (tempChangeF > 1.0)
             [currentTempRounded setImage:[UIImage imageNamed:@"red_arrow.png"]];
@@ -828,7 +790,7 @@
             [currentTempRounded setImage:nil];
 
         // humidity
-        float humidity = [[fields objectForKey:@"hum"] floatValue];
+        float humidity = [[json objectForKey:@"hum"] floatValue];
         [humidityRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f",humidity]];
         humidityRounded.unitsText.text = @"%";
         
@@ -837,10 +799,10 @@
         if (IS_IPHONE_5 || IS_IPAD)
         {
             
-            float windAveMph = [[fields valueForKey:@"wspeed"] floatValue];
-            float windMaxMph = [[fields valueForKey:@"wgust"] floatValue];
-            int windDirection = [[fields valueForKey:@"bearing"] intValue];
-            NSString *windDirectionLabel = [fields objectForKey:@"currentwdir"];
+            float windAveMph = [[json valueForKey:@"wspeed"] floatValue];
+            float windMaxMph = [[json valueForKey:@"wgust"] floatValue];
+            int windDirection = [[json valueForKey:@"bearing"] intValue];
+            NSString *windDirectionLabel = [json objectForKey:@"currentwdir"];
             
             NSLog(@"Wind direction: %@ (%d)", windDirectionLabel, windDirection);
             
@@ -868,9 +830,9 @@
         // sunrise/sunset times
 //        if (!self.sunsetTime)
 //        {
-//            self.sunriseTime = formatTime([fields objectForKey:@"sunrise"]);
-//            self.sunsetTime = formatTime([fields objectForKey:@"sunset"]);
-//            NSArray *lodArray = [[fields objectForKey:@"daylight"] componentsSeparatedByString:@":"];
+//            self.sunriseTime = formatTime([json objectForKey:@"sunrise"]);
+//            self.sunsetTime = formatTime([json objectForKey:@"sunset"]);
+//            NSArray *lodArray = [[json objectForKey:@"daylight"] componentsSeparatedByString:@":"];
 //            int lodHour = [[lodArray objectAtIndex:0] integerValue];
 //            int lodMinute = [[lodArray objectAtIndex:1] integerValue];
 //            NSString *lodHourPlural = (lodHour > 1) ? @"s" : @"";
@@ -894,236 +856,7 @@
         [self loadTempsFinished:YES];
 
 }
-/*
- {
- NSString *jsonString = [[NSString alloc] initWithData:[myfetcher data] encoding:NSASCIIStringEncoding];
- NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
- NSError *error;
- NSDictionary* json = [NSJSONSerialization
- JSONObjectWithData:jsonData
- options:NSJSONReadingAllowFragments
- error:&error];
- 
- if (error)
- NSLog(@"Json Error: %@", error.description);
- 
- if (json.count>0)
- {
- // high/low since midnight times  h:mm a
- NSString *highTime = [json objectForKey:@"hightime"];
- NSString *lowTime = [json objectForKey:@"lowtime"];
- [highTempRounded setFooterTextWithFade:formatTime(highTime)];
- [lowTempRounded setFooterTextWithFade:formatTime(lowTime)];
- 
- // current temp time
- // NSString *tempTimeFormat = @"";  // may have a different format
- NSString *tempTime = [json objectForKey:@"temptime"];
- [currentTempRounded setFooterTextWithFade:formatTime(tempTime)];
- 
- // current, high/low since midnight temps
- float tempF = [[json valueForKey:@"temp"] floatValue];
- //        float highTemp = [[json valueForKey:@"hightemp"] floatValue];
- //        float lowTemp = [[json valueForKey:@"lowtemp"] floatValue];
- //        float windChill = [[json valueForKey:@"chill"] floatValue];
- float windMph = [[json valueForKey:@"windcurrent"] floatValue];
- 
- // wind chill
- bool displayChill =  IS_IPAD || [[NSUserDefaults standardUserDefaults] boolForKey:kPrefChill];
- if ( displayChill &&  (windMph>3 && tempF<=50 && windMph<110 && tempF>-50))
- {
- //            if (isCelsius)
- //                windChill = FAHRENHEIT_TO_CELSIUS(windChill);
- if (IS_IPAD)
- {
- [chillRounded setMainTextWithFade:[self getTempStringForKey:@"chill" fromDictionary:json]];
- }
- else
- {
- [chillRounded.mainText setText:[self getTempStringForKey:@"chill" fromDictionary:json]];
- [self fade:chillRounded];
- }
- }
- else
- {
- if (IS_IPAD)
- {
- [chillRounded setMainTextWithFade:@"--"];
- }
- else
- {
- [self fadeOut:chillRounded];
- }
- }
- 
- 
- // deal with erroneous high/low temp readings
- 
- //        if (fabsf(highTemp) >= 100.0)
- //             [highTempRounded setMainTextWithFade:@"--"];
- //        else if (isCelsius)
- //            [highTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0",FAHRENHEIT_TO_CELSIUS(highTemp)]];
- //        else
- //            [highTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", highTemp]];
- //
- //        if (fabsf(lowTemp) >= 100.0)
- //            [lowTempRounded setMainTextWithFade:@"--"];
- //        else if (isCelsius)
- //            [lowTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0",FAHRENHEIT_TO_CELSIUS(lowTemp)]];
- //        else
- //            [lowTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", lowTemp]];
- 
- NSString *currentTemp = [self getTempStringForKey:@"temp" fromDictionary:json];
- self.currentTempString = [NSMutableString stringWithFormat:@"%@ %@",
- currentTemp,
- isCelsius ? @"C" : @"F"];
- [currentTempRounded setMainTextWithFade:currentTemp];
- [highTempRounded setMainTextWithFade:[self getTempStringForKey:@"hightemp" fromDictionary:json]];
- [lowTempRounded setMainTextWithFade:[self getTempStringForKey:@"lowtemp" fromDictionary:json]];
- //        if (isCelsius)
- //        {
- //            self.currentTempString = [NSMutableString stringWithFormat:@"%.f\u00B0 C",FAHRENHEIT_TO_CELSIUS(tempF)];
- //            [currentTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0",FAHRENHEIT_TO_CELSIUS(tempF)]];
- //            //[highTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0",FAHRENHEIT_TO_CELSIUS(highTemp)]];
- //            //[lowTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", FAHRENHEIT_TO_CELSIUS(lowTemp)]];
- //            //[chillRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", FAHRENHEIT_TO_CELSIUS(windChill)]];
- //        }
- //        else
- //        {
- //            self.currentTempString = [NSMutableString stringWithFormat:@"%.f\u00B0 F",tempF];
- //            [currentTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0",tempF]];
- //            // [highTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", highTemp]];
- //            //[lowTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", lowTemp]];
- //            //[chillRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", windChill]];
- //        }
- 
- 
- // temp trend
- float tempChangeF = [[json valueForKey:@"change"] floatValue];
- 
- if (tempChangeF > 1.0)
- [currentTempRounded setImage:[UIImage imageNamed:@"red_arrow.png"]];
- else if (tempChangeF < -1.0)
- [currentTempRounded setImage:[UIImage imageNamed:@"blue_arrow.png"]];
- else
- [currentTempRounded setImage:nil];
- 
- // humidity
- float humidity = [[json objectForKey:@"humidity"] floatValue];
- [humidityRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f",humidity]];
- humidityRounded.unitsText.text = @"%";
- 
- 
- // wind speed/direction
- if (IS_IPHONE_5 || IS_IPAD)
- {
- 
- float windAveMph = [[json valueForKey:@"windmax"] floatValue];
- float windMaxMph = [[json valueForKey:@"windgust"] floatValue];
- int windDirection = [[json valueForKey:@"winddeg"] intValue];
- NSString *windDirectionLabel = [json objectForKey:@"windlabel"];
- 
- NSLog(@"Wind direction: %@ (%d)", windDirectionLabel, windDirection);
- 
- if (isCelsius)
- {
- [windCurrentRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f", MPH_TO_MPS(windMph)]];
- [windAverageRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f", MPH_TO_MPS(windAveMph)]];
- [windMaxRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f", MPH_TO_MPS(windMaxMph)]];
- windCurrentRounded.unitsText.text = @"m  / s";
- windMaxRounded.unitsText.text = @"m  / s";
- windAverageRounded.unitsText.text = @"m  / s";
- }
- else
- {
- [windCurrentRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f", windMph]];
- [windAverageRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f", windAveMph]];
- [windMaxRounded setMainTextWithFade:[NSString stringWithFormat:@"%.f", windMaxMph]];
- windCurrentRounded.unitsText.text = @"mph";
- windMaxRounded.unitsText.text = @"mph";
- windAverageRounded.unitsText.text = @"mph";
- }
- 
- }
- 
- // sunrise/sunset times
- if (!self.sunsetTime)
- {
- self.sunriseTime = formatTime([json objectForKey:@"sunrise"]);
- self.sunsetTime = formatTime([json objectForKey:@"sunset"]);
- NSArray *lodArray = [[json objectForKey:@"daylight"] componentsSeparatedByString:@":"];
- int lodHour = [[lodArray objectAtIndex:0] integerValue];
- int lodMinute = [[lodArray objectAtIndex:1] integerValue];
- NSString *lodHourPlural = (lodHour > 1) ? @"s" : @"";
- NSString *lodMinutePlural = (lodMinute > 1) ? @"s" : @"";
- self.lodTime = [NSString stringWithFormat:@"%d hour%@ %d minute%@", lodHour, lodHourPlural, lodMinute, lodMinutePlural];
- NSLog(@"Sunrise/set from weather station: %@, %@", self.sunriseTime, self.sunsetTime);
- }
- if (IS_IPAD)
- {
- sunriseLabel.text =[NSString stringWithFormat:@"Sunrise: %@\nSunset: %@\nDaylight: %@", _sunriseTime, _sunsetTime, _lodTime];
- sunriseContainer.alpha = 1;
- }
- 
- 
- 
- 
- }
- 
- connectionCount -= 1;
- if (connectionCount == 0)
- [self loadTempsFinished:YES];
- 
- }
- */
 
--(void) receivedNWS:(HTTPFetcher *)myfetcher
-{
-    NSString *htmlstr = [[NSString alloc] initWithData:[myfetcher data]
-                                              encoding:NSASCIIStringEncoding];
-    // this should be good XML, so we can parse it, but regex seems just as easy
-    
-    NSArray *arrayNWS = getCapturesFromRegex(@"(?s)([0-9]{1,2}:[0-9][0-9] [ap]m) AK[DS]T</observation_time>.*<temp_f>(.*)</temp_f>.*<temp_c>(.*)</temp_c>.*<icon_url_base>(.*?)</icon_url_base>.*<icon_url_name>(.*?)</icon_url_name>", htmlstr);
-    
-    if ( [arrayNWS count] >= 3 ) {
-        NSString *temp = tempRounded([arrayNWS objectAtIndex:1]);
-        NSString *tempC = tempRounded([arrayNWS objectAtIndex:2]);
-        NSString *time = [[arrayNWS objectAtIndex:0] uppercaseString];
-        [nwsTempRounded setMainTextWithFade:[NSString stringWithFormat:@"%@\u00B0",  isCelsius ? tempC : temp]];
-        [nwsTempRounded setFooterTextWithFade:formatTime(time)];
-    }
-    else
-    {
-        // nwsTempRounded.mainText.text = @"--";
-        NSLog(@"Can't match airport temp");
-    }
-    
-    
-    // set icon
-    if (arrayNWS.count >= 5 && [[NSUserDefaults standardUserDefaults] boolForKey:kPrefIcon] && !IS_IPAD)
-    {
-        NSString *base = [arrayNWS objectAtIndex:3];
-        NSString *icon = [arrayNWS objectAtIndex:4];
-        NSString *iconURLString = [base stringByAppendingPathComponent:icon];
-        NSLog(@"Got icon: %@", iconURLString);
-        NSURL *url = [NSURL URLWithString:iconURLString];
-        NSData *imageData = [NSData dataWithContentsOfURL:url];
-        UIImage *iconImage = [[UIImage alloc] initWithData:imageData];
-        iconImageView.image = iconImage;
-        [self fade:iconImageView];
-
-    }
-    else
-    {
-        [self fadeOut:iconImageView];
-    }
-    
-    
-    connectionCount -= 1;
-    if (connectionCount == 0)
-        [self loadTempsFinished:YES];
-    
-    
-}
 
 
 -(void) receivedWxJsonFor:(RoundedView *)targetView FromFetcher:(HTTPFetcher *)myfetcher
@@ -1151,15 +884,16 @@
         NSString *tag = [json objectForKey:@"tag"];
         NSLog(@"%@ string: %@", tag, jsonString);
 
-        float temp = [[json objectForKey:@"temp"] floatValue];
-        NSLog(@"%@ TEMP: %f", tag, temp);
+        NSString *tempString = [self getTempStringForKey:@"temp" fromDictionary:json];
+        NSLog(@"%@ TEMP: %@", tag, tempString);
+        
         NSDate *pubdate = [self getDateFromISO8601:[json objectForKey:@"pubdate_atom"]];
         NSLog(@"%@ pubdate: %@", tag, pubdate);
         
         NSTimeInterval interval = [pubdate timeIntervalSinceNow];
         NSLog(@"%@ age in seconds: %f", tag, interval);
         
-        [targetView setMainTextWithFade:[NSString stringWithFormat:@"%.f\u00B0", isCelsius ? FAHRENHEIT_TO_CELSIUS(temp) : temp ]];
+        [targetView setMainTextWithFade:tempString];
 
         // flag stale if it's over x hours old
         if (fabs(interval) > kStaleTempAgeSeconds)
@@ -1180,11 +914,23 @@
     }
 }
 
+-(void) receivedAirport:(HTTPFetcher *)myfetcher
+{
+    return [self receivedWxJsonFor:airportTempRounded FromFetcher:myfetcher];
+}
+//-(void) receivedFtWainwright:(HTTPFetcher *)myfetcher
+//{
+//    return [self receivedWxJsonFor:uafTempRounded FromFetcher:myfetcher];
+//}
+-(void) receivedGoldstream:(HTTPFetcher *)myfetcher
+{
+    return [self receivedWxJsonFor:goldstreamRounded FromFetcher:myfetcher];
+}
 -(void) receivedUAF:(HTTPFetcher *)myfetcher
 {
     return [self receivedWxJsonFor:uafTempRounded FromFetcher:myfetcher];
 }
-    
+
 -(void) receivedTodayForecast:(HTTPFetcher *)myfetcher
 {
     NSString *htmlstr = [[NSString alloc] initWithData:[myfetcher data]
@@ -1248,6 +994,12 @@ int secondsSinceTimeString(NSString *timeString, NSString *formatString)
     NSString *newTime = [shortTimeDf stringFromDate:date];
     return newTime;
 }
+- (NSString *)formatShortTimeStringFromString:(NSString *)dateString
+{
+    NSDate *myDate = [hhmmTimeDf dateFromString:dateString];
+    return [shortTimeDf stringFromDate:myDate];
+}
+
 - (NSString *)formatAgeStringFromSeconds:(float)seconds
 {
     seconds = fabs(seconds);
@@ -1262,25 +1014,25 @@ int secondsSinceTimeString(NSString *timeString, NSString *formatString)
     }
     return [NSString stringWithFormat:@"%ld sec ago", lroundf(seconds)];
 }
-
-NSString *formatTimeString(NSString *timeString, NSString *formatString)
-{
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:formatString];
-    NSLocale *loc = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-    [df setLocale:loc];
-    NSDate *myDate = [df dateFromString:timeString];
-    [df setTimeStyle:NSDateFormatterShortStyle];
-    [df setLocale:[NSLocale currentLocale]];
-    NSString *newTime = [df stringFromDate:myDate];
-    return newTime;
-}
-
-NSString *formatTime(NSString *timeString)
-{
-    // formats a time in am/pm into current locale time format
-    return formatTimeString(timeString, @"h:mm a");
-}
+//
+//NSString *formatTimeString(NSString *timeString, NSString *formatString)
+//{
+//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+//    [df setDateFormat:formatString];
+//    NSLocale *loc = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+//    [df setLocale:loc];
+//    NSDate *myDate = [df dateFromString:timeString];
+//    [df setTimeStyle:NSDateFormatterShortStyle];
+//    [df setLocale:[NSLocale currentLocale]];
+//    NSString *newTime = [df stringFromDate:myDate];
+//    return newTime;
+//}
+//
+//NSString *formatTime(NSString *timeString)
+//{
+//    // formats a time in am/pm into current locale time format
+//    return formatTimeString(timeString, @"h:mm a");
+//}
 
 -(void) fade:(UIView *)aView
 {

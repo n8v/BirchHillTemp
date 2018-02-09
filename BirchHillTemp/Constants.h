@@ -34,14 +34,10 @@
 // colors
 #define GRAY_BACKGROUND [UIColor colorWithWhite:.97 alpha:1];
 
-// UAF weather
-// #define kUAFurl @"http://climate.gi.alaska.edu"
-// #define kUAFurl @"http://akclimate.org/wxstation/files/text_summary.html"
-#define kUAFurl @"http://akclimate.org/wview/index.html"
 
 // temperature/weather URLs
-#ifdef NONETWORK
-#define kStaleTempAgeSeconds 1*60*60
+#if NONETWORK
+#define kStaleTempAgeSeconds 12*60*60
 #define kWxRoot @"http://127.0.0.1:8081/"
 #else
 #define kStaleTempAgeSeconds 12*60*60
@@ -60,23 +56,15 @@
 #define kForecastIconURL @"http://graphical.weather.gov/xml/SOAP_server/ndfdXMLclient.php?whichClient=NDFDgen&lat=64.8185&lon=-147.722&product=glance&product=glance&icons=icons&startTime=%@&endTime=%@"
 #define kForecastWarning @"http://forecast.weather.gov/showsigwx.php?warnzone=AKZ222&warncounty=AKC090&firewxzone=AKZ222"
 #define kWebCamURL @"https://www.nscfairbanks.org/wp-content/nscf/weather/webcam/camera.jpg"
-#define kNWSxml @"http://www.weather.gov/xml/current_obs/PAFA.xml"
 #define kForecastxml @"http://pafc.arh.noaa.gov/rss/rssget.php?zone=AKZ222"
 #define kForecastText @"http://pafc.arh.noaa.gov/rss/fcst.php?zone=AKZ222"
-#define kNWSurl @"http://weather.noaa.gov/weather/current/PAFA.html"
-#define kNSCFurl @"https://www.nscfairbanks.org/weather/"
 #define kTrailsURL @"https://www.nscfairbanks.org/trails/"
 #define kTrailsXML @"http://www.nscfairbanks.org/index.php?option=com_content&view=category&format=feed&type=rss&id=16"
 #define kNSCFHomeUrl @"http://www.nscfairbanks.org"
-#define kNSCFjson @"http://nscfairbanks.org/weatherpage/wap/index.wml"
-#define kNSCFraw @"https://www.nscfairbanks.org/wp-content/nscf/weather/realtime.txt"
-#define kNSCFrawextra @"http://nscfairbanks.org/weatherpage/clientrawextra.txt"
-#define kNSCFrawhour @"http://nscfairbanks.org/weatherpage/clientrawhour.txt"
 #define kSkiRaceUrl @"http://www.skiraces.sportalaska.com"
 #define kNSCFxml @"https://www.nscfairbanks.org/feed/"   // news feed
 #define kNSCFDonationPage @"http://nordicskicluboffairbanks.wildapricot.org/Donate"
 
-#define kGoldstreamSportsWeather @"http://www.goldstreamsports.com/weather/realtime.txt"
 // custom alert message uploaded here
 #define kCustomAlert @"http://nscfairbanks.org/weatherpage/wap/alert.json"
 
