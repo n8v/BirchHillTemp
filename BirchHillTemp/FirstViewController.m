@@ -117,10 +117,12 @@
     // RoundedView class size based on size of container in storyboard
     currentTempRounded = [[RoundedView alloc] initWithFrame:CGRectMake(0, 0, currentTempView.frame.size.width, currentTempView.frame.size.height) andFontSize:0 footer:YES header:NO];
     airportTempRounded = [[RoundedView alloc] initWithFrame:CGRectMake(0, 0, nwsTempView.frame.size.width, nwsTempView.frame.size.height) andFontSize:0]; // 44
+    ftWainwrightTempRounded = [[RoundedView alloc] initWithFrame:CGRectMake(0, 0, ftWainwrightTempView.frame.size.width, ftWainwrightTempView.frame.size.height) andFontSize:0];
     uafTempRounded = [[RoundedView alloc] initWithFrame:CGRectMake(0, 0, uafTempView.frame.size.width, uafTempView.frame.size.height) andFontSize:0];
     goldstreamRounded = [[RoundedView alloc] initWithFrame:CGRectMake(0, 0, gsTempView.frame.size.width, gsTempView.frame.size.height) andFontSize:0];
     [currentTempView addSubview:currentTempRounded];
     [nwsTempView addSubview:airportTempRounded];
+    [ftWainwrightTempView addSubview:ftWainwrightTempRounded];
     [uafTempView addSubview:uafTempRounded];
     [gsTempView addSubview:goldstreamRounded];
     
@@ -263,10 +265,11 @@
     currentTempRounded.headerText.text = IS_IPAD ? @"BIRCH HILL" : @"";
     uafTempRounded.headerText.text = @"UAF";
     airportTempRounded.headerText.text = NSLocalizedString(@"AIRPORT",nil);
+    ftWainwrightTempRounded.headerText.text = NSLocalizedString(@"BASE",nil);
     lowTempRounded.headerText.text = NSLocalizedString(@"LOW", nil);
     highTempRounded.headerText.text = NSLocalizedString(@"HIGH",nil);
     humidityRounded.headerText.text = NSLocalizedString(@"HUMIDITY", nil);
-    goldstreamRounded.headerText.text = @"GS SPORTS";
+    goldstreamRounded.headerText.text = @"GOLDS";
 
     
     
@@ -483,6 +486,14 @@
         [fetcherGoldstream start];
         connectionCount += 1;
         
+        HTTPFetcher *fetcherFtWainwright = [[HTTPFetcher alloc] initWithURLString:kWxFtWainwrightUrl
+                                                                        timeout:60
+                                                                    cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                                       receiver:self
+                                                                         action:@selector(receivedFtWainwright:)];
+        [fetcherFtWainwright start];
+        connectionCount += 1;
+
         
         if (IS_IPAD)
         {
@@ -929,6 +940,10 @@
 -(void) receivedUAF:(HTTPFetcher *)myfetcher
 {
     return [self receivedWxJsonFor:uafTempRounded FromFetcher:myfetcher];
+}
+-(void) receivedFtWainwright:(HTTPFetcher *)myfetcher
+{
+    return [self receivedWxJsonFor:ftWainwrightTempRounded FromFetcher:myfetcher];
 }
 
 -(void) receivedTodayForecast:(HTTPFetcher *)myfetcher

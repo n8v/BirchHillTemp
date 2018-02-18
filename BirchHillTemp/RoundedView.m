@@ -68,7 +68,7 @@
         _headerText.backgroundColor = [UIColor clearColor];
         _headerText.textColor = TEXT_COLOR; //[UIColor blackColor];
         _headerText.textAlignment = NSTextAlignmentCenter;
-        _headerText.font = [UIFont systemFontOfSize:16];
+        _headerText.font = [UIFont systemFontOfSize:14];
         _headerText.tag = 11;
         [self addSubview:_headerText];
         
@@ -78,7 +78,7 @@
         _footerText.backgroundColor = [UIColor clearColor];
         _footerText.textColor = TEXT_COLOR;  // [UIColor blackColor];
         _footerText.textAlignment = NSTextAlignmentCenter;
-        _footerText.font = [UIFont systemFontOfSize:16];
+        _footerText.font = [UIFont systemFontOfSize:12];
         _footerText.tag = 11;
         [self addSubview:_footerText];
         
@@ -131,9 +131,9 @@
         }
         else
         {
-            CGSize size = [@"XXX" sizeWithFont:[UIFont systemFontOfSize:12.0]];
+            CGSize size = [@"XXX" sizeWithFont:[UIFont systemFontOfSize:10.0]];
 //            NSLog(@"Size: %f, %f", size.width, size.height);
-            _mainText.font = [UIFont systemFontOfSize:(_mainText.frame.size.height) * 12.0 / size.height *1.2];
+            _mainText.font = [UIFont systemFontOfSize:(_mainText.frame.size.height) * 10.0 / size.height *1.0];
         }
 
         

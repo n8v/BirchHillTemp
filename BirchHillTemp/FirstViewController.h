@@ -28,6 +28,7 @@
     
     IBOutlet UIView *currentTempView;
     IBOutlet UIView *nwsTempView;
+    IBOutlet UIView *ftWainwrightTempView;
     IBOutlet UIView *uafTempView;
     IBOutlet UIView *gsTempView;
     
@@ -50,6 +51,7 @@
     RoundedView *currentTempRounded;
     RoundedView *uafTempRounded;
     RoundedView *airportTempRounded;
+    RoundedView *ftWainwrightTempRounded;
     RoundedView *goldstreamRounded;
     RoundedView *lowTempRounded;
     RoundedView *highTempRounded;
