@@ -284,12 +284,12 @@ function loadWx (relUrl, tag, callback, reloadFunc) {
   xhr.send();
 }
 
-var bhwx, bhpubdate;
+// var bhwx, bhpubdate;
 
 function loadBirchHill () {
   loadWx('/birchhill.php', 'BirchHill', function(wxobj, tag, pubdate) {
-      bhwx = wxobj;
-      bhpubdate = pubdate;
+      // bhwx = wxobj;
+      // bhpubdate = pubdate;
       document.getElementById('Humidity').innerHTML = wxobj.hum + '<small>%</small>';
       document.getElementById('TempTodayHigh').innerHTML = Math.round(wxobj.tempth) + '&deg;';
       document.getElementById('TimeTodayHigh').innerHTML = wxobj.ttempth;
@@ -301,14 +301,14 @@ function loadBirchHill () {
       document.getElementById('WindMax').innerHTML = wxobj.wgust;
 
       var bodyElem = document.getElementsByTagName('body')[0];
-      console.log(  "isdaylight: " + wxobj.isdaylight );
+      // console.log(  "isdaylight: " + wxobj.isdaylight );
       if ( wxobj.isdaylight != "0" && bodyElem.className != 'light' ) {
-        console.log("changing to light theme");
+        // console.log("changing to light theme");
         bodyElem.className = 'light';
         bodyElem.style = 'background-color: #eee';
       }
       else if ( wxobj.isdaylight == "0" && bodyElem.className != 'dark' ) {
-        console.log("changing to dark theme");
+        // console.log("changing to dark theme");
         bodyElem.className = 'dark';
         bodyElem.style = 'background-color: #2a2a2a';
       }
