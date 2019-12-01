@@ -49,9 +49,9 @@ if (! preg_match("/CR1000X/", $raw)) {
 
 // $csv = str_getcsv($raw);
 $csv = explode("\n",$raw);
-array_shift($csv); # remove file header
+// array_shift($csv); # remove file header
 
-$csv = array_map('str_getcsv', $csv);
+// $csv = array_map('str_getcsv', $csv);
 
 // array_walk($csv, function(&$a) use ($csv) {
 //   $a = array_combine($csv[0], $a);
@@ -59,8 +59,8 @@ $csv = array_map('str_getcsv', $csv);
 // array_shift($csv); # remove column headers
 // array_shift($csv); # remove unit headers
 
-$first = $csv[0];
-$last = $csv[count($csv) - 2];
+$first = str_getcsv($csv[1]);
+$last = str_getcsv($csv[count($csv) - 2]);
 
 if (count($first) != count($last)) {
   emitError("Can't use first and last lines in array because unequal length: " . print_r($first,true) . "\n\n" . print_r($last,true));
@@ -73,9 +73,9 @@ if (count($first) != count($last)) {
 // print_r($last);
 // echo "</pre>";
 
-
 $curvals = array_combine($first, $last);
 
+$first = $last = $csv = $raw = null;
 // echo "<pre>curvals:";
 // print_r($curvals);
 // echo "</pre>";
@@ -106,3 +106,4 @@ $fields = addMetadataFields($fields);
 
 
 serveAndCache($fields, $cachefile, $d);
+// echo memory_get_usage();
