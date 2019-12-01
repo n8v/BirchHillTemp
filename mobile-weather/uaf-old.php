@@ -1,7 +1,9 @@
 <?php
 $TAG = "UAF";
-//  this file has way more data than we need but that's what's available I guess?
-$URL = "http://dev-acrc.alaska.edu/acrc_wstation/CR1000XSeries_Ten_minute.dat";
+$URL = "http://akclimate.org/wview/wxrss.xml";
+
+
+
 
 $CACHE_TTL_SECONDS = 60 * 5;
 $cachefile = './cache/uafwx.json';
@@ -13,6 +15,7 @@ if ((! $_GET['nocache']) && serveFromCache($cachefile)) {
   exit;
 }
 
+// ----- parse wview XML -------------------------------
 
 // into Cumulus style vars,
 // $keys  = explode(" ", "dateyyyymmdd timehhmmss temp hum dew wspeed wlatest bearing rrate rfall press currentwdir beaufortnumber windunit tempunitnodeg pressunit rainunit windrun presstrendval rmonth ryear rfally intemp inhum wchill temptrend tempth ttempth temptl ttemptl windtm twindtm wgusttm twgusttm pressth tpressth presstl tpresstl version build wgust heatindex humidex uv et solarrad avgbearing rhour forecastnumber isdaylight sensorcontactlost wdir cloudbasevalue cloudbaseunit apptemp sunshinehours currentsolarmax issunny");
@@ -23,6 +26,7 @@ $options = array(
     'header'=>"User-Agent: Birch Hill Ski Temperature iOS App/v2.15; contact tonallyaweso.me\r\n"
   )
 );
+
 $context = stream_context_create($options);
 
 $raw = @file_get_contents($URL, false, $context);
@@ -32,75 +36,48 @@ if ($raw === FALSE) {
   exit;
 }
 
-
-//
-// echo "<pre>raw:";
-// print_r($raw);
-// echo "\n\n\nlength:" . strlen($raw);
-// echo "\n</pre>";
-
-
 $fields = array();
 
-if (! preg_match("/CR1000X/", $raw)) {
-  emitError("Inconceivable HTML received from $URL : $raw");
+if (! preg_match("/^\<\?xml/", $raw)) {
+  emitError("Inconceivable XML received from $URL : $raw");
   exit;
 }
 
-// $csv = str_getcsv($raw);
-$csv = explode("\n",$raw);
-array_shift($csv); # remove file header
 
-$csv = array_map('str_getcsv', $csv);
+$x = simplexml_load_string($raw);
+// print "<pre>content:";
+// // https://stackoverflow.com/a/31473904/71650
+// print (string) $x->channel->item[0]->children('http://purl.org/rss/1.0/modules/content/')->encoded;
+// print "</pre>";
 
-// array_walk($csv, function(&$a) use ($csv) {
-//   $a = array_combine($csv[0], $a);
-// });
-// array_shift($csv); # remove column headers
-// array_shift($csv); # remove unit headers
+$content = $x->channel->item[0]->children('http://purl.org/rss/1.0/modules/content/')->encoded;
+if (preg_match('/Temp: *([\d.-]+) *([FC])/', (string)$content, $matches)) {
 
-$first = $csv[0];
-$last = $csv[count($csv) - 2];
+  $fields['temp'] = $matches[1];
+  $fields['tempunitnodeg'] = $matches[2];
+}
 
-if (count($first) != count($last)) {
-  emitError("Can't use first and last lines in array because unequal length: " . print_r($first,true) . "\n\n" . print_r($last,true));
+
+// You Aren't Gonna Need the other fields
+
+$datestring = (string)$x->channel->item[0]->pubDate;
+// $datestring = '10:36:10, 01/03/18'; // test stale date
+
+$d = DateTime::createFromFormat("H:i:s, m/d/y", $datestring);
+if (!$d) {
+  emitError("Errors parsing date '$datestring'" + print_r(date_get_last_errors(), true));
   exit;
 }
 
-// echo "<pre>csv first and last:";
-// print_r($first);
-// echo "\n\n";
-// print_r($last);
-// echo "</pre>";
-
-
-$curvals = array_combine($first, $last);
-
-// echo "<pre>curvals:";
-// print_r($curvals);
-// echo "</pre>";
-
-// this is apparently in UTC
-$fields['temp'] = $curvals['Temp_F_Avg'];
-$fields['tempunitnodeg'] = 'F';
-
-
-$datestring = $curvals['TIMESTAMP'];
-
-$d = DateTime::createFromFormat("Y-m-d H:i:s", $datestring, new DateTimeZone('UTC'));
-$d->setTimeZone(new DateTimeZone(date_default_timezone_get()));
 $fields['pubdate_raw'] = $datestring;
 $fields['dateyyyymmdd'] = $d->format('Ymd');
 $fields['timehhmmss'] = $d->format('H:i:s');
 $fields['pubdate_atom'] = $d->format(DATE_ATOM);
 
 
+// ------- END parse wview XML
 
-//
-// You Aren't Gonna Need the other fields
-//
 
-// ------- END parse UAF climate textfile
 
 $fields = addMetadataFields($fields);
 
