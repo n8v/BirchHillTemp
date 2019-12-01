@@ -3,7 +3,7 @@ $TAG = "UAF";
 //  this file has way more data than we need but that's what's available I guess?
 $URL = "http://dev-acrc.alaska.edu/acrc_wstation/CR1000XSeries_Ten_minute.dat";
 
-$CACHE_TTL_SECONDS = 60 * 5;
+$CACHE_TTL_SECONDS = 60 * 10;
 $cachefile = './cache/uafwx.json';
 
 date_default_timezone_set('America/Anchorage');
