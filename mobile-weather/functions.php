@@ -56,6 +56,7 @@ function serveAndCache($fields, $cachefile, $pubdate) {
 
   file_put_contents($cachefile, $jsonout);
 
+  $now = getdate();
   $last_modified_time = $now[0];
   $etag = md5($jsonout);
   $expiretime = $last_modified_time + $CACHE_TTL_SECONDS;

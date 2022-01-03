@@ -197,7 +197,7 @@ small {
 // var baseurl = '/NSCFwxgather';
 var baseurl = '.';
 var timeagoInstance = timeago();
-var RETRY_MS = 60 * 1000;
+var RETRY_MS = 60 * 1000 * 10;
 
 function calculateRefreshIntervalMs (pubdate, ttl_s) {
   var defaultms = 15000;
