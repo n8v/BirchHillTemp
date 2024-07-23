@@ -1,6 +1,6 @@
 <?php
 $TAG = "Ft Wainwright";
-$URL = "http://w1.weather.gov/xml/current_obs/PAFB.xml";
+$URL = "http://weather.gov/xml/current_obs/PAFB.xml";
 
 
 

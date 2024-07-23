@@ -66,6 +66,12 @@ if ($last_entry->field1 != null) {
   $fields['tempunitnodeg'] = 'F';
 }
 
+$DUSKLIGHT = 250;
+if ($last_entry->field4 != null) {
+  $fields['light'] = $last_entry->field4;
+  $fields['isdaylight'] = ($fields['light'] > $DUSKLIGHT ? true : false);
+}
+
 // You Aren't Gonna Need the other fields
 
 $datestring = (string)$last_entry->created_at;

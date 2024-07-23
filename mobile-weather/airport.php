@@ -1,6 +1,6 @@
 <?php
 $TAG = "Airport";
-$URL = "http://w1.weather.gov/xml/current_obs/PAFA.xml";
+$URL = "http://weather.gov/xml/current_obs/PAFA.xml";
 
 
 

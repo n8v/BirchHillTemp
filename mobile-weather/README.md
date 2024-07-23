@@ -23,6 +23,7 @@ repeat 30 mirror -R -v --exclude cache --exclude .git --dereference
 
 
 ## TODO
+-  add grooming report(s) at least links
 -  use visibility api to quiesce in background
 -  faviconomatic other sizes for mobile platforms... wordpress site has favicon
 -  favicon badge temp
