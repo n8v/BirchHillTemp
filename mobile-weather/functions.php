@@ -22,13 +22,13 @@ function serveFromCache ($cachefile) {
           return true;
       }
       else {
-        if ($GET['jsonp']) {
+        if (isset($GET['jsonp'])) {
           echo $TAG . 'wx(';
         }
 
         readfile($cachefile);
 
-        if ($_GET['jsonp']) {
+        if (isset($GET['jsonp'])) {
           echo ');';
         }
 
@@ -64,7 +64,7 @@ function serveAndCache($fields, $cachefile, $pubdate) {
   header("Etag: $etag");
   header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', $expiretime));
 
-  if ($_GET['jsonp']) {
+  if (isset($_GET['jsonp'])) {
     echo $TAG . '(' . $jsonout . ');';
   }
   else {

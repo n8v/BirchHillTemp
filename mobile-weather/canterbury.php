@@ -11,7 +11,7 @@ $cachefile = './cache/canterbury.json';
 date_default_timezone_set('America/Anchorage');
 include 'functions.php';
 
-if ((! $_GET['nocache']) && serveFromCache($cachefile)) {
+if ((! isset($_GET['nocache'])) && serveFromCache($cachefile)) {
   exit;
 }
 
@@ -66,10 +66,25 @@ if ($last_entry->field1 != null) {
   $fields['tempunitnodeg'] = 'F';
 }
 
+// use light sensor to determine isdaylight
+// if this continues to be unreliable, PHP can calculate with lat/long https://www.php.net/manual/en/function.date-sun-info.php
+
 $DUSKLIGHT = 250;
 if ($last_entry->field4 != null) {
   $fields['light'] = $last_entry->field4;
   $fields['isdaylight'] = ($fields['light'] > $DUSKLIGHT ? true : false);
+}
+
+// "latitude":"64.817874","longitude":"-147.954413"
+$lat = $x->channel->latitude;
+$long = $x->channel->longitude;
+$sun_info = date_sun_info(time(), $lat, $long);
+$fields['sunrise'] = date('H:i', $sun_info['sunrise']);
+$fields['sunset'] = date('H:i', $sun_info['sunset']);
+if (time() > $sun_info['sunrise'] && time() < $sun_info['sunset']) {
+  $fields['isdaylight'] = true;
+} else {
+  $fields['isdaylight'] = false;
 }
 
 // You Aren't Gonna Need the other fields

@@ -11,7 +11,7 @@ $cachefile = './cache/airportwx.json';
 date_default_timezone_set('America/Anchorage');
 include 'functions.php';
 
-if ((! $_GET['nocache']) && serveFromCache($cachefile)) {
+if ((! isset($_GET['nocache'])) && serveFromCache($cachefile)) {
   exit;
 }
 

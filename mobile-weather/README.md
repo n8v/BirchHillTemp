@@ -17,6 +17,7 @@ php -t mobile-weather/ -S 127.0.0.1:8081
 ```
 NSCFPASS=xxxx
 lftp nordicskier:$NSCFPASS@www.nscfairbanks.org
+ssl:check-hostname off
 cd nscfairbanks.org/mobile-weather
 repeat 30 mirror -R -v --exclude cache --exclude .git --dereference
 ```
